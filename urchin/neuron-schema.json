@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "number"
+      },
+      "type": {
+        "type": "string",
+        "const": "neuron"
+      },
+      "position": {
+        "type": "array",
+        "items": {
+            "type": "number"
+        },
+        "minItems": 3,
+        "maxItems": 3
+      },
+      "color": {
+        "type": "string"
+      },
+      "shape": {
+        "type": "string"
+      },
+      "material": {
+        "type": "string"
+      }
+    }
+  }
+  

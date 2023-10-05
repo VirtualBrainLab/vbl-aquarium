@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "msg": {
+        "type":"string"
+      },
+      "type": {
+        "type":"string",
+        "enum": ["send", "receive"]
+      }
+    }
+  }
+  

@@ -1,0 +1,59 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "number"
+      },
+      "type": {
+        "type": "string",
+        "const": "camera"
+      },
+      "position": {
+        "type": "array",
+        "items": {
+            "type": "number"
+        },
+        "minItems": 3,
+        "maxItems": 3
+      },
+      "rotation": {
+        "type": "array",
+        "items": {
+            "type": "number"
+        },
+        "minItems": 3,
+        "maxItems": 3
+      },
+      "target": {
+        "type": "array",
+        "items": {
+            "type": "number"
+        },
+        "minItems": 3,
+        "maxItems": 3
+      },
+      "zoom": {
+        "type": "number"
+      },
+      "pan": {
+        "type": "array",
+        "items": {
+            "type": "number"
+        },
+        "minItems": 2,
+        "maxItems": 2
+      },
+      "mode": {
+        "type": "string",
+        "enum": ["orthographic", "perspective"]
+      },
+      "controllable": {
+        "type": "boolean"
+      },
+      "main": {
+        "type":"boolean"
+      }
+    }
+  }
+  
