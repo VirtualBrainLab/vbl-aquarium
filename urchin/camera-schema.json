@@ -11,39 +11,64 @@
         "const": "camera"
       },
       "position": {
-        "type": "array",
-        "items": {
+        "type": "object",
+        "properties": {
+          "x": {
             "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "z": {
+            "type": "number"
+          }
         },
-        "minItems": 3,
-        "maxItems": 3
+        "required": ["x", "y", "z"]
       },
       "rotation": {
-        "type": "array",
-        "items": {
+        "type": "object",
+        "properties": {
+          "x": {
             "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "z": {
+            "type": "number"
+          }
         },
-        "minItems": 3,
-        "maxItems": 3
+        "required": ["x", "y", "z"] 
       },
       "target": {
-        "type": "array",
-        "items": {
+        "type": "object",
+        "properties": {
+          "x": {
             "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "z": {
+            "type": "number"
+          }
         },
-        "minItems": 3,
-        "maxItems": 3
+        "required": ["x", "y", "z"] 
       },
       "zoom": {
         "type": "number"
       },
       "pan": {
-        "type": "array",
-        "items": {
+        "type": "object",
+        "properties": {
+          "x": {
             "type": "number"
+          },
+          "y": {
+            "type": "number"
+          }
         },
-        "minItems": 2,
-        "maxItems": 2
+        "required": ["x", "y"] 
       },
       "mode": {
         "type": "string",

@@ -11,12 +11,19 @@
         "const": "neuron"
       },
       "position": {
-        "type": "array",
-        "items": {
+        "type": "object",
+        "properties": {
+          "x": {
             "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "z": {
+            "type": "number"
+          }
         },
-        "minItems": 3,
-        "maxItems": 3
+        "required": ["x", "y", "z"]
       },
       "color": {
         "type": "string"
