@@ -23,7 +23,8 @@
             "type": "number"
           }
         },
-        "required": ["x", "y", "z"]
+        "required": ["x", "y", "z"],
+        "additionalProperties": false 
       },
       "color": {
         "type": "string"
@@ -33,7 +34,8 @@
       },
       "material": {
         "type": "string"
-      }
+      },
+      "additionalProperties": false 
     }
   }
   

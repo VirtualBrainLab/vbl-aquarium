@@ -23,7 +23,8 @@
             "type": "number"
           }
         },
-        "required": ["x", "y", "z"]
+        "required": ["x", "y", "z"],
+        "additionalProperties": false 
       },
       "rotation": {
         "type": "object",
@@ -38,7 +39,8 @@
             "type": "number"
           }
         },
-        "required": ["x", "y", "z"] 
+        "required": ["x", "y", "z"] ,
+        "additionalProperties": false 
       },
       "target": {
         "type": "object",
@@ -53,7 +55,8 @@
             "type": "number"
           }
         },
-        "required": ["x", "y", "z"] 
+        "required": ["x", "y", "z"] ,
+        "additionalProperties": false 
       },
       "zoom": {
         "type": "number"
@@ -68,7 +71,8 @@
             "type": "number"
           }
         },
-        "required": ["x", "y"] 
+        "required": ["x", "y"] ,
+        "additionalProperties": false 
       },
       "mode": {
         "type": "string",
@@ -79,7 +83,8 @@
       },
       "main": {
         "type":"boolean"
-      }
+      },
+      "additionalProperties": false 
     }
   }
   
