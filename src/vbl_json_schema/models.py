@@ -16,13 +16,13 @@ class Vector3Data(BaseModel):
     value: Vector3
 
 
-with open("./schemas/vector3.json", "w") as f:
-    f.write(dumps(Vector3.model_json_schema()))
+# with open("./schemas/vector3.json", "w") as f:
+#     f.write(dumps(Vector3.model_json_schema()))
 
-online_schema = get(
-    "https://raw.githubusercontent.com/VirtualBrainLab/vbl-json-schema/pydantic/src/vbl_json_schema/schemas/vector3.json")
-print(online_schema.text)
-as_dict = loads(online_schema.text)
+# online_schema = get(
+#     "https://raw.githubusercontent.com/VirtualBrainLab/vbl-json-schema/pydantic/src/vbl_json_schema/schemas/vector3.json")
+# print(online_schema.text)
+# as_dict = loads(online_schema.text)
 
-print(validate(instance={"id": 1, "value": {"x": 1.0, "y": 2.0, "z": 3.0}},
-               schema=as_dict))
+# print(validate(instance={"id": 1, "value": {"x": 1.0, "y": 2.0, "z": 3.0}},
+#                schema=as_dict))
