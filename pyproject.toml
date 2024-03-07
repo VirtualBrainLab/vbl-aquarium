@@ -12,6 +12,7 @@ license = "MIT"
 keywords = []
 authors = [
   { name = "Kenneth Yang", email = "kjy5@uw.edu" },
+  { name = "Daniel Birman", email = "dbirman@uw.edu" },
 ]
 classifiers = [
   "Development Status :: 4 - Beta",
@@ -25,7 +26,10 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = [
-  "pydantic==2.6.3"
+  "jsonschema==4.21.1",
+  "pydantic==2.6.3",
+  "pytest==8.1.0",
+  "requests==2.31.0"
 ]
 
 [project.urls]

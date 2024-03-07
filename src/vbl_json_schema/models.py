@@ -1,4 +1,4 @@
-from json import loads, dumps
+from json import dumps, loads
 
 from jsonschema import validate
 from pydantic import BaseModel
