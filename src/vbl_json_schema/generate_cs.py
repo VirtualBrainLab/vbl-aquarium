@@ -4,8 +4,6 @@ from vbl_json_schema.models_urchin import *
 
 def generate_csharp_struct(class_name: str, fields: List[str]) -> str:
     field_declarations = "\n".join(f"    public {field};" for field in fields)
-    constructor_parameters = ", ".join(f"{field} {field.lower()}" for field in fields)
-    assignments = "\n".join(f"        this.{field} = {field.lower()};" for field in fields)
     
     return f"""
 using UnityEngine;
