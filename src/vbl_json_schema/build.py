@@ -1,6 +1,7 @@
 import models_unity
 import models_generic
 import models_urchin
+import models_logging
 
 from generate_cs import *
 
@@ -19,18 +20,16 @@ def get_classes_nunity(module):
 
 unity_classes = get_classes(models_unity)
 
-generic_classes = get_classes_nunity(models_generic)
-urchin_classes = get_classes_nunity(models_urchin)
-
-classes_list = [generic_classes, urchin_classes]
-folder_prefix = ['generic', 'urchin']
+module_list = [models_generic, models_urchin, models_logging]
+folder_prefix = ['generic', 'urchin', 'logging']
 
 
 cdir = os.path.dirname(os.path.abspath(__file__))
 
-for i, (classes, cfolder) in enumerate(zip(classes_list, folder_prefix)):
+for i, (module, cfolder) in enumerate(zip(module_list, folder_prefix)):
+    classes = get_classes_nunity(module)
+    
     for cclass in classes:
-
 
         path = f"{cdir}/schemas/{cfolder}"
         if not os.path.exists(path):
