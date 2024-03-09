@@ -13,12 +13,14 @@ def generate_csharp_struct(class_name: str, fields: List[str], enums = None):
 
     enum_str = ""
     if enums is not None:
-        enum_array = ["\n".join(f"    {v[0]} = {v[1]}," for v in enums[1])]
+        enum_array = "\n".join(f"    {v[0]} = {v[1]}," for v in enums[1])
         enum_str = f"""
 \n\npublic Enum {enums[0]}
+{{
 {enum_array}
+}}
 """
-
+         
     return f"""
 using UnityEngine;
     
@@ -28,17 +30,27 @@ public struct {class_name}
 }}{enum_str}
 """
 
-def pydantic_to_csharp(pydantic_class):
+def pydantic_to_csharp(pydantic_class, class_json):
     class_name = pydantic_class.__name__
 
     fields = []
+
+    enums = None # when enums are active this should be a tuple (ClassName, [(Option1, Value1), (Option2, Value2)])
+
     for name, data in pydantic_class.model_fields.items():
         field_data = ''
-        enums = None # when enums are active this should be a tuple (ClassName, [(Option1, Value1), (Option2, Value2)])
 
         # first, catch enums
         if 'enum' in str(data.annotation):
-            print(pydantic_class.field_definitions)
+            # get the name of the enum
+            enum_name = data.annotation.__name__
+            # pull the defs
+            enum_data = class_json["$defs"][enum_name]['enum'] 
+            data_list = []
+            for i, v in enumerate(enum_data):
+                data_list.append((v, i))
+            enums = (enum_name, data_list)
+            field_data = f'{enum_name} {name}'
 
         # next, deal with base classes
         elif hasattr(data.annotation, "__name__"):

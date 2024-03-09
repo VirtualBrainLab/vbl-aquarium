@@ -43,4 +43,4 @@ for i, (module, cfolder) in enumerate(zip(module_list, folder_prefix)):
                 os.makedirs(path)
 
         with open(f'{path}/{cclass.__name__}.cs', 'w') as f:
-            f.write(pydantic_to_csharp(cclass))
+            f.write(pydantic_to_csharp(cclass, cclass.model_json_schema()))
