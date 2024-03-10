@@ -54,11 +54,12 @@ class CameraModel(BaseModel):
     
 class MeshModel(BaseModel):
     id: str
-    type: str
+    shape: str
     position: Vector3
     color: Color
-    shape: str
+    scale: Vector3
     material: str
+    interactive: bool
 
 # Particle group
     
