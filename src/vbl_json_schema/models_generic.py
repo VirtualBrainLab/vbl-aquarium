@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import List
 from vbl_json_schema.models_unity import *
 
+# Standard types and lists
 class IDData(BaseModel):
     id: str
 
@@ -51,4 +52,57 @@ class BoolData(BaseModel):
 
 class BoolList(BaseModel):
     id: str
+    value: List[bool]
+
+# ID lists 
+    
+class IDList(BaseModel):
+    id: List[str]
+
+class IDListVector3Data(BaseModel):
+    id: List[str]
+    value: Vector3
+
+class IDListVector3List(BaseModel):
+    id: List[str]
+    value: List[Vector3]
+
+class IDListColorData(BaseModel):
+    id: List[str]
+    value: Color
+
+class IDListColorList(BaseModel):
+    id: List[str]
+    value: List[Color]
+
+class IDListStringData(BaseModel):
+    id: List[str]
+    value: str
+
+class IDListStringList(BaseModel):
+    id: List[str]
+    value: List[str]
+
+class IDListFloatData(BaseModel):
+    id: List[str]
+    value: float
+
+class IDListFloatList(BaseModel):
+    id: List[str]
+    value: List[float]
+
+class IDListIntData(BaseModel):
+    id: List[str]
+    value: int
+
+class IDListIntList(BaseModel):
+    id: List[str]
+    value: List[int]
+
+class IDListBoolData(BaseModel):
+    id: List[str]
+    value: bool
+
+class IDListBoolList(BaseModel):
+    id: List[str]
     value: List[bool]
