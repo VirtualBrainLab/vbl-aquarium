@@ -4,5 +4,5 @@ using UnityEngine;
 public struct StringList
 {
     public string id;
-    public str[] value;
+    public string[] value;
 }

@@ -3,7 +3,7 @@ using UnityEngine;
     
 public struct AreaGroupData
 {
-    public str[] acronyms;
+    public string[] acronyms;
     public bool[] visible;
     public int[] side;
 }

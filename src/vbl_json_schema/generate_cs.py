@@ -64,9 +64,9 @@ def pydantic_to_csharp(pydantic_class, class_json):
 
         # next, deal with base classes
         elif hasattr(data.annotation, "__name__"):
+
             # convert str -> string properly
             type_name = data.annotation.__name__
-
             if type_name in p2c_types.keys():
                 type_name = p2c_types[type_name]
 
@@ -75,8 +75,14 @@ def pydantic_to_csharp(pydantic_class, class_json):
         # finally, deal with arrays
         elif typing.get_origin(data.annotation) == list:
             arg_class = typing.get_args(data.annotation)
+            type_name = arg_class[0].__name__
+
+            # convert str -> string properly
+            if type_name in p2c_types.keys():
+                type_name = p2c_types[type_name]
+
             if hasattr(arg_class[0], "__name__"):
-                field_data = f'{arg_class[0].__name__}[] {name}'
+                field_data = f'{type_name}[] {name}'
             else:
                 print(arg_class[0])
 

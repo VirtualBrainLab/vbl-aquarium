@@ -3,6 +3,6 @@ using UnityEngine;
     
 public struct IDListBoolList
 {
-    public str[] id;
+    public string[] id;
     public bool[] value;
 }
