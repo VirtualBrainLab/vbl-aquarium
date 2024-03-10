@@ -9,20 +9,30 @@ p2c_types = {
 }
 
 def generate_csharp_struct(class_name: str, fields: List[str], enums = None):
+    #build using statements
+    usings = ''
+    # if enums is not None:
+    #     usings += 'using System;\nusing UnityEngine;'
+    # else:
+    usings += 'using UnityEngine;' 
+
+    # build field declartions
     field_declarations = "\n".join(f"    public {field};" for field in fields)
 
+    # build enum str
     enum_str = ""
     if enums is not None:
         enum_array = "\n".join(f"    {v[0]} = {v[1]}," for v in enums[1])
         enum_str = f"""
-\n\npublic Enum {enums[0]}
+\n\npublic enum {enums[0]}
 {{
 {enum_array}
 }}
 """
          
+    # build the full class file string
     return f"""
-using UnityEngine;
+{usings}
     
 public struct {class_name}
 {{
