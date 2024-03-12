@@ -66,18 +66,18 @@ dependencies = [
   "mypy>=1.0.0",
 ]
 [tool.hatch.envs.types.scripts]
-check = "mypy --install-types --non-interactive {args:src/vbl_json_schema tests}"
+check = "mypy --install-types --non-interactive {args:src/vbl_aquarium tests}"
 
 [tool.coverage.run]
-source_pkgs = ["vbl_json_schema", "tests"]
+source_pkgs = ["vbl_aquarium", "tests"]
 branch = true
 parallel = true
 omit = [
-  "src/vbl_json_schema/__about__.py",
+  "src/vbl_aquarium/__about__.py",
 ]
 
 [tool.coverage.paths]
-vbl_json_schema = ["src/vbl_json_schema", "*/vbl-aquarium/src/vbl_aquarium"]
+vbl_aquarium = ["src/vbl_aquarium", "*/vbl-aquarium/src/vbl_aquarium"]
 tests = ["tests", "*/vbl-aquarium/tests"]
 
 [tool.coverage.report]
