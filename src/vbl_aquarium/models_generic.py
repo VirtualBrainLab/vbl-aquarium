@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from typing import List
-from vbl_json_schema.models_unity import *
+from vbl_aquarium.models_unity import *
 
 # Standard types and lists
 class IDData(BaseModel):
