@@ -3,6 +3,6 @@ using UnityEngine;
     
 public struct IDListVector3List
 {
-    public List ids;
-    public List values;
+    public string[] ids;
+    public Vector3[] values;
 }

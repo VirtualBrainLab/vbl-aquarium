@@ -1,8 +1,8 @@
 
-using UnityEngine;
+
     
 public struct IDListIntList
 {
-    public List ids;
-    public List values;
+    public string[] ids;
+    public int[] values;
 }

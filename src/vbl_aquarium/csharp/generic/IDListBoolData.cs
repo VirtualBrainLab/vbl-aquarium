@@ -1,8 +1,8 @@
 
-using UnityEngine;
+
     
 public struct IDListBoolData
 {
-    public List ids;
+    public string[] ids;
     public bool value;
 }

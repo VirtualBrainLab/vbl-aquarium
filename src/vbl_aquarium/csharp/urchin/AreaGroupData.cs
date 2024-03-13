@@ -1,9 +1,9 @@
 
-using UnityEngine;
+
     
 public struct AreaGroupData
 {
-    public List acronyms;
-    public List visible;
-    public List side;
+    public string[] acronyms;
+    public bool[] visible;
+    public int[] side;
 }
