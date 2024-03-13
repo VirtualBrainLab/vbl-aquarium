@@ -12,7 +12,7 @@ class Vector3Data(BaseModel):
 
 class Vector3List(BaseModel):
     id: str
-    value: List[Vector3]
+    values: List[Vector3]
 
 class ColorData(BaseModel):
     id: str
@@ -20,7 +20,7 @@ class ColorData(BaseModel):
 
 class ColorList(BaseModel):
     id: str
-    value: List[Color]
+    values: List[Color]
 
 class StringData(BaseModel):
     id: str
@@ -28,7 +28,7 @@ class StringData(BaseModel):
 
 class StringList(BaseModel):
     id: str
-    value: List[str]
+    values: List[str]
 
 class FloatData(BaseModel):
     id: str
@@ -36,7 +36,7 @@ class FloatData(BaseModel):
 
 class FloatList(BaseModel):
     id: str
-    value: List[float]
+    values: List[float]
 
 class IntData(BaseModel):
     id: str
@@ -44,7 +44,7 @@ class IntData(BaseModel):
 
 class IntList(BaseModel):
     id: str
-    value: List[int]
+    values: List[int]
 
 class BoolData(BaseModel):
     id: str
@@ -52,57 +52,57 @@ class BoolData(BaseModel):
 
 class BoolList(BaseModel):
     id: str
-    value: List[bool]
+    values: List[bool]
 
 # ID lists 
     
 class IDList(BaseModel):
-    id: List[str]
+    ids: List[str]
 
 class IDListVector3Data(BaseModel):
-    id: List[str]
+    ids: List[str]
     value: Vector3
 
 class IDListVector3List(BaseModel):
-    id: List[str]
-    value: List[Vector3]
+    ids: List[str]
+    values: List[Vector3]
 
 class IDListColorData(BaseModel):
-    id: List[str]
+    ids: List[str]
     value: Color
 
 class IDListColorList(BaseModel):
-    id: List[str]
-    value: List[Color]
+    ids: List[str]
+    values: List[Color]
 
 class IDListStringData(BaseModel):
-    id: List[str]
+    ids: List[str]
     value: str
 
 class IDListStringList(BaseModel):
-    id: List[str]
-    value: List[str]
+    ids: List[str]
+    values: List[str]
 
 class IDListFloatData(BaseModel):
-    id: List[str]
+    ids: List[str]
     value: float
 
 class IDListFloatList(BaseModel):
-    id: List[str]
-    value: List[float]
+    ids: List[str]
+    values: List[float]
 
 class IDListIntData(BaseModel):
-    id: List[str]
+    ids: List[str]
     value: int
 
 class IDListIntList(BaseModel):
-    id: List[str]
-    value: List[int]
+    ids: List[str]
+    values: List[int]
 
 class IDListBoolData(BaseModel):
-    id: List[str]
+    ids: List[str]
     value: bool
 
 class IDListBoolList(BaseModel):
-    id: List[str]
-    value: List[bool]
+    ids: List[str]
+    values: List[bool]
