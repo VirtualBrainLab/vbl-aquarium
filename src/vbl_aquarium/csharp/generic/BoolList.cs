@@ -4,5 +4,5 @@ using UnityEngine;
 public struct BoolList
 {
     public string id;
-    public bool[] value;
+    public List values;
 }

@@ -3,6 +3,6 @@ using UnityEngine;
     
 public struct IDListColorData
 {
-    public string[] id;
+    public List ids;
     public Color value;
 }

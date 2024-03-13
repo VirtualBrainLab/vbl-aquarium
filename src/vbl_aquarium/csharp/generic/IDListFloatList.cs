@@ -3,6 +3,6 @@ using UnityEngine;
     
 public struct IDListFloatList
 {
-    public string[] id;
-    public float[] value;
+    public List ids;
+    public List values;
 }

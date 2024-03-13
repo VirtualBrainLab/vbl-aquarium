@@ -7,8 +7,8 @@ public struct ParticleGroupModel
     public Vector3 scale;
     public string shape;
     public string material;
-    public float[] xs;
-    public float[] ys;
-    public float[] zs;
-    public Color[] colors;
+    public List xs;
+    public List ys;
+    public List zs;
+    public List colors;
 }

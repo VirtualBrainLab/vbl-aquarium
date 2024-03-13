@@ -1,5 +1,5 @@
-from vbl_json_schema import *
-from vbl_json_schema.models_urchin import *
+from vbl_aquarium import *
+from vbl_aquarium.models_urchin import *
 
 import typing
 import inspect
