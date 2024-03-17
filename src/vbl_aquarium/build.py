@@ -2,6 +2,7 @@ import models_unity
 import models_generic
 import models_urchin
 import models_logging
+import models_pinpoint
 
 from generate_cs import *
 
@@ -21,8 +22,8 @@ def get_classes_nunity(module):
 unity_classes = get_classes(models_unity)
 unity_class_names = [x.__name__ for x in get_classes(models_unity)]
 
-module_list = [models_generic, models_urchin, models_logging]
-folder_prefix = ['generic', 'urchin', 'logging']
+module_list = [models_generic, models_urchin, models_logging, models_pinpoint]
+folder_prefix = ['generic', 'urchin', 'logging', 'pinpoint']
 
 
 cdir = os.path.dirname(os.path.abspath(__file__))
@@ -34,14 +35,14 @@ for i, (module, cfolder) in enumerate(zip(module_list, folder_prefix)):
         
         if not cclass.__name__ in unity_class_names:
 
-            path = f"{cdir}/schemas/{cfolder}"
+            path = f"{cdir}/../../models/schemas/{cfolder}"
             if not os.path.exists(path):
                     os.makedirs(path)
 
             with open(f"{path}/{cclass.__name__}.json", "w") as f:
                 f.write(json.dumps(cclass.model_json_schema()))
 
-            path = f"{cdir}/csharp/{cfolder}"
+            path = f"{cdir}/../../models/csharp/{cfolder}"
             if not os.path.exists(path):
                     os.makedirs(path)
 
