@@ -3,6 +3,7 @@ from vbl_aquarium.models_urchin import *
 
 import typing
 import inspect
+import models_unity
 
 p2c_types = {
     'str': 'string',
@@ -14,6 +15,9 @@ def get_classes(module):
     # Filter out classes
     classes = [getattr(module, attr) for attr in attributes if isinstance(getattr(module, attr), type)]
     return classes
+
+
+unity_class_names = [x.__name__ for x in get_classes(models_unity)]
 
 def generate_csharp_struct(class_name: str, fields: List[str], enums = None, has_unity_classes = False):
     #build using statements
