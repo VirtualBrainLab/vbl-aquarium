@@ -9,4 +9,5 @@ class CraniotomyModel(BaseModel):
     rectangle: bool = False
 
 class CraniotomyGroup(BaseModel):
+    atlas: str
     data: List[CraniotomyModel]
