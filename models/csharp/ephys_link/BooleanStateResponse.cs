@@ -3,6 +3,6 @@
     
 public struct BooleanStateResponse
 {
-    public bool state;
-    public string error;
+    public bool State;
+    public string Error;
 }

@@ -3,6 +3,6 @@
     
 public struct DriveToDepthResponse
 {
-    public float depth;
-    public string error;
+    public float Depth;
+    public string Error;
 }

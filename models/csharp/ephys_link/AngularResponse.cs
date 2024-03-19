@@ -3,6 +3,6 @@ using UnityEngine;
     
 public struct AngularResponse
 {
-    public Vector3 angles;
-    public string error;
+    public Vector3 Angles;
+    public string Error;
 }

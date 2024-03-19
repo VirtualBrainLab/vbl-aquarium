@@ -3,7 +3,7 @@
     
 public struct DriveToDepthRequest
 {
-    public string manipulator_id;
-    public float depth;
-    public float speed;
+    public string ManipulatorId;
+    public float Depth;
+    public float Speed;
 }
