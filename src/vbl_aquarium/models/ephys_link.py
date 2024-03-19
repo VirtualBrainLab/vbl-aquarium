@@ -97,3 +97,53 @@ class PositionalResponse(VBLBaseModel):
 
     position: Vector4
     error: str
+
+
+class AngularResponse(VBLBaseModel):
+    """Response format for the manipulator angles.
+
+    :param angles: Position of the manipulator.
+    :type angles: Vector3
+    """
+
+    angles: Vector3
+    error: str
+
+
+class ShankCountResponse(VBLBaseModel):
+    """Response format for the shank count.
+
+    :param shank_count: Number of shanks.
+    :type shank_count: int
+    :param error: Error message if any.
+    :type error: str
+    """
+
+    shank_count: int
+    error: str
+
+
+class DriveToDepthResponse(VBLBaseModel):
+    """Response format for driving a manipulator to depth.
+
+    :param depth: Depth the manipulator is at in mm.
+    :type depth: float
+    :param error: Error message if any.
+    :type error: str
+    """
+
+    depth: float
+    error: str
+
+
+class BooleanStateResponse(VBLBaseModel):
+    """Response format for a boolean state.
+
+    :param state: State of the event.
+    :type state: bool
+    :param error: Error message if any.
+    :type error: str
+    """
+
+    state: bool
+    error: str
