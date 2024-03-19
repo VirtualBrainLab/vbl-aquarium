@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from pydantic import BaseModel
-
 from vbl_aquarium.models.vbl_base_model import VBLBaseModel
 from vbl_aquarium.models_unity import Vector3, Vector4
 
