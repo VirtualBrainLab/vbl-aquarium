@@ -1,11 +1,9 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from pydantic import BaseModel
 
 from vbl_aquarium.models.vbl_base_model import VBLBaseModel
-
-if TYPE_CHECKING:
-    from vbl_aquarium.models_unity import Vector3, Vector4
+from vbl_aquarium.models_unity import Vector3, Vector4
 
 
 class GotoPositionRequest(VBLBaseModel):

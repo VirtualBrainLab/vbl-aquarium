@@ -1,0 +1,1 @@
+{"description": "Response format for a boolean state.\n\n:param state: State of the event.\n:type state: bool\n:param error: Error message if any.\n:type error: str", "properties": {"State": {"title": "State", "type": "boolean"}, "Error": {"title": "Error", "type": "string"}}, "required": ["State", "Error"], "title": "BooleanStateResponse", "type": "object"}

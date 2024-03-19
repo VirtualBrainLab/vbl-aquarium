@@ -3,6 +3,7 @@ import models_generic
 import models_urchin
 import models_logging
 import models_pinpoint
+from vbl_aquarium.models import ephys_link
 
 from generate_cs import *
 
@@ -22,8 +23,8 @@ def get_classes_nunity(module):
 unity_classes = get_classes(models_unity)
 unity_class_names = [x.__name__ for x in get_classes(models_unity)]
 
-module_list = [models_generic, models_urchin, models_logging, models_pinpoint]
-folder_prefix = ['generic', 'urchin', 'logging', 'pinpoint']
+module_list = [models_generic, models_urchin, models_logging, models_pinpoint, ephys_link]
+folder_prefix = ['generic', 'urchin', 'logging', 'pinpoint', 'ephys_link']
 
 
 cdir = os.path.dirname(os.path.abspath(__file__))
