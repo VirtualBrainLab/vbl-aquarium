@@ -5,11 +5,11 @@ build-backend = "hatchling.build"
 [project]
 name = "vbl-aquarium"
 dynamic = ["version"]
-description = ''
+description = 'Collection of Pydantic models describing data objects passed between Virtual Brain Lab projects.'
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.8, <3.13"
 license = "MIT"
-keywords = []
+keywords = ['pydantic', "virtualbrainlab", "neuroscience"]
 authors = [
   { name = "Kenneth Yang", email = "kjy5@uw.edu" },
   { name = "Daniel Birman", email = "dbirman@uw.edu" },
@@ -24,15 +24,17 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Science/Research",
 ]
 dependencies = [
   "pydantic==2.6.4",
 ]
 
 [project.urls]
-Documentation = "https://github.com/unknown/vbl-aquarium#readme"
-Issues = "https://github.com/unknown/vbl-aquarium/issues"
-Source = "https://github.com/unknown/vbl-aquarium"
+Documentation = "https://github.com/VirtualBrainLab/vbl-aquarium/blob/main/README.md"
+Issues = "https://github.com/VirtualBrainLab/vbl-aquarium/issues"
+Source = "https://github.com/VirtualBrainLab/vbl-aquarium"
 
 [tool.hatch.version]
 path = "src/vbl_aquarium/__about__.py"
