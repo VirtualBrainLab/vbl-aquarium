@@ -1,0 +1,1 @@
+{"description": "Response format for the shank count.\n\n:param shank_count: Number of shanks.\n:type shank_count: int\n:param error: Error message if any.\n:type error: str", "properties": {"ShankCount": {"title": "Shankcount", "type": "integer"}, "Error": {"title": "Error", "type": "string"}}, "required": ["ShankCount", "Error"], "title": "ShankCountResponse", "type": "object"}

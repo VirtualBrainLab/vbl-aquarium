@@ -74,7 +74,7 @@ def pydantic_to_csharp(pydantic_class, class_json):
             for i, v in enumerate(enum_data):
                 data_list.append((v, i))
             enums = (enum_name, data_list)
-            field_data = f'{enum_name} {name}'
+            field_data = f'{enum_name} {alias if (alias := data.alias) else name}'
 
         # finally, deal with arrays
         elif typing.get_origin(data.annotation) == list:
@@ -86,7 +86,7 @@ def pydantic_to_csharp(pydantic_class, class_json):
                 type_name = p2c_types[type_name]
 
             if hasattr(arg_class[0], "__name__"):
-                field_data = f'{type_name}[] {name}'
+                field_data = f'{type_name}[] {alias if (alias := data.alias) else name}'
             else:
                 print(arg_class[0])
 
@@ -98,7 +98,7 @@ def pydantic_to_csharp(pydantic_class, class_json):
             if type_name in p2c_types.keys():
                 type_name = p2c_types[type_name]
 
-            field_data = f'{type_name} {name}'
+            field_data = f'{type_name} {alias if (alias := data.alias) else name}'
 
         else:
             raise Exception("need to write a new parser for a missing type")

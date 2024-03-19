@@ -1,0 +1,1 @@
+{"description": "Base model for all VBL models.\n\nConfigured to use PascalCase for field names and be immutable.", "properties": {}, "title": "VBLBaseModel", "type": "object"}
