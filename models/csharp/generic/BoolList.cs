@@ -3,6 +3,6 @@
     
 public struct BoolList
 {
-    public string id;
-    public bool[] values;
+    public string ID;
+    public bool[] Values;
 }

@@ -3,6 +3,6 @@
     
 public struct IDListStringData
 {
-    public string[] ids;
-    public string value;
+    public string[] IDs;
+    public string Value;
 }

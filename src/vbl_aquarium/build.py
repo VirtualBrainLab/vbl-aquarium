@@ -1,8 +1,8 @@
-import models_unity
-import models_generic
-import models_urchin
-import models_logging
-import models_pinpoint
+import vbl_aquarium.unity as unity
+from vbl_aquarium.models import generic
+from vbl_aquarium.models import urchin
+from vbl_aquarium.models import logging
+from vbl_aquarium.models import pinpoint
 from vbl_aquarium.models import ephys_link
 
 from generate_cs import *
@@ -20,10 +20,10 @@ def get_classes(module):
 def get_classes_nunity(module):
     return [c for c in get_classes(module) if c not in unity_classes]
 
-unity_classes = get_classes(models_unity)
-unity_class_names = [x.__name__ for x in get_classes(models_unity)]
+unity_classes = get_classes(unity)
+unity_class_names = [x.__name__ for x in get_classes(unity)]
 
-module_list = [models_generic, models_urchin, models_logging, models_pinpoint, ephys_link]
+module_list = [generic, urchin, logging, pinpoint, ephys_link]
 folder_prefix = ['generic', 'urchin', 'logging', 'pinpoint', 'ephys_link']
 
 

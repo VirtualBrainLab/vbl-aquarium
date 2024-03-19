@@ -1,1 +1,1 @@
-{"properties": {"msg": {"title": "Msg", "type": "string"}}, "required": ["msg"], "title": "LogError", "type": "object"}
+{"properties": {"Msg": {"title": "Msg", "type": "string"}}, "required": ["Msg"], "title": "LogError", "type": "object"}

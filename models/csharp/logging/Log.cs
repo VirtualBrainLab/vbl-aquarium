@@ -3,5 +3,5 @@
     
 public struct Log
 {
-    public string msg;
+    public string Msg;
 }

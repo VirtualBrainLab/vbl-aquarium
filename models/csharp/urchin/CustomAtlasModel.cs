@@ -3,7 +3,7 @@ using UnityEngine;
     
 public struct CustomAtlasModel
 {
-    public string name;
-    public Vector3 dimensions;
-    public Vector3 resolution;
+    public string Name;
+    public Vector3 Dimensions;
+    public Vector3 Resolution;
 }

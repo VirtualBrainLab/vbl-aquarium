@@ -3,8 +3,8 @@ using UnityEngine;
     
 public struct CraniotomyModel
 {
-    public int index;
-    public Vector2 size;
-    public Vector3 position;
-    public bool rectangle;
+    public int Index;
+    public Vector2 Size;
+    public Vector3 Position;
+    public bool Rectangle;
 }

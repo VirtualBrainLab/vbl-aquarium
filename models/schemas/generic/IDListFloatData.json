@@ -1,1 +1,1 @@
-{"properties": {"ids": {"items": {"type": "string"}, "title": "Ids", "type": "array"}, "value": {"title": "Value", "type": "number"}}, "required": ["ids", "value"], "title": "IDListFloatData", "type": "object"}
+{"properties": {"IDs": {"items": {"type": "string"}, "title": "Ids", "type": "array"}, "Value": {"title": "Value", "type": "number"}}, "required": ["IDs", "Value"], "title": "IDListFloatData", "type": "object"}

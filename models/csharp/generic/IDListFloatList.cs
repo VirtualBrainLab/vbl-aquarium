@@ -3,6 +3,6 @@
     
 public struct IDListFloatList
 {
-    public string[] ids;
-    public float[] values;
+    public string[] IDs;
+    public float[] Values;
 }

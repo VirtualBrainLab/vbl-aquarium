@@ -3,12 +3,12 @@ using UnityEngine;
     
 public struct ParticleGroupModel
 {
-    public string id;
-    public Vector3 scale;
-    public string shape;
-    public string material;
-    public float[] xs;
-    public float[] ys;
-    public float[] zs;
-    public Color[] colors;
+    public string Id;
+    public Vector3 Scale;
+    public string Shape;
+    public string Material;
+    public float[] Xs;
+    public float[] Ys;
+    public float[] Zs;
+    public Color[] Colors;
 }

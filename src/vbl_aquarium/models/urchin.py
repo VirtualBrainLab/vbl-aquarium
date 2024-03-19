@@ -1,23 +1,23 @@
-from pydantic import BaseModel
+from vbl_aquarium.models.vbl_base_model import VBLBaseModel
 from typing import List
-from vbl_aquarium.models_unity import *
+from vbl_aquarium.unity import *
 
 # CustomAtlas
 
-class CustomAtlasModel(BaseModel):
+class CustomAtlasModel(VBLBaseModel):
     name: str
     dimensions: Vector3
     resolution: Vector3
 
 # CustomMesh
 
-class CustomMeshData(BaseModel):
+class CustomMeshData(VBLBaseModel):
     id: str
     vertices: List[Vector3]
     triangles: List[int]
     normals: List[Vector3] = None
 
-class CustomMeshModel(BaseModel):
+class CustomMeshModel(VBLBaseModel):
     id: str
     position: Vector3
     use_reference: bool
@@ -27,14 +27,14 @@ class CustomMeshModel(BaseModel):
 
 # Area
     
-class AreaGroupData(BaseModel):
+class AreaGroupData(VBLBaseModel):
     acronyms: List[str]
     visible: List[bool]
     side: List[int]
 
 # Camera
     
-class CameraModel(BaseModel):
+class CameraModel(VBLBaseModel):
     class CameraMode(str, Enum):
         orthographic = "orthographic"
         perspective = "perspective"
@@ -52,7 +52,7 @@ class CameraModel(BaseModel):
     
 # Individual mesh neuron
     
-class MeshModel(BaseModel):
+class MeshModel(VBLBaseModel):
     id: str
     shape: str
     position: Vector3
@@ -63,7 +63,7 @@ class MeshModel(BaseModel):
 
 # Particle group
     
-class ParticleGroupModel(BaseModel):
+class ParticleGroupModel(VBLBaseModel):
     id: str
     scale: Vector3
     shape: str

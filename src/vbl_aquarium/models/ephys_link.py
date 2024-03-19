@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from vbl_aquarium.models.vbl_base_model import VBLBaseModel
-from vbl_aquarium.models_unity import Vector3, Vector4
+from vbl_aquarium.unity import Vector3, Vector4
 
 
 class GotoPositionRequest(VBLBaseModel):

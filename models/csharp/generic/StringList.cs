@@ -3,6 +3,6 @@
     
 public struct StringList
 {
-    public string id;
-    public string[] values;
+    public string ID;
+    public string[] Values;
 }

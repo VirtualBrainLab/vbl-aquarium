@@ -1,1 +1,1 @@
-{"properties": {"id": {"title": "Id", "type": "string"}, "values": {"items": {"type": "string"}, "title": "Values", "type": "array"}}, "required": ["id", "values"], "title": "StringList", "type": "object"}
+{"properties": {"ID": {"title": "Id", "type": "string"}, "Values": {"items": {"type": "string"}, "title": "Values", "type": "array"}}, "required": ["ID", "Values"], "title": "StringList", "type": "object"}

@@ -3,16 +3,16 @@ using UnityEngine;
     
 public struct CameraModel
 {
-    public float id;
-    public string type;
-    public Vector3 position;
-    public Vector3 rotation;
-    public Vector3 target;
-    public float zoom;
-    public Vector2 pan;
-    public CameraMode mode;
-    public bool controllable;
-    public bool main;
+    public float Id;
+    public string Type;
+    public Vector3 Position;
+    public Vector3 Rotation;
+    public Vector3 Target;
+    public float Zoom;
+    public Vector2 Pan;
+    public CameraMode Mode;
+    public bool Controllable;
+    public bool Main;
 }
 
 

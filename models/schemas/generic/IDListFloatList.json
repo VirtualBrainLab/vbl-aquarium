@@ -1,1 +1,1 @@
-{"properties": {"ids": {"items": {"type": "string"}, "title": "Ids", "type": "array"}, "values": {"items": {"type": "number"}, "title": "Values", "type": "array"}}, "required": ["ids", "values"], "title": "IDListFloatList", "type": "object"}
+{"properties": {"IDs": {"items": {"type": "string"}, "title": "Ids", "type": "array"}, "Values": {"items": {"type": "number"}, "title": "Values", "type": "array"}}, "required": ["IDs", "Values"], "title": "IDListFloatList", "type": "object"}

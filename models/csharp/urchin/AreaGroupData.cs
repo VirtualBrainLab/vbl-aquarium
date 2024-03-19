@@ -3,7 +3,7 @@
     
 public struct AreaGroupData
 {
-    public string[] acronyms;
-    public bool[] visible;
-    public int[] side;
+    public string[] Acronyms;
+    public bool[] Visible;
+    public int[] Side;
 }

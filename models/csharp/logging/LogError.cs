@@ -3,5 +3,5 @@
     
 public struct LogError
 {
-    public string msg;
+    public string Msg;
 }

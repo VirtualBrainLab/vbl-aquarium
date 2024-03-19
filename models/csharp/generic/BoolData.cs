@@ -3,6 +3,6 @@
     
 public struct BoolData
 {
-    public string id;
-    public bool value;
+    public string ID;
+    public bool Value;
 }

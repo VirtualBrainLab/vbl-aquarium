@@ -3,6 +3,6 @@
     
 public struct CraniotomyGroup
 {
-    public string atlas;
-    public CraniotomyModel[] data;
+    public string Atlas;
+    public CraniotomyModel[] Data;
 }

@@ -3,10 +3,10 @@ using UnityEngine;
     
 public struct CustomMeshModel
 {
-    public string id;
-    public Vector3 position;
-    public bool use_reference;
-    public string material;
-    public Vector3 scale;
-    public Color color;
+    public string Id;
+    public Vector3 Position;
+    public bool UseReference;
+    public string Material;
+    public Vector3 Scale;
+    public Color Color;
 }

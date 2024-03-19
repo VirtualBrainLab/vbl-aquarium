@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field, confloat
 from enum import Enum
 
+
 # Unity models don't get generated as .cs files since they exist in UnityEngine
 
 class Color(BaseModel):
