@@ -78,10 +78,10 @@ class GetManipulatorsResponse(VBLBaseModel):
     :type error: str
     """
 
-    manipulators: list[str]
-    num_axes: int
-    dimensions: Vector3
-    error: str
+    manipulators: list[str] = []
+    num_axes: int = 0
+    dimensions: Vector3 = Vector3()
+    error: str = ""
 
 
 class PositionalResponse(VBLBaseModel):
@@ -91,8 +91,8 @@ class PositionalResponse(VBLBaseModel):
     :type position: Vector4
     """
 
-    position: Vector4
-    error: str
+    position: Vector4 = Vector4()
+    error: str = ""
 
 
 class AngularResponse(VBLBaseModel):
@@ -102,8 +102,8 @@ class AngularResponse(VBLBaseModel):
     :type angles: Vector3
     """
 
-    angles: Vector3
-    error: str
+    angles: Vector3 = Vector3()
+    error: str = ""
 
 
 class ShankCountResponse(VBLBaseModel):
@@ -115,8 +115,8 @@ class ShankCountResponse(VBLBaseModel):
     :type error: str
     """
 
-    shank_count: int
-    error: str
+    shank_count: int = 0
+    error: str = ""
 
 
 class DriveToDepthResponse(VBLBaseModel):
@@ -128,8 +128,8 @@ class DriveToDepthResponse(VBLBaseModel):
     :type error: str
     """
 
-    depth: float
-    error: str
+    depth: float = 0
+    error: str = ""
 
 
 class BooleanStateResponse(VBLBaseModel):
@@ -141,5 +141,5 @@ class BooleanStateResponse(VBLBaseModel):
     :type error: str
     """
 
-    state: bool
-    error: str
+    state: bool = False
+    error: str = ""
