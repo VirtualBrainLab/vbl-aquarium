@@ -36,9 +36,6 @@ Documentation = "https://github.com/VirtualBrainLab/vbl-aquarium/blob/main/READM
 Issues = "https://github.com/VirtualBrainLab/vbl-aquarium/issues"
 Source = "https://github.com/VirtualBrainLab/vbl-aquarium"
 
-[project.scripts]
-vbl_aquarium_build = "vbl_aquarium.build:main"
-
 [tool.hatch.version]
 path = "src/vbl_aquarium/__about__.py"
 
