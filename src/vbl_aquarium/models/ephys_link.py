@@ -17,9 +17,9 @@ class GotoPositionRequest(VBLBaseModel):
     :type speed: float
     """
 
-    manipulator_id: str
+    manipulator_id: str = Field(min_length=1)
     position: Vector4
-    speed: float
+    speed: float = Field(gt=0)
 
 
 class InsideBrainRequest(VBLBaseModel):
@@ -31,7 +31,7 @@ class InsideBrainRequest(VBLBaseModel):
     :type inside: bool
     """
 
-    manipulator_id: str
+    manipulator_id: str = Field(min_length=1)
     inside: bool
 
 
@@ -46,9 +46,9 @@ class DriveToDepthRequest(VBLBaseModel):
     :type speed: float
     """
 
-    manipulator_id: str
+    manipulator_id: str = Field(min_length=1)
     depth: float
-    speed: float
+    speed: float = Field(gt=0)
 
 
 class CanWriteRequest(VBLBaseModel):
@@ -58,13 +58,13 @@ class CanWriteRequest(VBLBaseModel):
     :type manipulator_id: str
     :param can_write: Whether the manipulator can write.
     :type can_write: bool
-    :param hours: Number of hours the manipulator can write for.
+    :param hours: Number of hours the manipulator can write for (0 = indefinitely).
     :type hours: float
     """
 
-    manipulator_id: str
+    manipulator_id: str = Field(min_length=1)
     can_write: bool
-    hours: float
+    hours: float = Field(ge=0)
 
 
 class GetManipulatorsResponse(VBLBaseModel):
@@ -81,7 +81,7 @@ class GetManipulatorsResponse(VBLBaseModel):
     """
 
     manipulators: list[str] = Field(default_factory=list)
-    num_axes: int = 0
+    num_axes: int = Field(default=0, ge=-1)
     dimensions: Vector3 = Vector3()
     error: str = ""
 
@@ -117,7 +117,7 @@ class ShankCountResponse(VBLBaseModel):
     :type error: str
     """
 
-    shank_count: int = 0
+    shank_count: int = Field(default=1, ge=1)
     error: str = ""
 
 
