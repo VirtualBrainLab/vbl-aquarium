@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import typing
+from typing import get_args, get_origin
 
 from vbl_aquarium.models import unity
 from vbl_aquarium.utils.common import get_classes
@@ -72,8 +72,8 @@ def pydantic_to_csharp(pydantic_class, class_json):
             field_data = f"{enum_name} {alias if (alias := data.alias) else name}"
 
         # finally, deal with arrays
-        elif typing.get_origin(data.annotation) == list:
-            arg_class = typing.get_args(data.annotation)
+        elif get_origin(data.annotation) == list:
+            arg_class = get_args(data.annotation)
             type_name = arg_class[0].__name__
 
             # convert str -> string properly
