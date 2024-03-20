@@ -1,21 +1,28 @@
-from vbl_aquarium.models.vbl_base_model import VBLBaseModel
-from typing import List
-from vbl_aquarium.unity import *
+from __future__ import annotations
+
+from enum import Enum
+
+from vbl_aquarium.models.unity import Color, Vector2, Vector3
+from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
 # CustomAtlas
+
 
 class CustomAtlasModel(VBLBaseModel):
     name: str
     dimensions: Vector3
     resolution: Vector3
 
+
 # CustomMesh
+
 
 class CustomMeshData(VBLBaseModel):
     id: str
-    vertices: List[Vector3]
-    triangles: List[int]
-    normals: List[Vector3] = None
+    vertices: list[Vector3]
+    triangles: list[int]
+    normals: list[Vector3] = None
+
 
 class CustomMeshModel(VBLBaseModel):
     id: str
@@ -25,15 +32,19 @@ class CustomMeshModel(VBLBaseModel):
     scale: Vector3
     color: Color
 
+
 # Area
-    
+
+
 class AreaGroupData(VBLBaseModel):
-    acronyms: List[str]
-    visible: List[bool]
-    side: List[int]
+    acronyms: list[str]
+    visible: list[bool]
+    side: list[int]
+
 
 # Camera
-    
+
+
 class CameraModel(VBLBaseModel):
     class CameraMode(str, Enum):
         orthographic = "orthographic"
@@ -49,9 +60,11 @@ class CameraModel(VBLBaseModel):
     mode: CameraMode
     controllable: bool
     main: bool
-    
+
+
 # Individual mesh neuron
-    
+
+
 class MeshModel(VBLBaseModel):
     id: str
     shape: str
@@ -61,16 +74,18 @@ class MeshModel(VBLBaseModel):
     material: str
     interactive: bool
 
+
 # Particle group
-    
+
+
 class ParticleGroupModel(VBLBaseModel):
     id: str
     scale: Vector3
     shape: str
     material: str
 
-    xs: List[float]
-    ys: List[float]
-    zs: List[float]
+    xs: list[float]
+    ys: list[float]
+    zs: list[float]
 
-    colors: List[Color]
+    colors: list[Color]

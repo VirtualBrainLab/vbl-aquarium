@@ -1,6 +1,6 @@
 
 
-    
+
 public struct IntData
 {
     public string ID;

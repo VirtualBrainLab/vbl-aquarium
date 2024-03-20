@@ -1,7 +1,9 @@
 from __future__ import annotations
 
-from vbl_aquarium.models.vbl_base_model import VBLBaseModel
-from vbl_aquarium.unity import Vector3, Vector4
+from pydantic import Field
+
+from vbl_aquarium.models.unity import Vector3, Vector4
+from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
 
 class GotoPositionRequest(VBLBaseModel):
@@ -15,9 +17,9 @@ class GotoPositionRequest(VBLBaseModel):
     :type speed: float
     """
 
-    manipulator_id: str
+    manipulator_id: str = Field(min_length=1)
     position: Vector4
-    speed: float
+    speed: float = Field(gt=0)
 
 
 class InsideBrainRequest(VBLBaseModel):
@@ -29,7 +31,7 @@ class InsideBrainRequest(VBLBaseModel):
     :type inside: bool
     """
 
-    manipulator_id: str
+    manipulator_id: str = Field(min_length=1)
     inside: bool
 
 
@@ -44,9 +46,9 @@ class DriveToDepthRequest(VBLBaseModel):
     :type speed: float
     """
 
-    manipulator_id: str
+    manipulator_id: str = Field(min_length=1)
     depth: float
-    speed: float
+    speed: float = Field(gt=0)
 
 
 class CanWriteRequest(VBLBaseModel):
@@ -56,13 +58,13 @@ class CanWriteRequest(VBLBaseModel):
     :type manipulator_id: str
     :param can_write: Whether the manipulator can write.
     :type can_write: bool
-    :param hours: Number of hours the manipulator can write for.
+    :param hours: Number of hours the manipulator can write for (0 = indefinitely).
     :type hours: float
     """
 
-    manipulator_id: str
+    manipulator_id: str = Field(min_length=1)
     can_write: bool
-    hours: float
+    hours: float = Field(ge=0)
 
 
 class GetManipulatorsResponse(VBLBaseModel):
@@ -78,10 +80,10 @@ class GetManipulatorsResponse(VBLBaseModel):
     :type error: str
     """
 
-    manipulators: list[str]
-    num_axes: int
-    dimensions: Vector3
-    error: str
+    manipulators: list[str] = Field(default_factory=list)
+    num_axes: int = Field(default=0, ge=-1)
+    dimensions: Vector3 = Vector3()
+    error: str = ""
 
 
 class PositionalResponse(VBLBaseModel):
@@ -91,8 +93,8 @@ class PositionalResponse(VBLBaseModel):
     :type position: Vector4
     """
 
-    position: Vector4
-    error: str
+    position: Vector4 = Vector4()
+    error: str = ""
 
 
 class AngularResponse(VBLBaseModel):
@@ -102,8 +104,8 @@ class AngularResponse(VBLBaseModel):
     :type angles: Vector3
     """
 
-    angles: Vector3
-    error: str
+    angles: Vector3 = Vector3()
+    error: str = ""
 
 
 class ShankCountResponse(VBLBaseModel):
@@ -115,8 +117,8 @@ class ShankCountResponse(VBLBaseModel):
     :type error: str
     """
 
-    shank_count: int
-    error: str
+    shank_count: int = Field(default=1, ge=1)
+    error: str = ""
 
 
 class DriveToDepthResponse(VBLBaseModel):
@@ -128,8 +130,8 @@ class DriveToDepthResponse(VBLBaseModel):
     :type error: str
     """
 
-    depth: float
-    error: str
+    depth: float = 0
+    error: str = ""
 
 
 class BooleanStateResponse(VBLBaseModel):
@@ -141,5 +143,5 @@ class BooleanStateResponse(VBLBaseModel):
     :type error: str
     """
 
-    state: bool
-    error: str
+    state: bool = False
+    error: str = ""

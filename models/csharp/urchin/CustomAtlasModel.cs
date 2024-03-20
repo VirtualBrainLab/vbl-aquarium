@@ -1,6 +1,6 @@
 
 using UnityEngine;
-    
+
 public struct CustomAtlasModel
 {
     public string Name;

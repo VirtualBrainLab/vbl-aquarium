@@ -1,6 +1,6 @@
 
 using UnityEngine;
-    
+
 public struct ParticleGroupModel
 {
     public string Id;

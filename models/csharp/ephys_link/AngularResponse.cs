@@ -1,6 +1,6 @@
 
 using UnityEngine;
-    
+
 public struct AngularResponse
 {
     public Vector3 Angles;

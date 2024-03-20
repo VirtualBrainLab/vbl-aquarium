@@ -1,6 +1,6 @@
 
 
-    
+
 public struct IDListBoolList
 {
     public string[] IDs;

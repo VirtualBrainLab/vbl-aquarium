@@ -8,4 +8,7 @@ class VBLBaseModel(BaseModel):
     Configured to use PascalCase for field names and be immutable.
     """
 
-    model_config = ConfigDict(alias_generator=to_pascal, frozen=True)
+    model_config = ConfigDict(alias_generator=to_pascal, frozen=True, populate_by_name=True)
+
+    def to_string(self) -> str:
+        return self.model_dump_json(by_alias=True)
