@@ -1,6 +1,6 @@
 
 
-    
+
 public struct AreaGroupData
 {
     public string[] Acronyms;

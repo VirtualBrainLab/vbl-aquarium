@@ -1,8 +1,10 @@
-from vbl_aquarium.models.vbl_base_model import VBLBaseModel
-from typing import List
-from vbl_aquarium.unity import *
+from __future__ import annotations
+
+from vbl_aquarium.models.unity import Vector2, Vector3
+from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
 # CRANIOTOMY
+
 
 class CraniotomyModel(VBLBaseModel):
     index: int
@@ -10,6 +12,7 @@ class CraniotomyModel(VBLBaseModel):
     position: Vector3
     rectangle: bool = False
 
+
 class CraniotomyGroup(VBLBaseModel):
     atlas: str
-    data: List[CraniotomyModel]
+    data: list[CraniotomyModel]

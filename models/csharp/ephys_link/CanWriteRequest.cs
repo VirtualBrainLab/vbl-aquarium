@@ -1,6 +1,6 @@
 
 
-    
+
 public struct CanWriteRequest
 {
     public string ManipulatorId;

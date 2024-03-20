@@ -1,6 +1,6 @@
 
 using UnityEngine;
-    
+
 public struct CameraModel
 {
     public float Id;

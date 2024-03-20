@@ -1,6 +1,6 @@
 
 using UnityEngine;
-    
+
 public struct CraniotomyModel
 {
     public int Index;

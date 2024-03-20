@@ -1,6 +1,6 @@
 
 
-    
+
 public struct SaveModel
 {
     public string Bucket;

@@ -1,6 +1,6 @@
 
 
-    
+
 public struct BooleanStateResponse
 {
     public bool State;

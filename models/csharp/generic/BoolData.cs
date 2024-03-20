@@ -1,6 +1,6 @@
 
 
-    
+
 public struct BoolData
 {
     public string ID;

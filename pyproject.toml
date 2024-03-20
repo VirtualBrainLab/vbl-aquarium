@@ -84,4 +84,4 @@ exclude_lines = [
 ]
 
 [tool.ruff.lint]
-ignore=["TCH001"]
+ignore=["A003", "EM101", "FBT002", "T201", "TCH001", "TRY002", "TRY003"]

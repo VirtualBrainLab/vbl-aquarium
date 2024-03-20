@@ -1,6 +1,6 @@
 
 
-    
+
 public struct BucketModel
 {
     public string Token;

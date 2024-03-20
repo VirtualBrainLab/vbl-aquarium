@@ -1,6 +1,6 @@
 
 
-    
+
 public struct FloatData
 {
     public string ID;

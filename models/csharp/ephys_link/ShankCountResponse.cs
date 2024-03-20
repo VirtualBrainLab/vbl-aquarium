@@ -1,6 +1,6 @@
 
 
-    
+
 public struct ShankCountResponse
 {
     public int ShankCount;

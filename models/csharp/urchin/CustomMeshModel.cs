@@ -1,6 +1,6 @@
 
 using UnityEngine;
-    
+
 public struct CustomMeshModel
 {
     public string Id;
