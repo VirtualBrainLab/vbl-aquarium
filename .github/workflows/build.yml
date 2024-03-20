@@ -25,3 +25,12 @@ jobs:
 
       - name: 🛠️ Build
         run: ./vbl_aquarium_build
+      
+      - name: 📤 PR changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.PR_TOKEN }}
+          commit-message: "Build Models"
+          title: "chore: Build Models"
+          branch: "build-models"
+          delete-branch: true
