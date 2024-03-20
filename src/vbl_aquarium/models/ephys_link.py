@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pydantic import Field
+
 from vbl_aquarium.models.unity import Vector3, Vector4
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
@@ -78,7 +80,7 @@ class GetManipulatorsResponse(VBLBaseModel):
     :type error: str
     """
 
-    manipulators: list[str] = []
+    manipulators: list[str] = Field(default_factory=list)
     num_axes: int = 0
     dimensions: Vector3 = Vector3()
     error: str = ""
