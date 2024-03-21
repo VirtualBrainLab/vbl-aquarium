@@ -3,7 +3,7 @@ using UnityEngine;
 
 public struct CustomMeshModel
 {
-    public string Id;
+    public string ID;
     public Vector3 Position;
     public bool UseReference;
     public string Material;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public struct ParticleGroupModel
 {
-    public string Id;
+    public string ID;
     public Vector3 Scale;
     public string Shape;
     public string Material;

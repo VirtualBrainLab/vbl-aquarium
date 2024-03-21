@@ -3,7 +3,7 @@ using UnityEngine;
 
 public struct MeshModel
 {
-    public string Id;
+    public string ID;
     public string Shape;
     public Vector3 Position;
     public Color Color;
