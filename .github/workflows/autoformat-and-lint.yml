@@ -35,11 +35,22 @@ jobs:
         run: hatch fmt -f
 
       - name: ✅ Commit code format changes
+        if: github.ref != 'refs/heads/main'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Autoformat code"
+          commit_message: "chore: Autoformat code"
           skip_fetch: true
           skip_checkout: true
+
+      - name: 📤 PR code format changes
+        if: github.ref == 'refs/heads/main'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.PR_TOKEN }}
+          commit-message: "Autoformat code"
+          title: "chore: Autoformat code"
+          branch: "autoformat-code"
+          delete-branch: true
 
       - name: 🔍 Lint
         run: hatch fmt --check

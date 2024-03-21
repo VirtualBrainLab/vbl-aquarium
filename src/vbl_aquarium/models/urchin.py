@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from enum import Enum
+
 from pydantic import Field
 
 from vbl_aquarium.models.unity import Color, Vector2, Vector3
