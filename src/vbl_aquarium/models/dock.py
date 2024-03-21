@@ -16,8 +16,10 @@ class UploadModel(VBLBaseModel):
 
 # Models for sending save/load messages
 class SaveModel(VBLBaseModel):
+    bucket: str
     password: str
 
 
 class LoadModel(VBLBaseModel):
+    bucket: str
     password: str
