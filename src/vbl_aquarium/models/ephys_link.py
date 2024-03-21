@@ -74,15 +74,15 @@ class GetManipulatorsResponse(VBLBaseModel):
     :type manipulators: list[str]
     :param num_axes: Number of axes for the manipulators.
     :type num_axes: int
-    :param dimensions: Dimensions of the manipulators (first 3 axes in unified manipulator space).
-    :type dimensions: Vector3
+    :param dimensions: Dimensions of the manipulators (3-axis manipulators should set w to 0).
+    :type dimensions: Vector4
     :param error: Error message if any.
     :type error: str
     """
 
     manipulators: list[str] = Field(default_factory=list)
     num_axes: int = Field(default=0, ge=-1)
-    dimensions: Vector3 = Vector3()
+    dimensions: Vector4 = Vector4()
     error: str = ""
 
 
