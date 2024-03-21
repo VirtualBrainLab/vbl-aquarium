@@ -1,9 +1,11 @@
 name: Build
 
 on:
+  pull_request: 
   push:
     branches:
       - main
+  merge_group:
 
 jobs:
   build:
@@ -27,6 +29,7 @@ jobs:
         run: python src/vbl_aquarium/build.py
       
       - name: 📤 PR changes
+        if: github.ref == 'refs/heads/main'
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.PR_TOKEN }}
