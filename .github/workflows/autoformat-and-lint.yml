@@ -2,9 +2,9 @@ name: Autoformat and Lint
 
 on:
   pull_request:
-  push:
-    branches:
-      - main
+#  push:
+#    branches:
+#      - main
   merge_group:
 
 jobs:
@@ -37,7 +37,7 @@ jobs:
       - name: ✅ Commit code format changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Autoformat code"
+          commit_message: "chore: Autoformat code"
           skip_fetch: true
           skip_checkout: true
 
