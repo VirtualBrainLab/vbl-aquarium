@@ -19,14 +19,14 @@ class CustomAtlasModel(VBLBaseModel):
 
 
 class CustomMeshData(VBLBaseModel):
-    id: str = Field(alias = 'ID')
+    id: str = Field(alias="ID")
     vertices: list[Vector3]
     triangles: list[int]
     normals: list[Vector3] = None
 
 
 class CustomMeshModel(VBLBaseModel):
-    id: str = Field(alias = 'ID')
+    id: str = Field(alias="ID")
     position: Vector3
     use_reference: bool
     material: str
@@ -67,7 +67,7 @@ class CameraModel(VBLBaseModel):
 
 
 class MeshModel(VBLBaseModel):
-    id: str = Field(alias = 'ID')
+    id: str = Field(alias="ID")
     shape: str
     position: Vector3
     color: Color
@@ -80,7 +80,7 @@ class MeshModel(VBLBaseModel):
 
 
 class ParticleGroupModel(VBLBaseModel):
-    id: str = Field(alias = 'ID')
+    id: str = Field(alias="ID")
     scale: Vector3
     shape: str
     material: str
