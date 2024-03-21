@@ -11,8 +11,8 @@ requires-python = ">=3.8, <3.13"
 license = "MIT"
 keywords = ['pydantic', "virtualbrainlab", "neuroscience"]
 authors = [
-  { name = "Kenneth Yang", email = "kjy5@uw.edu" },
   { name = "Daniel Birman", email = "dbirman@uw.edu" },
+  { name = "Kenneth Yang", email = "kjy5@uw.edu" },
 ]
 classifiers = [
   "Development Status :: 4 - Beta",
@@ -38,6 +38,9 @@ Source = "https://github.com/VirtualBrainLab/vbl-aquarium"
 
 [tool.hatch.version]
 path = "src/vbl_aquarium/__about__.py"
+
+[tool.hatch.build.targets.sdist]
+exclude = ["/models"]
 
 [tool.hatch.envs.default]
 python="3.12"
