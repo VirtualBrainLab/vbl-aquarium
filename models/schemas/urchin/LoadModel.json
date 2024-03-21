@@ -1,1 +1,0 @@
-{"properties": {"Bucket": {"title": "Bucket", "type": "string"}}, "required": ["Bucket"], "title": "LoadModel", "type": "object"}
