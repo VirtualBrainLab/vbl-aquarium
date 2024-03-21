@@ -6,7 +6,6 @@ from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 # Models for sending data to dock server
 class BucketModel(VBLBaseModel):
     token: str
-    bucket: str
     password: str
 
 
@@ -17,10 +16,8 @@ class UploadModel(VBLBaseModel):
 
 # Models for sending save/load messages
 class SaveModel(VBLBaseModel):
-    bucket: str
     password: str
 
 
 class LoadModel(VBLBaseModel):
-    bucket: str
     password: str
