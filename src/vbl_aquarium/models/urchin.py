@@ -3,6 +3,7 @@ from __future__ import annotations
 from enum import Enum
 
 from pydantic import Field
+from typing import List
 
 from vbl_aquarium.models.unity import Color, Vector2, Vector3
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
@@ -38,10 +39,17 @@ class CustomMeshModel(VBLBaseModel):
 # Area
 
 
-class AreaGroupData(VBLBaseModel):
-    acronyms: list[str]
-    visible: list[bool]
-    side: list[int]
+class AtlasModel(VBLBaseModel):
+    name: str
+    reference_coord: Vector3
+    acronyms: List[str]
+    visible: List[bool]
+    colors: List[Color]
+    sides: List[int]
+    colormap: str = ''
+    intensities: List[float] = []
+    alphas: List[float]
+    materials: List[str]
 
 
 # Camera
@@ -86,8 +94,8 @@ class ParticleGroupModel(VBLBaseModel):
     shape: str
     material: str
 
-    xs: list[float]
-    ys: list[float]
-    zs: list[float]
+    xs: List[float]
+    ys: List[float]
+    zs: List[float]
 
-    colors: list[Color]
+    colors: List[Color]
