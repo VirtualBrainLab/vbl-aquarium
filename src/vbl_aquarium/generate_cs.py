@@ -2,13 +2,14 @@ from __future__ import annotations
 
 from typing import get_args, get_origin
 
+from pydantic.alias_generators import to_camel, to_snake
+
 from vbl_aquarium.models import unity
 from vbl_aquarium.utils.common import get_classes
 
 p2c_types = {
     "str": "string",
 }
-
 
 unity_class_names = [x.__name__ for x in get_classes(unity)]
 
@@ -24,6 +25,10 @@ def generate_csharp_struct(class_name: str, fields: list[str], enums=None, has_u
 
     # build field declarations
     field_declarations = "\n".join(f"    public {field};" for field in fields)
+    constructor_arg = ", ".join(f"{field.split(' ')[0]} {to_camel(to_snake(field.split(' ')[1]))}" for field in fields)
+    constructor_assignments = "\n        ".join(
+        f"{field.split(' ')[1]} = {to_camel(to_snake(field.split(' ')[1]))};" for field in fields
+    )
 
     # build enum str
     enum_str = ""
@@ -42,6 +47,11 @@ def generate_csharp_struct(class_name: str, fields: list[str], enums=None, has_u
 public struct {class_name}
 {{
 {field_declarations}
+
+    public {class_name}({constructor_arg})
+    {{
+        {constructor_assignments}
+    }}
 }}{enum_str}
 """
 

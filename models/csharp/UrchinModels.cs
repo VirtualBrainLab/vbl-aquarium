@@ -6,6 +6,14 @@ public struct AtlasModel
     public Vector3 ReferenceCoord;
     public StructureModel[] Areas;
     public string Colormap;
+
+    public AtlasModel(string name, Vector3 referenceCoord, StructureModel[] areas, string colormap)
+    {
+        Name = name;
+        ReferenceCoord = referenceCoord;
+        Areas = areas;
+        Colormap = colormap;
+    }
 }
 
 
@@ -21,6 +29,20 @@ public struct CameraModel
     public CameraMode Mode;
     public bool Controllable;
     public bool Main;
+
+    public CameraModel(float id, string type, Vector3 position, Vector3 rotation, Vector3 target, float zoom, Vector2 pan, CameraMode mode, bool controllable, bool main)
+    {
+        Id = id;
+        Type = type;
+        Position = position;
+        Rotation = rotation;
+        Target = target;
+        Zoom = zoom;
+        Pan = pan;
+        Mode = mode;
+        Controllable = controllable;
+        Main = main;
+    }
 }
 
 
@@ -36,6 +58,13 @@ public struct CustomAtlasModel
     public string Name;
     public Vector3 Dimensions;
     public Vector3 Resolution;
+
+    public CustomAtlasModel(string name, Vector3 dimensions, Vector3 resolution)
+    {
+        Name = name;
+        Dimensions = dimensions;
+        Resolution = resolution;
+    }
 }
 
 
@@ -45,6 +74,14 @@ public struct CustomMeshData
     public Vector3[] Vertices;
     public int[] Triangles;
     public Vector3[] Normals;
+
+    public CustomMeshData(string id, Vector3[] vertices, int[] triangles, Vector3[] normals)
+    {
+        ID = id;
+        Vertices = vertices;
+        Triangles = triangles;
+        Normals = normals;
+    }
 }
 
 
@@ -56,6 +93,16 @@ public struct CustomMeshModel
     public string Material;
     public Vector3 Scale;
     public Color Color;
+
+    public CustomMeshModel(string id, Vector3 position, bool useReference, string material, Vector3 scale, Color color)
+    {
+        ID = id;
+        Position = position;
+        UseReference = useReference;
+        Material = material;
+        Scale = scale;
+        Color = color;
+    }
 }
 
 
@@ -68,6 +115,17 @@ public struct MeshModel
     public Vector3 Scale;
     public string Material;
     public bool Interactive;
+
+    public MeshModel(string id, string shape, Vector3 position, Color color, Vector3 scale, string material, bool interactive)
+    {
+        ID = id;
+        Shape = shape;
+        Position = position;
+        Color = color;
+        Scale = scale;
+        Material = material;
+        Interactive = interactive;
+    }
 }
 
 
@@ -81,11 +139,28 @@ public struct ParticleGroupModel
     public float[] Ys;
     public float[] Zs;
     public Color[] Colors;
+
+    public ParticleGroupModel(string id, Vector3 scale, string shape, string material, float[] xs, float[] ys, float[] zs, Color[] colors)
+    {
+        ID = id;
+        Scale = scale;
+        Shape = shape;
+        Material = material;
+        Xs = xs;
+        Ys = ys;
+        Zs = zs;
+        Colors = colors;
+    }
 }
 
 public struct PrimitiveMeshModel
 {
     public MeshModel[] Data;
+
+    public PrimitiveMeshModel(MeshModel[] data)
+    {
+        Data = data;
+    }
 }
 
 
@@ -99,5 +174,17 @@ public struct StructureModel
     public float ColorIntensity;
     public int Side;
     public string Material;
+
+    public StructureModel(string name, string acronym, int atlasId, Color color, bool visible, float colorIntensity, int side, string material)
+    {
+        Name = name;
+        Acronym = acronym;
+        AtlasId = atlasId;
+        Color = color;
+        Visible = visible;
+        ColorIntensity = colorIntensity;
+        Side = side;
+        Material = material;
+    }
 }
 
