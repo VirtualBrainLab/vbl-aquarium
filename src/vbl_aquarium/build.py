@@ -1,8 +1,8 @@
-from shutil import rmtree
 from enum import Enum
 from json import dumps
 from os import makedirs
 from os.path import abspath, dirname, exists
+from shutil import rmtree
 
 from vbl_aquarium.generate_cs import pydantic_to_csharp
 from vbl_aquarium.models import dock, ephys_link, generic, logging, pinpoint, unity, urchin
@@ -51,7 +51,7 @@ for _, (module, cfolder) in enumerate(zip(module_list, folder_prefix)):
         output = ""
         for cclass in classes:
             if cclass.__name__ not in unity_class_names:
-                output += pydantic_to_csharp(cclass, cclass.model_json_schema()) + "\n\n"
+                output += pydantic_to_csharp(cclass, cclass.model_json_schema()).strip() + "\n\n"
 
         # Move using statement to top
         if "using UnityEngine;" in output:

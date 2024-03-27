@@ -1,25 +1,15 @@
 using UnityEngine;
-
-
-
 public struct BoolData
 {
     public string ID;
     public bool Value;
 }
 
-
-
-
-
 public struct BoolList
 {
     public string ID;
     public bool[] Values;
 }
-
-
-
 
 
 public struct ColorData
@@ -29,18 +19,11 @@ public struct ColorData
 }
 
 
-
-
-
 public struct ColorList
 {
     public string ID;
     public Color[] Values;
 }
-
-
-
-
 
 public struct FloatData
 {
@@ -48,37 +31,21 @@ public struct FloatData
     public float Value;
 }
 
-
-
-
-
 public struct FloatList
 {
     public string ID;
     public float[] Values;
 }
 
-
-
-
-
 public struct IDData
 {
     public string ID;
 }
 
-
-
-
-
 public struct IDList
 {
     public string[] IDs;
 }
-
-
-
-
 
 public struct IDListBoolData
 {
@@ -86,18 +53,11 @@ public struct IDListBoolData
     public bool Value;
 }
 
-
-
-
-
 public struct IDListBoolList
 {
     public string[] IDs;
     public bool[] Values;
 }
-
-
-
 
 
 public struct IDListColorData
@@ -107,18 +67,11 @@ public struct IDListColorData
 }
 
 
-
-
-
 public struct IDListColorList
 {
     public string[] IDs;
     public Color[] Values;
 }
-
-
-
-
 
 public struct IDListFloatData
 {
@@ -126,19 +79,11 @@ public struct IDListFloatData
     public float Value;
 }
 
-
-
-
-
 public struct IDListFloatList
 {
     public string[] IDs;
     public float[] Values;
 }
-
-
-
-
 
 public struct IDListIntData
 {
@@ -146,19 +91,11 @@ public struct IDListIntData
     public int Value;
 }
 
-
-
-
-
 public struct IDListIntList
 {
     public string[] IDs;
     public int[] Values;
 }
-
-
-
-
 
 public struct IDListStringData
 {
@@ -166,18 +103,11 @@ public struct IDListStringData
     public string Value;
 }
 
-
-
-
-
 public struct IDListStringList
 {
     public string[] IDs;
     public string[] Values;
 }
-
-
-
 
 
 public struct IDListVector3Data
@@ -187,18 +117,11 @@ public struct IDListVector3Data
 }
 
 
-
-
-
 public struct IDListVector3List
 {
     public string[] IDs;
     public Vector3[] Values;
 }
-
-
-
-
 
 public struct IntData
 {
@@ -206,19 +129,11 @@ public struct IntData
     public int Value;
 }
 
-
-
-
-
 public struct IntList
 {
     public string ID;
     public int[] Values;
 }
-
-
-
-
 
 public struct StringData
 {
@@ -226,18 +141,11 @@ public struct StringData
     public string Value;
 }
 
-
-
-
-
 public struct StringList
 {
     public string ID;
     public string[] Values;
 }
-
-
-
 
 
 public struct Vector3Data
@@ -247,13 +155,9 @@ public struct Vector3Data
 }
 
 
-
-
-
 public struct Vector3List
 {
     public string ID;
     public Vector3[] Values;
 }
-
 

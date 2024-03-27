@@ -1,7 +1,5 @@
 using UnityEngine;
 
-
-
 public struct AtlasModel
 {
     public string Name;
@@ -9,9 +7,6 @@ public struct AtlasModel
     public StructureModel[] Areas;
     public string Colormap;
 }
-
-
-
 
 
 public struct CameraModel
@@ -36,19 +31,12 @@ public enum CameraMode
 }
 
 
-
-
-
-
 public struct CustomAtlasModel
 {
     public string Name;
     public Vector3 Dimensions;
     public Vector3 Resolution;
 }
-
-
-
 
 
 public struct CustomMeshData
@@ -60,9 +48,6 @@ public struct CustomMeshData
 }
 
 
-
-
-
 public struct CustomMeshModel
 {
     public string ID;
@@ -72,9 +57,6 @@ public struct CustomMeshModel
     public Vector3 Scale;
     public Color Color;
 }
-
-
-
 
 
 public struct MeshModel
@@ -89,9 +71,6 @@ public struct MeshModel
 }
 
 
-
-
-
 public struct ParticleGroupModel
 {
     public string ID;
@@ -104,17 +83,10 @@ public struct ParticleGroupModel
     public Color[] Colors;
 }
 
-
-
-
-
 public struct PrimitiveMeshModel
 {
     public MeshModel[] Data;
 }
-
-
-
 
 
 public struct StructureModel
@@ -128,5 +100,4 @@ public struct StructureModel
     public int Side;
     public string Material;
 }
-
 
