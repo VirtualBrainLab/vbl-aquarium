@@ -2,6 +2,7 @@ from enum import Enum
 from json import dumps
 from os import makedirs
 from os.path import abspath, dirname, exists
+from shutil import rmtree
 
 from vbl_aquarium.generate_cs import pydantic_to_csharp
 from vbl_aquarium.models import dock, ephys_link, generic, logging, pinpoint, unity, urchin
@@ -23,9 +24,15 @@ folder_prefix = ["generic", "urchin", "logging", "pinpoint", "ephys_link", "dock
 
 cdir = dirname(abspath(__file__))
 
+# Reset the models directory if it exists.
+path = f"{cdir}/../../models"
+if exists(path):
+    rmtree(path)
+
 for _, (module, cfolder) in enumerate(zip(module_list, folder_prefix)):
     classes = remove_ignored_classes(module)
 
+    # JSON Schema
     for cclass in classes:
         if cclass.__name__ not in unity_class_names:
             path = f"{cdir}/../../models/schemas/{cfolder}"
@@ -35,9 +42,19 @@ for _, (module, cfolder) in enumerate(zip(module_list, folder_prefix)):
             with open(f"{path}/{cclass.__name__}.json", "w") as f:
                 f.write(dumps(cclass.model_json_schema()))
 
-            path = f"{cdir}/../../models/csharp/{cfolder}"
-            if not exists(path):
-                makedirs(path)
+    # C# models
+    path = f"{cdir}/../../models/csharp/"
+    if not exists(path):
+        makedirs(path)
 
-            with open(f"{path}/{cclass.__name__}.cs", "w") as f:
-                f.write(pydantic_to_csharp(cclass, cclass.model_json_schema()))
+    with open(f"{path}/{cfolder}_models.cs", "w") as f:
+        output = ""
+        for cclass in classes:
+            if cclass.__name__ not in unity_class_names:
+                output += pydantic_to_csharp(cclass, cclass.model_json_schema()).strip() + "\n\n"
+
+        # Move using statement to top
+        if "using UnityEngine;" in output:
+            output = "using UnityEngine;\n" + output.replace("using UnityEngine;", "")
+
+        f.write(output)

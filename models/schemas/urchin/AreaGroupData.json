@@ -1,1 +1,0 @@
-{"properties": {"Acronyms": {"items": {"type": "string"}, "title": "Acronyms", "type": "array"}, "Visible": {"items": {"type": "boolean"}, "title": "Visible", "type": "array"}, "Side": {"items": {"type": "integer"}, "title": "Side", "type": "array"}}, "required": ["Acronyms", "Visible", "Side"], "title": "AreaGroupData", "type": "object"}
