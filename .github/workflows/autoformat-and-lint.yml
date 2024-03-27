@@ -31,8 +31,8 @@ jobs:
       - name: 📦 Install Hatch
         run: pip install hatch
 
-      - name: 📝 Format Code
-        run: hatch fmt -f
+      - name: 📝 Static Analysis
+        run: hatch fmt
 
       - name: ✅ Commit code format changes
         if: github.ref != 'refs/heads/main'
@@ -51,6 +51,3 @@ jobs:
           title: "chore: Autoformat code"
           branch: "autoformat-code"
           delete-branch: true
-
-      - name: 🔍 Lint
-        run: hatch fmt --check
