@@ -47,7 +47,7 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.PR_TOKEN }}
-          commit-message: "Autoformat code"
+          commit-message: "chore: Autoformat code"
           title: "chore: Autoformat code"
           branch: "autoformat-code"
           delete-branch: true
