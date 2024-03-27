@@ -3,7 +3,6 @@ from __future__ import annotations
 from enum import Enum
 
 from pydantic import Field
-from typing import List
 
 from vbl_aquarium.models.unity import Color, Vector2, Vector3
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
@@ -42,8 +41,9 @@ class CustomMeshModel(VBLBaseModel):
 class AtlasModel(VBLBaseModel):
     name: str
     reference_coord: Vector3 = None
-    areas: List[StructureModel]
-    colormap: str = ''
+    areas: list[StructureModel]
+    colormap: str = ""
+
 
 class StructureModel(VBLBaseModel):
     name: str
@@ -54,7 +54,8 @@ class StructureModel(VBLBaseModel):
     visible: bool = False
     color_intensity: float = -1
     side: int = 0
-    material: str = 'default'
+    material: str = "default"
+
 
 # Camera
 
@@ -78,8 +79,10 @@ class CameraModel(VBLBaseModel):
 
 # Individual mesh neuron
 
+
 class PrimitiveMeshModel(VBLBaseModel):
-    data: List[MeshModel]
+    data: list[MeshModel]
+
 
 class MeshModel(VBLBaseModel):
     id: str = Field(alias="ID")
@@ -100,8 +103,8 @@ class ParticleGroupModel(VBLBaseModel):
     shape: str
     material: str
 
-    xs: List[float]
-    ys: List[float]
-    zs: List[float]
+    xs: list[float]
+    ys: list[float]
+    zs: list[float]
 
-    colors: List[Color]
+    colors: list[Color]
