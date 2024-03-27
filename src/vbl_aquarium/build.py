@@ -3,7 +3,7 @@ from json import dumps
 from os import makedirs
 from os.path import abspath, dirname, exists
 from shutil import rmtree
-
+from pydantic.alias_generators import to_pascal
 from vbl_aquarium.generate_cs import pydantic_to_csharp
 from vbl_aquarium.models import dock, ephys_link, generic, logging, pinpoint, unity, urchin
 from vbl_aquarium.utils.common import get_classes
@@ -47,7 +47,7 @@ for _, (module, cfolder) in enumerate(zip(module_list, folder_prefix)):
     if not exists(path):
         makedirs(path)
 
-    with open(f"{path}/{cfolder}_models.cs", "w") as f:
+    with open(f"{path}/{to_pascal(cfolder)}Models.cs", "w") as f:
         output = ""
         for cclass in classes:
             if cclass.__name__ not in unity_class_names:
