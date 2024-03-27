@@ -43,7 +43,8 @@ class AtlasModel(VBLBaseModel):
     name: str
     reference_coord: Vector3 = None
     areas: List[StructureModel]
-    colormap: str = ''
+    colormap: str = ""
+
 
 class StructureModel(VBLBaseModel):
     name: str
@@ -54,7 +55,8 @@ class StructureModel(VBLBaseModel):
     visible: bool = False
     color_intensity: float = -1
     side: int = 0
-    material: str = 'default'
+    material: str = "default"
+
 
 # Camera
 
@@ -78,8 +80,10 @@ class CameraModel(VBLBaseModel):
 
 # Individual mesh neuron
 
+
 class PrimitiveMeshModel(VBLBaseModel):
     data: List[MeshModel]
+
 
 class MeshModel(VBLBaseModel):
     id: str = Field(alias="ID")
