@@ -1,5 +1,10 @@
-
 using UnityEngine;
+public struct CraniotomyGroup
+{
+    public string Atlas;
+    public CraniotomyModel[] Data;
+}
+
 
 public struct CraniotomyModel
 {
@@ -8,3 +13,4 @@ public struct CraniotomyModel
     public Vector3 Position;
     public bool Rectangle;
 }
+
