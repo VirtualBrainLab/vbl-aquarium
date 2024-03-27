@@ -41,16 +41,20 @@ class CustomMeshModel(VBLBaseModel):
 
 class AtlasModel(VBLBaseModel):
     name: str
-    reference_coord: Vector3
-    acronyms: List[str]
-    visible: List[bool]
-    colors: List[Color]
-    sides: List[int]
+    reference_coord: Vector3 = None
+    areas: List[StructureModel]
     colormap: str = ''
-    intensities: List[float] = []
-    alphas: List[float]
-    materials: List[str]
 
+class StructureModel(VBLBaseModel):
+    name: str
+    acronym: str
+    atlas_id: int
+    color: Color
+    # values that come with defaults:
+    visible: bool = False
+    color_intensity: float = -1
+    side: int = 0
+    material: str = 'default'
 
 # Camera
 
@@ -74,6 +78,8 @@ class CameraModel(VBLBaseModel):
 
 # Individual mesh neuron
 
+class PrimitiveMeshModel(VBLBaseModel):
+    data: List[MeshModel]
 
 class MeshModel(VBLBaseModel):
     id: str = Field(alias="ID")
