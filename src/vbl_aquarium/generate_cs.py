@@ -22,7 +22,7 @@ def generate_csharp_struct(class_name: str, fields: list[str], enums=None, has_u
     if has_unity_classes:
         usings += "using UnityEngine;"
 
-    # build field declartions
+    # build field declarations
     field_declarations = "\n".join(f"    public {field};" for field in fields)
 
     # build enum str
