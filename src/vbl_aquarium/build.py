@@ -3,7 +3,9 @@ from json import dumps
 from os import makedirs
 from os.path import abspath, dirname, exists
 from shutil import rmtree
+
 from pydantic.alias_generators import to_pascal
+
 from vbl_aquarium.generate_cs import pydantic_to_csharp
 from vbl_aquarium.models import dock, ephys_link, generic, logging, pinpoint, unity, urchin
 from vbl_aquarium.utils.common import get_classes
