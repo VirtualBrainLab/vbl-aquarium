@@ -1,1 +1,0 @@
-{"properties": {"Bucket": {"title": "Bucket", "type": "string"}, "Manager": {"title": "Manager", "type": "string"}, "Password": {"title": "Password", "type": "string"}}, "required": ["Bucket", "Manager", "Password"], "title": "SaveManagerModel", "type": "object"}

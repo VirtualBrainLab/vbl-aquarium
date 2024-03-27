@@ -1,3 +1,4 @@
+from shutil import rmtree
 from enum import Enum
 from json import dumps
 from os import makedirs
@@ -22,6 +23,11 @@ module_list = [generic, urchin, logging, pinpoint, ephys_link, dock]
 folder_prefix = ["generic", "urchin", "logging", "pinpoint", "ephys_link", "dock"]
 
 cdir = dirname(abspath(__file__))
+
+# Reset the models directory if it exists.
+path = f"{cdir}/../../models"
+if exists(path):
+    rmtree(path)
 
 for _, (module, cfolder) in enumerate(zip(module_list, folder_prefix)):
     classes = remove_ignored_classes(module)
