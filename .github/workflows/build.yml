@@ -33,7 +33,7 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.PR_TOKEN }}
-          commit-message: "Build Models"
+          commit-message: "chore: Build Models"
           title: "chore: Build Models"
           branch: "build-models"
           delete-branch: true
