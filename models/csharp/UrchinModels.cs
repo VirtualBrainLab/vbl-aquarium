@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[Serializable]
 public struct AtlasModel
 {
     public string Name;
@@ -17,6 +18,7 @@ public struct AtlasModel
 }
 
 
+[Serializable]
 public struct CameraModel
 {
     public float Id;
@@ -53,6 +55,21 @@ public enum CameraMode
 }
 
 
+[Serializable]
+public struct CameraRotationModel
+{
+    public Vector3 StartRotation;
+    public Vector3 EndRotation;
+
+    public CameraRotationModel(Vector3 startRotation, Vector3 endRotation)
+    {
+        StartRotation = startRotation;
+        EndRotation = endRotation;
+    }
+}
+
+
+[Serializable]
 public struct CustomAtlasModel
 {
     public string Name;
@@ -68,6 +85,7 @@ public struct CustomAtlasModel
 }
 
 
+[Serializable]
 public struct CustomMeshData
 {
     public string ID;
@@ -85,6 +103,7 @@ public struct CustomMeshData
 }
 
 
+[Serializable]
 public struct CustomMeshModel
 {
     public string ID;
@@ -106,6 +125,7 @@ public struct CustomMeshModel
 }
 
 
+[Serializable]
 public struct MeshModel
 {
     public string ID;
@@ -129,6 +149,7 @@ public struct MeshModel
 }
 
 
+[Serializable]
 public struct ParticleGroupModel
 {
     public string ID;
@@ -153,6 +174,7 @@ public struct ParticleGroupModel
     }
 }
 
+[Serializable]
 public struct PrimitiveMeshModel
 {
     public MeshModel[] Data;
@@ -164,8 +186,10 @@ public struct PrimitiveMeshModel
 }
 
 
+[Serializable]
 public struct StructureModel
 {
+    public int Index;
     public string Name;
     public string Acronym;
     public int AtlasId;
@@ -175,8 +199,9 @@ public struct StructureModel
     public int Side;
     public string Material;
 
-    public StructureModel(string name, string acronym, int atlasId, Color color, bool visible, float colorIntensity, int side, string material)
+    public StructureModel(int index, string name, string acronym, int atlasId, Color color, bool visible, float colorIntensity, int side, string material)
     {
+        Index = index;
         Name = name;
         Acronym = acronym;
         AtlasId = atlasId;

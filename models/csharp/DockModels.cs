@@ -1,3 +1,4 @@
+[Serializable]
 public struct BucketModel
 {
     public string Token;
@@ -10,6 +11,7 @@ public struct BucketModel
     }
 }
 
+[Serializable]
 public struct LoadModel
 {
     public string Bucket;
@@ -22,6 +24,7 @@ public struct LoadModel
     }
 }
 
+[Serializable]
 public struct SaveModel
 {
     public string Bucket;
@@ -34,6 +37,7 @@ public struct SaveModel
     }
 }
 
+[Serializable]
 public struct UploadModel
 {
     public string Data;

@@ -1,3 +1,4 @@
+[Serializable]
 public struct Log
 {
     public string Msg;
@@ -8,6 +9,7 @@ public struct Log
     }
 }
 
+[Serializable]
 public struct LogError
 {
     public string Msg;
@@ -18,6 +20,7 @@ public struct LogError
     }
 }
 
+[Serializable]
 public struct LogWarning
 {
     public string Msg;

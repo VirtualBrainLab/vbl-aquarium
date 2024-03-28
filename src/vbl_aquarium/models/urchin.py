@@ -46,6 +46,7 @@ class AtlasModel(VBLBaseModel):
 
 
 class StructureModel(VBLBaseModel):
+    index: int
     name: str
     acronym: str
     atlas_id: int
@@ -76,6 +77,9 @@ class CameraModel(VBLBaseModel):
     controllable: bool
     main: bool
 
+class CameraRotationModel(VBLBaseModel):
+    start_rotation: Vector3
+    end_rotation: Vector3
 
 # Individual mesh neuron
 

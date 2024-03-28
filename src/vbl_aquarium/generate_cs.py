@@ -44,6 +44,7 @@ def generate_csharp_struct(class_name: str, fields: list[str], enums=None, has_u
     # build the full class file string
     return f"""
 {usings}
+[Serializable]
 public struct {class_name}
 {{
 {field_declarations}

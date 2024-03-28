@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[Serializable]
 public struct AngularResponse
 {
     public Vector3 Angles;
@@ -12,6 +13,7 @@ public struct AngularResponse
     }
 }
 
+[Serializable]
 public struct BooleanStateResponse
 {
     public bool State;
@@ -24,6 +26,7 @@ public struct BooleanStateResponse
     }
 }
 
+[Serializable]
 public struct CanWriteRequest
 {
     public string ManipulatorId;
@@ -38,6 +41,7 @@ public struct CanWriteRequest
     }
 }
 
+[Serializable]
 public struct DriveToDepthRequest
 {
     public string ManipulatorId;
@@ -52,6 +56,7 @@ public struct DriveToDepthRequest
     }
 }
 
+[Serializable]
 public struct DriveToDepthResponse
 {
     public float Depth;
@@ -65,6 +70,7 @@ public struct DriveToDepthResponse
 }
 
 
+[Serializable]
 public struct GetManipulatorsResponse
 {
     public string[] Manipulators;
@@ -82,6 +88,7 @@ public struct GetManipulatorsResponse
 }
 
 
+[Serializable]
 public struct GotoPositionRequest
 {
     public string ManipulatorId;
@@ -96,6 +103,7 @@ public struct GotoPositionRequest
     }
 }
 
+[Serializable]
 public struct InsideBrainRequest
 {
     public string ManipulatorId;
@@ -109,6 +117,7 @@ public struct InsideBrainRequest
 }
 
 
+[Serializable]
 public struct PositionalResponse
 {
     public Vector4 Position;
@@ -121,6 +130,7 @@ public struct PositionalResponse
     }
 }
 
+[Serializable]
 public struct ShankCountResponse
 {
     public int ShankCount;

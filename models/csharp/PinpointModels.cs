@@ -1,4 +1,5 @@
 using UnityEngine;
+[Serializable]
 public struct CraniotomyGroup
 {
     public string Atlas;
@@ -12,6 +13,7 @@ public struct CraniotomyGroup
 }
 
 
+[Serializable]
 public struct CraniotomyModel
 {
     public int Index;
