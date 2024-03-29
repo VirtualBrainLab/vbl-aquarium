@@ -56,6 +56,8 @@ for _, (module, cfolder) in enumerate(zip(module_list, folder_prefix)):
                 output += pydantic_to_csharp(cclass, cclass.model_json_schema()).strip() + "\n\n"
 
         # Move using statement to top
+        output = "using System;\n" + output
+        
         if "using UnityEngine;" in output:
             output = "using UnityEngine;\n" + output.replace("using UnityEngine;", "")
 

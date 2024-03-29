@@ -1,3 +1,4 @@
+using System;
 [Serializable]
 public struct BucketModel
 {
@@ -7,6 +8,17 @@ public struct BucketModel
     public BucketModel(string token, string password)
     {
         Token = token;
+        Password = password;
+    }
+}
+
+[Serializable]
+public struct DownloadModel
+{
+    public string Password;
+
+    public DownloadModel(string password)
+    {
         Password = password;
     }
 }

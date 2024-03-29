@@ -42,11 +42,10 @@ class AtlasModel(VBLBaseModel):
     name: str
     reference_coord: Vector3 = None
     areas: list[StructureModel]
-    colormap: str = ""
+    colormap: ColormapModel
 
 
 class StructureModel(VBLBaseModel):
-    index: int
     name: str
     acronym: str
     atlas_id: int
@@ -112,3 +111,11 @@ class ParticleGroupModel(VBLBaseModel):
     zs: list[float]
 
     colors: list[Color]
+
+
+# Utilities
+    
+class ColormapModel(VBLBaseModel):
+    name: str
+    min: float
+    max: float

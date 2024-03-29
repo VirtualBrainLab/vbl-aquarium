@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 [Serializable]
 public struct AtlasModel
@@ -6,9 +7,9 @@ public struct AtlasModel
     public string Name;
     public Vector3 ReferenceCoord;
     public StructureModel[] Areas;
-    public string Colormap;
+    public ColormapModel Colormap;
 
-    public AtlasModel(string name, Vector3 referenceCoord, StructureModel[] areas, string colormap)
+    public AtlasModel(string name, Vector3 referenceCoord, StructureModel[] areas, ColormapModel colormap)
     {
         Name = name;
         ReferenceCoord = referenceCoord;
@@ -65,6 +66,21 @@ public struct CameraRotationModel
     {
         StartRotation = startRotation;
         EndRotation = endRotation;
+    }
+}
+
+[Serializable]
+public struct ColormapModel
+{
+    public string Name;
+    public float Min;
+    public float Max;
+
+    public ColormapModel(string name, float min, float max)
+    {
+        Name = name;
+        Min = min;
+        Max = max;
     }
 }
 
@@ -189,7 +205,6 @@ public struct PrimitiveMeshModel
 [Serializable]
 public struct StructureModel
 {
-    public int Index;
     public string Name;
     public string Acronym;
     public int AtlasId;
@@ -199,9 +214,8 @@ public struct StructureModel
     public int Side;
     public string Material;
 
-    public StructureModel(int index, string name, string acronym, int atlasId, Color color, bool visible, float colorIntensity, int side, string material)
+    public StructureModel(string name, string acronym, int atlasId, Color color, bool visible, float colorIntensity, int side, string material)
     {
-        Index = index;
         Name = name;
         Acronym = acronym;
         AtlasId = atlasId;
