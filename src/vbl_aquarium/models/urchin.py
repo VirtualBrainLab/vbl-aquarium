@@ -116,6 +116,6 @@ class ParticleGroupModel(VBLBaseModel):
 # Utilities
     
 class ColormapModel(VBLBaseModel):
-    name: str
-    min: float
-    max: float
+    name: str = ''
+    min: float = 0
+    max: float = 1
