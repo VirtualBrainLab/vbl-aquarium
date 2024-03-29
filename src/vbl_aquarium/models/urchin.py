@@ -76,9 +76,11 @@ class CameraModel(VBLBaseModel):
     controllable: bool
     main: bool
 
+
 class CameraRotationModel(VBLBaseModel):
     start_rotation: Vector3
     end_rotation: Vector3
+
 
 # Individual mesh neuron
 
@@ -114,8 +116,9 @@ class ParticleGroupModel(VBLBaseModel):
 
 
 # Utilities
-    
+
+
 class ColormapModel(VBLBaseModel):
-    name: str = ''
+    name: str = ""
     min: float = 0
     max: float = 1
