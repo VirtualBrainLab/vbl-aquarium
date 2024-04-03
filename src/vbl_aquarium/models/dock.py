@@ -13,8 +13,10 @@ class UploadModel(VBLBaseModel):
     data: str
     password: str
 
+
 class DownloadModel(VBLBaseModel):
     password: str
+
 
 # Models for sending save/load messages
 class SaveModel(VBLBaseModel):

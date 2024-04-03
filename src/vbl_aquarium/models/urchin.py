@@ -68,17 +68,19 @@ class CameraModel(VBLBaseModel):
     id: str
     type: str
     position: Vector3 = None
-    rotation: Vector3 = Vector3(0,0,0)
+    rotation: Vector3 = Vector3(0, 0, 0)
     target: Vector3 = None
     zoom: float = 16
-    pan: Vector2 = Vector2(0,0)
+    pan: Vector2 = Vector2(0, 0)
     mode: CameraMode = CameraMode.orthographic
     controllable: bool = True
     main: bool = False
 
+
 class CameraRotationModel(VBLBaseModel):
     start_rotation: Vector3
     end_rotation: Vector3
+
 
 # Individual mesh neuron
 
@@ -114,8 +116,9 @@ class ParticleGroupModel(VBLBaseModel):
 
 
 # Utilities
-    
+
+
 class ColormapModel(VBLBaseModel):
-    name: str = ''
+    name: str = ""
     min: float = 0
     max: float = 1
