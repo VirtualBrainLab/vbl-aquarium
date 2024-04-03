@@ -65,16 +65,16 @@ class CameraModel(VBLBaseModel):
         orthographic = "orthographic"
         perspective = "perspective"
 
-    id: float
+    id: str
     type: str
-    position: Vector3
-    rotation: Vector3
-    target: Vector3
-    zoom: float
-    pan: Vector2
-    mode: CameraMode
-    controllable: bool
-    main: bool
+    position: Vector3 = None
+    rotation: Vector3 = Vector3(0,0,0)
+    target: Vector3 = None
+    zoom: float = 16
+    pan: Vector2 = Vector2(0,0)
+    mode: CameraMode = CameraMode.orthographic
+    controllable: bool = True
+    main: bool = False
 
 class CameraRotationModel(VBLBaseModel):
     start_rotation: Vector3
