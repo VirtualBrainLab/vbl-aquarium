@@ -1,1 +1,1 @@
-{"properties": {"Bucket": {"title": "Bucket", "type": "string"}, "Password": {"title": "Password", "type": "string"}}, "required": ["Bucket", "Password"], "title": "LoadModel", "type": "object"}
+{"properties": {"Filename": {"default": "", "title": "Filename", "type": "string"}, "Bucket": {"default": "", "title": "Bucket", "type": "string"}, "Password": {"default": "", "title": "Password", "type": "string"}}, "title": "LoadModel", "type": "object"}

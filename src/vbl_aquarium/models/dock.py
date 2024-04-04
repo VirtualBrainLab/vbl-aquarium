@@ -18,12 +18,12 @@ class DownloadModel(VBLBaseModel):
 
 # Models for sending save/load messages
 class SaveModel(VBLBaseModel):
-    filename: str
+    filename: str = ''
     bucket: str = ''
     password: str = ''
 
 
 class LoadModel(VBLBaseModel):
-    filename: str
+    filename: str = ''
     bucket: str = ''
     password: str = ''
