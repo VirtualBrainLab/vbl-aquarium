@@ -128,6 +128,14 @@ class ParticleGroupModel(VBLBaseModel):
 
     colors: list[Color]
 
+# Text
+    
+class TextModel(VBLBaseModel):
+    id: str = Field(alias="ID")
+    text: str
+    color: Color = Color(r = 0, g = 0, b = 0)
+    font_size: int = 12
+    position: Vector2 = Vector2()
 
 # Utilities
     
