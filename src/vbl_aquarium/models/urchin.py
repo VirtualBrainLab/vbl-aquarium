@@ -116,17 +116,14 @@ class ProbeModel(VBLBaseModel):
 # Particle group
 
 
-class ParticleGroupModel(VBLBaseModel):
+class ParticleSystemModel(VBLBaseModel):
     id: str = Field(alias="ID")
-    scale: Vector3
-    shape: str
-    material: str
+    n: int
+    material: str = 'circle'
 
-    xs: list[float]
-    ys: list[float]
-    zs: list[float]
-
-    colors: list[Color]
+    positions: list[Vector3] = []
+    sizes: list[float] = []
+    colors: list[Color] = []
 
 # Text
     
