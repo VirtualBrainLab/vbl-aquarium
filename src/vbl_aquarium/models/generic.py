@@ -80,6 +80,13 @@ class BoolList(VBLBaseModel):
 class IDList(VBLBaseModel):
     ids: list[str] = Field(..., alias="IDs")
 
+class IDListVector2Data(VBLBaseModel):
+    ids: list[str] = Field(..., alias="IDs")
+    value: Vector2
+
+class IDListVector2List(VBLBaseModel):
+    ids: list[str] = Field(..., alias="IDs")
+    values: list[Vector2]
 
 class IDListVector3Data(VBLBaseModel):
     ids: list[str] = Field(..., alias="IDs")
