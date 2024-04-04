@@ -22,27 +22,27 @@ public struct AtlasModel
 [Serializable]
 public struct CameraModel
 {
-    public float Id;
-    public string Type;
+    public string ID;
     public Vector3 Position;
     public Vector3 Rotation;
     public Vector3 Target;
     public float Zoom;
     public Vector2 Pan;
     public CameraMode Mode;
+    public Color BackgroundColor;
     public bool Controllable;
     public bool Main;
 
-    public CameraModel(float id, string type, Vector3 position, Vector3 rotation, Vector3 target, float zoom, Vector2 pan, CameraMode mode, bool controllable, bool main)
+    public CameraModel(string id, Vector3 position, Vector3 rotation, Vector3 target, float zoom, Vector2 pan, CameraMode mode, Color backgroundColor, bool controllable, bool main)
     {
-        Id = id;
-        Type = type;
+        ID = id;
         Position = position;
         Rotation = rotation;
         Target = target;
         Zoom = zoom;
         Pan = pan;
         Mode = mode;
+        BackgroundColor = backgroundColor;
         Controllable = controllable;
         Main = main;
     }
@@ -142,6 +142,22 @@ public struct CustomMeshModel
 
 
 [Serializable]
+public struct LineModel
+{
+    public string ID;
+    public Vector3[] Positions;
+    public Color Color;
+
+    public LineModel(string id, Vector3[] positions, Color color)
+    {
+        ID = id;
+        Positions = positions;
+        Color = color;
+    }
+}
+
+
+[Serializable]
 public struct MeshModel
 {
     public string ID;
@@ -198,6 +214,28 @@ public struct PrimitiveMeshModel
     public PrimitiveMeshModel(MeshModel[] data)
     {
         Data = data;
+    }
+}
+
+
+[Serializable]
+public struct ProbeModel
+{
+    public string ID;
+    public Vector3 Position;
+    public Color Color;
+    public Vector3 Angles;
+    public string Style;
+    public Vector3 Scale;
+
+    public ProbeModel(string id, Vector3 position, Color color, Vector3 angles, string style, Vector3 scale)
+    {
+        ID = id;
+        Position = position;
+        Color = color;
+        Angles = angles;
+        Style = style;
+        Scale = scale;
     }
 }
 

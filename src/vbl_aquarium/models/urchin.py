@@ -65,14 +65,14 @@ class CameraModel(VBLBaseModel):
         orthographic = "orthographic"
         perspective = "perspective"
 
-    id: str
-    type: str
+    id: str = Field(alias="ID")
     position: Vector3 = None
-    rotation: Vector3 = Vector3(0,0,0)
+    rotation: Vector3 = Vector3()
     target: Vector3 = None
     zoom: float = 16
-    pan: Vector2 = Vector2(0,0)
+    pan: Vector2 = Vector2()
     mode: CameraMode = CameraMode.orthographic
+    background_color: Color = Color() # white by default
     controllable: bool = True
     main: bool = False
 
@@ -96,6 +96,22 @@ class MeshModel(VBLBaseModel):
     material: str
     interactive: bool
 
+# Lines
+    
+class LineModel(VBLBaseModel):
+    id: str = Field(alias="ID")
+    positions: list[Vector3] = []
+    color: Color = Color()
+
+# Probes
+    
+class ProbeModel(VBLBaseModel):
+    id: str = Field(alias="ID")
+    position: Vector3
+    color: Color
+    angles: Vector3
+    style: str
+    scale: Vector3
 
 # Particle group
 

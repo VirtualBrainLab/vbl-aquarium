@@ -1,1 +1,1 @@
-{"properties": {"Name": {"title": "Name", "type": "string"}, "Min": {"title": "Min", "type": "number"}, "Max": {"title": "Max", "type": "number"}}, "required": ["Name", "Min", "Max"], "title": "ColormapModel", "type": "object"}
+{"properties": {"Name": {"default": "", "title": "Name", "type": "string"}, "Min": {"default": 0, "title": "Min", "type": "number"}, "Max": {"default": 1, "title": "Max", "type": "number"}}, "title": "ColormapModel", "type": "object"}

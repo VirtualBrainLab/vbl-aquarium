@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pydantic import Field
 
-from vbl_aquarium.models.unity import Color, Vector3
+from vbl_aquarium.models.unity import Color, Vector2, Vector3
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
 
@@ -10,6 +10,9 @@ from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 class IDData(VBLBaseModel):
     id: str = Field(..., alias="ID")
 
+class Vector2Data(VBLBaseModel):
+    id: str = Field(alias= "ID")
+    value: Vector2
 
 class Vector3Data(VBLBaseModel):
     id: str = Field(..., alias="ID")

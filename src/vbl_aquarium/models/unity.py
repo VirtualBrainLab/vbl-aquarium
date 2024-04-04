@@ -5,9 +5,9 @@ from typing_extensions import Annotated
 
 
 class Color(BaseModel):
-    r: Annotated[float, Field(ge=0, le=1)]
-    g: Annotated[float, Field(ge=0, le=1)]
-    b: Annotated[float, Field(ge=0, le=1)]
+    r: Annotated[float, Field(default=1, ge=0, le=1)]
+    g: Annotated[float, Field(default=1, ge=0, le=1)]
+    b: Annotated[float, Field(default=1, ge=0, le=1)]
     a: Annotated[float, Field(default=1, ge=0, le=1)]
 
 
