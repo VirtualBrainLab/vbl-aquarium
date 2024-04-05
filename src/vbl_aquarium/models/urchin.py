@@ -72,13 +72,15 @@ class CameraModel(VBLBaseModel):
     zoom: float = 16
     pan: Vector2 = Vector2()
     mode: CameraMode = CameraMode.orthographic
-    background_color: Color = Color() # white by default
+    background_color: Color = Color()  # white by default
     controllable: bool = True
     main: bool = False
+
 
 class CameraRotationModel(VBLBaseModel):
     start_rotation: Vector3
     end_rotation: Vector3
+
 
 # Individual mesh neuron
 
@@ -96,15 +98,19 @@ class MeshModel(VBLBaseModel):
     material: str
     interactive: bool
 
+
 # Lines
-    
+
+
 class LineModel(VBLBaseModel):
     id: str = Field(alias="ID")
-    positions: list[Vector3] = []
+    positions: list[Vector3] = Field(default_factory=list)
     color: Color = Color()
 
+
 # Probes
-    
+
+
 class ProbeModel(VBLBaseModel):
     id: str = Field(alias="ID")
     position: Vector3
@@ -113,30 +119,35 @@ class ProbeModel(VBLBaseModel):
     style: str
     scale: Vector3
 
+
 # Particle group
 
 
 class ParticleSystemModel(VBLBaseModel):
     id: str = Field(alias="ID")
     n: int
-    material: str = 'circle'
+    material: str = "circle"
 
-    positions: list[Vector3] = []
-    sizes: list[float] = []
-    colors: list[Color] = []
+    positions: list[Vector3] = Field(default_factory=list)
+    sizes: list[float] = Field(default_factory=list)
+    colors: list[Color] = Field(default_factory=list)
+
 
 # Text
-    
+
+
 class TextModel(VBLBaseModel):
     id: str = Field(alias="ID")
     text: str
-    color: Color = Color(r = 0, g = 0, b = 0)
+    color: Color = Color(r=0, g=0, b=0)
     font_size: int = 12
     position: Vector2 = Vector2()
 
+
 # Utilities
-    
+
+
 class ColormapModel(VBLBaseModel):
-    name: str = ''
+    name: str = ""
     min: float = 0
     max: float = 1
