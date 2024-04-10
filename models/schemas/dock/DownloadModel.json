@@ -1,1 +1,0 @@
-{"properties": {"Password": {"title": "Password", "type": "string"}}, "required": ["Password"], "title": "DownloadModel", "type": "object"}

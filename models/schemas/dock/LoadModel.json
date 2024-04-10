@@ -1,1 +1,1 @@
-{"properties": {"Filename": {"default": "", "title": "Filename", "type": "string"}, "Bucket": {"default": "", "title": "Bucket", "type": "string"}, "Password": {"default": "", "title": "Password", "type": "string"}}, "title": "LoadModel", "type": "object"}
+{"properties": {"Types": {"items": {"type": "integer"}, "title": "Types", "type": "array"}, "Data": {"items": {"type": "string"}, "title": "Data", "type": "array"}}, "required": ["Types", "Data"], "title": "LoadModel", "type": "object"}

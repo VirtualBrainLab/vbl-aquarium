@@ -4,26 +4,34 @@ from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
 
 # Models for sending data to dock server
-class BucketModel(VBLBaseModel):
+class BucketRequest(VBLBaseModel):
     token: str
     password: str
 
-
-class UploadModel(VBLBaseModel):
+class UploadRequest(VBLBaseModel):
+    type: int
     data: str
     password: str
 
-class DownloadModel(VBLBaseModel):
+class DownloadRequest(VBLBaseModel):
     password: str
 
+class DownloadResponse(VBLBaseModel):
+    type: str
+    data: str
+
 # Models for sending save/load messages
-class SaveModel(VBLBaseModel):
+class SaveRequest(VBLBaseModel):
     filename: str = ''
     bucket: str = ''
     password: str = ''
 
+
+class LoadRequest(VBLBaseModel):
+    filename: str = ''
+    bucket: str = ''
+    password: str = ''
 
 class LoadModel(VBLBaseModel):
-    filename: str = ''
-    bucket: str = ''
-    password: str = ''
+    types: list[int]
+    data: list[str]

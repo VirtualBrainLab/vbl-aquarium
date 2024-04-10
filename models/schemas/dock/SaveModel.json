@@ -1,1 +1,0 @@
-{"properties": {"Filename": {"default": "", "title": "Filename", "type": "string"}, "Bucket": {"default": "", "title": "Bucket", "type": "string"}, "Password": {"default": "", "title": "Password", "type": "string"}}, "title": "SaveModel", "type": "object"}

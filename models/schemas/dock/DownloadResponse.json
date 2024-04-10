@@ -1,0 +1,1 @@
+{"properties": {"Type": {"title": "Type", "type": "string"}, "Data": {"title": "Data", "type": "string"}}, "required": ["Type", "Data"], "title": "DownloadResponse", "type": "object"}

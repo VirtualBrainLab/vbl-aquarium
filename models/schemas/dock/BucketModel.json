@@ -1,1 +1,0 @@
-{"properties": {"Token": {"title": "Token", "type": "string"}, "Password": {"title": "Password", "type": "string"}}, "required": ["Token", "Password"], "title": "BucketModel", "type": "object"}

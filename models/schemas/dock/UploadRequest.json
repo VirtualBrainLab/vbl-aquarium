@@ -1,0 +1,1 @@
+{"properties": {"Type": {"title": "Type", "type": "integer"}, "Data": {"title": "Data", "type": "string"}, "Password": {"title": "Password", "type": "string"}}, "required": ["Type", "Data", "Password"], "title": "UploadRequest", "type": "object"}
