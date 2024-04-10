@@ -57,7 +57,7 @@ for _, (module, cfolder) in enumerate(zip(module_list, folder_prefix)):
 
         # Move using statement to top
         output = "using System;\n" + output
-        
+
         if "using UnityEngine;" in output:
             output = "using UnityEngine;\n" + output.replace("using UnityEngine;", "")
 
