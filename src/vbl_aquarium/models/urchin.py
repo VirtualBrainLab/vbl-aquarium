@@ -15,26 +15,6 @@ class CustomAtlasModel(VBLBaseModel):
     dimensions: Vector3
     resolution: Vector3
 
-
-# CustomMesh
-
-
-class CustomMeshData(VBLBaseModel):
-    id: str = Field(alias="ID")
-    vertices: list[Vector3]
-    triangles: list[int]
-    normals: list[Vector3] = None
-
-
-class CustomMeshModel(VBLBaseModel):
-    id: str = Field(alias="ID")
-    position: Vector3
-    use_reference: bool
-    material: str
-    scale: Vector3
-    color: Color
-
-
 # Area
 
 
@@ -142,6 +122,17 @@ class TextModel(VBLBaseModel):
     color: Color = Color(r=0, g=0, b=0)
     font_size: int = 12
     position: Vector2 = Vector2()
+
+
+# Custom meshes
+class CustomMeshModel(VBLBaseModel):
+    id: str = Field(alias="ID")
+    vertices: list[Vector3]
+    triangles: list[int]
+    normals: list[Vector3] = None
+    position: Vector3 = Vector3(x = 0, y = 0, z = 0)
+    use_reference: bool = True
+    scale: Vector3 = Vector3(x = 1, y = 1, z = 1)
 
 
 # Utilities
