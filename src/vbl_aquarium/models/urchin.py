@@ -15,6 +15,7 @@ class CustomAtlasModel(VBLBaseModel):
     dimensions: Vector3
     resolution: Vector3
 
+
 # Area
 
 
@@ -130,9 +131,9 @@ class CustomMeshModel(VBLBaseModel):
     vertices: list[Vector3]
     triangles: list[int]
     normals: list[Vector3] = None
-    position: Vector3 = Vector3(x = 0, y = 0, z = 0)
+    position: Vector3 = Vector3(x=0, y=0, z=0)
     use_reference: bool = True
-    scale: Vector3 = Vector3(x = 1, y = 1, z = 1)
+    scale: Vector3 = Vector3(x=1, y=1, z=1)
 
 
 # Utilities
