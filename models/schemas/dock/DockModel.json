@@ -1,0 +1,1 @@
+{"properties": {"DockUrl": {"title": "Dockurl", "type": "string"}}, "required": ["DockUrl"], "title": "DockModel", "type": "object"}

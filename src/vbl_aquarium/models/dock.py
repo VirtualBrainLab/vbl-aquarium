@@ -6,6 +6,9 @@ from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
 
 # Models for sending data to dock server
+class DockModel(VBLBaseModel):
+    dock_url: str
+
 class BucketRequest(VBLBaseModel):
     token: str
     password: str
