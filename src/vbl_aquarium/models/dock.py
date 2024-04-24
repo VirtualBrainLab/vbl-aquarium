@@ -9,6 +9,7 @@ from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 class DockModel(VBLBaseModel):
     dock_url: str
 
+
 class BucketRequest(VBLBaseModel):
     token: str
     password: str
