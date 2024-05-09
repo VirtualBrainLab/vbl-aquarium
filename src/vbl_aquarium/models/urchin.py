@@ -138,15 +138,18 @@ class CustomMeshModel(VBLBaseModel):
 
 # Volumes
 
+
 class VolumeMetaModel(VBLBaseModel):
     name: str
     n_bytes: int
     colormap: list[Color]
     visible: bool
 
+
 class VolumeDataChunk(VBLBaseModel):
     name: str
     bytes: str
+
 
 # Utilities
 
