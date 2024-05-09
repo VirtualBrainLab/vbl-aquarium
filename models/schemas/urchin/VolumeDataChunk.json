@@ -1,0 +1,1 @@
+{"properties": {"Name": {"title": "Name", "type": "string"}, "Bytes": {"title": "Bytes", "type": "string"}}, "required": ["Name", "Bytes"], "title": "VolumeDataChunk", "type": "object"}

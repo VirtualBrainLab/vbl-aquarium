@@ -81,6 +81,10 @@ def pydantic_to_csharp(pydantic_class, class_json):
             enums = (enum_name, data_list)
             field_data = f"{enum_name} {alias if (alias := data.alias) else name}"
 
+        if "bytearray" in str(data.annotation):
+            
+            field_data = f"byte[] {alias if (alias := data.alias) else name}"
+
         # finally, deal with arrays
         elif get_origin(data.annotation) == list:
             arg_class = get_args(data.annotation)

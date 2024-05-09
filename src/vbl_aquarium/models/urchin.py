@@ -136,6 +136,18 @@ class CustomMeshModel(VBLBaseModel):
     scale: Vector3 = Vector3(x=1, y=1, z=1)
 
 
+# Volumes
+
+class VolumeMetaModel(VBLBaseModel):
+    name: str
+    n_bytes: int
+    colormap: list[Color]
+    visible: bool
+
+class VolumeDataChunk(VBLBaseModel):
+    name: str
+    bytes: str
+
 # Utilities
 
 
