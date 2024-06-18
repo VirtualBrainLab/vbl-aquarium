@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from enum import Enum
+from enum import IntEnum
 
 from pydantic import Field
 
@@ -42,7 +42,7 @@ class StructureModel(VBLBaseModel):
 
 
 class CameraModel(VBLBaseModel):
-    class CameraMode(int, Enum):
+    class CameraMode(IntEnum):
         orthographic = 0
         perspective = 1
 
@@ -52,7 +52,9 @@ class CameraModel(VBLBaseModel):
     target: Vector3 = None
     zoom: float = 16
     pan: Vector2 = Vector2()
-    mode: CameraMode = CameraMode.orthographic
+    mode: CameraMode = Field(
+        default=CameraMode.orthographic, json_schema_extra={"enum_keys": list(CameraMode.__members__.keys())}
+    )
     background_color: Color = Color()  # white by default
     controllable: bool = True
     main: bool = False

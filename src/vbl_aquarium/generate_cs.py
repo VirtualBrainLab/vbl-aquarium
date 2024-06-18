@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import get_args, get_origin
 
-from pydantic.alias_generators import to_camel, to_snake
+from pydantic.alias_generators import to_camel, to_pascal, to_snake
 
 from vbl_aquarium.models import unity
 from vbl_aquarium.utils.common import get_classes
@@ -73,11 +73,11 @@ def pydantic_to_csharp(pydantic_class, class_json):
         if "enum" in str(data.annotation):
             # get the name of the enum
             enum_name = data.annotation.__name__
-            # pull the defs
-            enum_data = class_json["$defs"][enum_name]["enum"]
-            data_list = []
-            for i, v in enumerate(enum_data):
-                data_list.append((v, i))
+            # pull the defs and properties from the json
+            enum_values = class_json["$defs"][enum_name]["enum"]
+            enum_keys = class_json["properties"][to_pascal(name)]["enum_keys"]
+            # Bind the keys and values together
+            data_list = zip(enum_keys, enum_values)
             enums = (enum_name, data_list)
             field_data = f"{enum_name} {alias if (alias := data.alias) else name}"
 
