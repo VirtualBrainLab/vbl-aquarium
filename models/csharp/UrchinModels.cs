@@ -51,8 +51,8 @@ public struct CameraModel
 
 public enum CameraMode
 {
-    orthographic = 0,
-    perspective = 1,
+    0 = 0,
+    1 = 1,
 }
 
 
