@@ -5,10 +5,10 @@ from typing_extensions import Annotated
 
 
 class Color(BaseModel):
-    r: Annotated[float, Field(default=1, ge=0, le=1)]
-    g: Annotated[float, Field(default=1, ge=0, le=1)]
-    b: Annotated[float, Field(default=1, ge=0, le=1)]
-    a: Annotated[float, Field(default=1, ge=0, le=1)]
+    r: float = Field(default=1, ge=0, le=1)
+    g: float = Field(default=1, ge=0, le=1)
+    b: float = Field(default=1, ge=0, le=1)
+    a: float = Field(default=1, ge=0, le=1)
 
 
 class Vector2(BaseModel):

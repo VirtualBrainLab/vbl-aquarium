@@ -1,4 +1,4 @@
-from enum import Enum
+from enum import IntEnum
 from json import dumps
 from os import makedirs
 from os.path import abspath, dirname, exists
@@ -17,7 +17,7 @@ def remove_ignored_classes(module):
 
 
 ignored_classes = get_classes(unity)
-ignored_classes.append(Enum)
+ignored_classes.append(IntEnum)
 ignored_classes.append(VBLBaseModel)
 unity_class_names = [x.__name__ for x in get_classes(unity)]
 
