@@ -1,5 +1,4 @@
 from pydantic import BaseModel, Field
-from typing_extensions import Annotated
 
 # Unity models don't get generated as .cs files since they exist in UnityEngine
 

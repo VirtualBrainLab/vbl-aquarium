@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import get_args, get_origin
 
-from pydantic.alias_generators import to_camel, to_snake, to_pascal
+from pydantic.alias_generators import to_camel, to_pascal, to_snake
 
 from vbl_aquarium.models import unity
 from vbl_aquarium.utils.common import get_classes

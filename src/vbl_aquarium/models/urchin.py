@@ -7,7 +7,6 @@ from pydantic import Field
 from vbl_aquarium.models.unity import Color, Vector2, Vector3
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
-
 # CustomAtlas
 
 
@@ -53,8 +52,9 @@ class CameraModel(VBLBaseModel):
     target: Vector3 = None
     zoom: float = 16
     pan: Vector2 = Vector2()
-    mode: CameraMode = Field(default=CameraMode.orthographic,
-                             json_schema_extra={"enum_keys": list(CameraMode.__members__.keys())})
+    mode: CameraMode = Field(
+        default=CameraMode.orthographic, json_schema_extra={"enum_keys": list(CameraMode.__members__.keys())}
+    )
     background_color: Color = Color()  # white by default
     controllable: bool = True
     main: bool = False
