@@ -42,9 +42,9 @@ class StructureModel(VBLBaseModel):
 
 
 class CameraModel(VBLBaseModel):
-    class CameraMode(str, Enum):
-        orthographic = "orthographic"
-        perspective = "perspective"
+    class CameraMode(int, Enum):
+        orthographic = 0
+        perspective = 1
 
     id: str = Field(alias="ID")
     position: Vector3 = None
