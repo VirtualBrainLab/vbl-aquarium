@@ -7,7 +7,7 @@ from shutil import rmtree
 from pydantic.alias_generators import to_pascal
 
 from vbl_aquarium.generate_cs import pydantic_to_csharp
-from vbl_aquarium.models import dock, ephys_link, generic, logging, pinpoint, unity, urchin
+from vbl_aquarium.models import dock, ephys_link, generic, logging, pinpoint, unity, urchin, proxy
 from vbl_aquarium.utils.common import get_classes
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
@@ -21,8 +21,8 @@ ignored_classes.append(IntEnum)
 ignored_classes.append(VBLBaseModel)
 unity_class_names = [x.__name__ for x in get_classes(unity)]
 
-module_list = [generic, urchin, logging, pinpoint, ephys_link, dock]
-folder_prefix = ["generic", "urchin", "logging", "pinpoint", "ephys_link", "dock"]
+module_list = [generic, urchin, logging, pinpoint, ephys_link, dock, proxy]
+folder_prefix = ["generic", "urchin", "logging", "pinpoint", "ephys_link", "dock", "proxy"]
 
 cdir = dirname(abspath(__file__))
 
