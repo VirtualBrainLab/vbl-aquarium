@@ -7,7 +7,7 @@ from shutil import rmtree
 from pydantic.alias_generators import to_pascal
 
 from vbl_aquarium.generate_cs import pydantic_to_csharp
-from vbl_aquarium.models import dock, ephys_link, generic, logging, pinpoint, unity, urchin, proxy
+from vbl_aquarium.models import dock, ephys_link, generic, logging, pinpoint, proxy, unity, urchin
 from vbl_aquarium.utils.common import get_classes
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
