@@ -6,6 +6,40 @@ from vbl_aquarium.models.unity import Vector3, Vector4
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
 
+class EphysLinkOptions(VBLBaseModel):
+    """Options for running Ephys Link.
+
+    :param background: Whether to skip the GUI and run using CLI arguments.
+    :type background: bool
+    :param ignore_updates: Whether to ignore updates.
+    :type ignore_updates: bool
+    :param type: Type of manipulator platform to use.
+    :type type: str
+    :param debug: Whether to print debug messages.
+    :type debug: bool
+    :param use_proxy: Whether to use VBL proxy service.
+    :type use_proxy: bool
+    :param proxy_address: Address of the proxy service.
+    :type proxy_address: str
+    :param port: HTTP port to serve on or connect to (if using the proxy).
+    :type port: int
+    :param mpm_port: Port for New Scale MPM HTTP server.
+    :type mpm_port: int
+    :param serial: Serial port for emergency stop.
+    :type serial: str
+    """
+
+    background: bool = False
+    ignore_updates: bool = False
+    type: str = "ump-4"
+    debug: bool = False
+    use_proxy: bool = False
+    proxy_address: str = "proxy2.virtualbrainlab.org"
+    port: int = Field(default=8081, ge=1024, le=49151)
+    mpm_port: int = 8080
+    serial: str = "no-e-stop"
+
+
 class GotoPositionRequest(VBLBaseModel):
     """Request format for moving a manipulator to a position.
 
