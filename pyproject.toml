@@ -46,6 +46,7 @@ exclude = ["/models"]
 python="3.12"
 dependencies = [
   "coverage[toml]>=6.5",
+  "mypy>=1.0.0",
   "pytest",
 ]
 
@@ -60,13 +61,7 @@ cov = [
   "test-cov",
   "cov-report",
 ]
-
-[tool.hatch.envs.types]
-dependencies = [
-  "mypy>=1.0.0",
-]
-[tool.hatch.envs.types.scripts]
-check = "mypy --install-types --non-interactive {args:src/vbl_aquarium tests}"
+check = "mypy --strict --install-types --non-interactive {args:src/vbl_aquarium}"
 
 [tool.coverage.run]
 source_pkgs = ["vbl_aquarium", "tests"]
