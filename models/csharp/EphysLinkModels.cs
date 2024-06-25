@@ -70,6 +70,33 @@ public struct DriveToDepthResponse
     }
 }
 
+[Serializable]
+public struct EphysLinkOptions
+{
+    public bool Background;
+    public bool IgnoreUpdates;
+    public string Type;
+    public bool Debug;
+    public bool UseProxy;
+    public string ProxyAddress;
+    public int Port;
+    public int MpmPort;
+    public string Serial;
+
+    public EphysLinkOptions(bool background, bool ignoreUpdates, string type, bool debug, bool useProxy, string proxyAddress, int port, int mpmPort, string serial)
+    {
+        Background = background;
+        IgnoreUpdates = ignoreUpdates;
+        Type = type;
+        Debug = debug;
+        UseProxy = useProxy;
+        ProxyAddress = proxyAddress;
+        Port = port;
+        MpmPort = mpmPort;
+        Serial = serial;
+    }
+}
+
 
 [Serializable]
 public struct GetManipulatorsResponse
