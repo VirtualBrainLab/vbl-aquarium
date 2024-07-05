@@ -21,8 +21,6 @@ class EphysLinkOptions(VBLBaseModel):
     :type use_proxy: bool
     :param proxy_address: Address of the proxy service.
     :type proxy_address: str
-    :param port: HTTP port to serve on or connect to (if using the proxy).
-    :type port: int
     :param mpm_port: Port for New Scale MPM HTTP server.
     :type mpm_port: int
     :param serial: Serial port for emergency stop.
@@ -35,7 +33,6 @@ class EphysLinkOptions(VBLBaseModel):
     debug: bool = False
     use_proxy: bool = False
     proxy_address: str = "proxy2.virtualbrainlab.org"
-    port: int = Field(default=8081, ge=1024, le=49151)
     mpm_port: int = Field(default=8080, ge=1024, le=49151)
     serial: str = "no-e-stop"
 
