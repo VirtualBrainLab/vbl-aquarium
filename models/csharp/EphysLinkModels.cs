@@ -79,11 +79,10 @@ public struct EphysLinkOptions
     public bool Debug;
     public bool UseProxy;
     public string ProxyAddress;
-    public int Port;
     public int MpmPort;
     public string Serial;
 
-    public EphysLinkOptions(bool background, bool ignoreUpdates, string type, bool debug, bool useProxy, string proxyAddress, int port, int mpmPort, string serial)
+    public EphysLinkOptions(bool background, bool ignoreUpdates, string type, bool debug, bool useProxy, string proxyAddress, int mpmPort, string serial)
     {
         Background = background;
         IgnoreUpdates = ignoreUpdates;
@@ -91,7 +90,6 @@ public struct EphysLinkOptions
         Debug = debug;
         UseProxy = useProxy;
         ProxyAddress = proxyAddress;
-        Port = port;
         MpmPort = mpmPort;
         Serial = serial;
     }
