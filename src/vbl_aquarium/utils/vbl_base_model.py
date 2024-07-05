@@ -10,5 +10,5 @@ class VBLBaseModel(BaseModel):
 
     model_config = ConfigDict(alias_generator=to_pascal, populate_by_name=True)
 
-    def to_string(self) -> str:
+    def to_json_string(self) -> str:
         return self.model_dump_json(by_alias=True)
