@@ -37,7 +37,7 @@ class EphysLinkOptions(VBLBaseModel):
     serial: str = "no-e-stop"
 
 
-class GotoPositionRequest(VBLBaseModel):
+class SetPositionRequest(VBLBaseModel):
     """Request format for moving a manipulator to a position.
 
     :param manipulator_id: ID of the manipulator to move.
@@ -53,7 +53,7 @@ class GotoPositionRequest(VBLBaseModel):
     speed: float = Field(gt=0)
 
 
-class InsideBrainRequest(VBLBaseModel):
+class SetInsideBrainRequest(VBLBaseModel):
     """Request format for setting inside brain state.
 
     :param manipulator_id: ID of the manipulator to move.
@@ -66,7 +66,7 @@ class InsideBrainRequest(VBLBaseModel):
     inside: bool
 
 
-class DriveToDepthRequest(VBLBaseModel):
+class SetDepthRequest(VBLBaseModel):
     """Request format for driving a manipulator to depth.
 
     :param manipulator_id: ID of the manipulator to move.
@@ -80,22 +80,6 @@ class DriveToDepthRequest(VBLBaseModel):
     manipulator_id: str = Field(min_length=1)
     depth: float
     speed: float = Field(gt=0)
-
-
-class CanWriteRequest(VBLBaseModel):
-    """Request format for setting can write state.
-
-    :param manipulator_id: ID of the manipulator to move.
-    :type manipulator_id: str
-    :param can_write: Whether the manipulator can write.
-    :type can_write: bool
-    :param hours: Number of hours the manipulator can write for (0 = indefinitely).
-    :type hours: float
-    """
-
-    manipulator_id: str = Field(min_length=1)
-    can_write: bool
-    hours: float = Field(ge=0)
 
 
 class GetManipulatorsResponse(VBLBaseModel):
@@ -152,7 +136,7 @@ class ShankCountResponse(VBLBaseModel):
     error: str = ""
 
 
-class DriveToDepthResponse(VBLBaseModel):
+class SetDepthResponse(VBLBaseModel):
     """Response format for driving a manipulator to depth.
 
     :param depth: Depth the manipulator is at in mm.
