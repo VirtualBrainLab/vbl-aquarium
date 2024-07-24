@@ -75,11 +75,13 @@ public struct GetManipulatorsResponse
 public struct PositionalResponse
 {
     public Vector4 Position;
+    public bool IsStereotactic;
     public string Error;
 
-    public PositionalResponse(Vector4 position, string error)
+    public PositionalResponse(Vector4 position, bool isStereotactic, string error)
     {
         Position = position;
+        IsStereotactic = isStereotactic;
         Error = error;
     }
 }
@@ -131,12 +133,14 @@ public struct SetPositionRequest
 {
     public string ManipulatorId;
     public Vector4 Position;
+    public bool IsStereotactic;
     public float Speed;
 
-    public SetPositionRequest(string manipulatorId, Vector4 position, float speed)
+    public SetPositionRequest(string manipulatorId, Vector4 position, bool isStereotactic, float speed)
     {
         ManipulatorId = manipulatorId;
         Position = position;
+        IsStereotactic = isStereotactic;
         Speed = speed;
     }
 }
