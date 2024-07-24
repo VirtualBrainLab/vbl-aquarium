@@ -28,7 +28,7 @@ classifiers = [
   "Intended Audience :: Science/Research",
 ]
 dependencies = [
-  "pydantic==2.7.4",
+  "pydantic==2.8.2",
 ]
 
 [project.urls]
