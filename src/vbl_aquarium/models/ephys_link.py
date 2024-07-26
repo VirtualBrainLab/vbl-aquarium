@@ -44,15 +44,12 @@ class SetPositionRequest(VBLBaseModel):
     :type manipulator_id: str
     :param position: Position to move to in mm (X, Y, Z, W).
     :type position: Vector4
-    :param is_stereotactic: Whether the provided position is stereotactic (ML, AP, DV, W).
-    :type is_stereotactic: bool
     :param speed: Speed to move at in mm/s.
     :type speed: float
     """
 
     manipulator_id: str = Field(min_length=1)
     position: Vector4
-    is_stereotactic: bool = False
     speed: float = Field(gt=0)
 
 
@@ -109,14 +106,11 @@ class PositionalResponse(VBLBaseModel):
 
     :param position: Position of the manipulator.
     :type position: Vector4
-    :param is_stereotactic: Whether the position is stereotactic (ML, AP, DV, W).
-    :type is_stereotactic: bool
     :param error: Error message if any.
     :type error: str
     """
 
     position: Vector4 = Vector4()
-    is_stereotactic: bool = False
     error: str = ""
 
 
