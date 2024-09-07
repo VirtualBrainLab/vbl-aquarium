@@ -16,3 +16,11 @@ class CraniotomyModel(VBLBaseModel):
 class CraniotomyGroup(VBLBaseModel):
     atlas: str
     data: list[CraniotomyModel]
+
+
+
+# TRANSFORM
+
+class AffineTransformModel(VBLBaseModel):
+    scaling: Vector3
+    rotation: Vector3
