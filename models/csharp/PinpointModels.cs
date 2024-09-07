@@ -1,5 +1,19 @@
 using UnityEngine;
 using System;
+
+[Serializable]
+public struct AffineTransformModel
+{
+    public Vector3 Scaling;
+    public Vector3 Rotation;
+
+    public AffineTransformModel(Vector3 scaling, Vector3 rotation)
+    {
+        Scaling = scaling;
+        Rotation = rotation;
+    }
+}
+
 [Serializable]
 public struct CraniotomyGroup
 {
