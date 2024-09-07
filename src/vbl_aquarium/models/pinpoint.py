@@ -18,8 +18,8 @@ class CraniotomyGroup(VBLBaseModel):
     data: list[CraniotomyModel]
 
 
-
 # TRANSFORM
+
 
 class AffineTransformModel(VBLBaseModel):
     scaling: Vector3
