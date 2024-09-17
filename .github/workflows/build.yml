@@ -30,7 +30,7 @@ jobs:
       
       - name: 📤 PR changes
         if: github.ref == 'refs/heads/main'
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.PR_TOKEN }}
           commit-message: "chore: Build Models"
