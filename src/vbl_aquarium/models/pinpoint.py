@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pydantic import Field
 
-from vbl_aquarium.models.unity import Vector2, Vector3, Color
+from vbl_aquarium.models.unity import Color, Vector2, Vector3
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
 # CRANIOTOMY
@@ -12,6 +12,7 @@ class CraniotomyModel(VBLBaseModel):
     index: int
     size: Vector2
     position: Vector3
+
 
 # TRANSFORM
 
@@ -25,6 +26,7 @@ class AffineTransformModel(VBLBaseModel):
 
 # RIG
 
+
 class RigModel(VBLBaseModel):
     name: str
     image: str
@@ -35,12 +37,14 @@ class RigModel(VBLBaseModel):
 
 # Probes and insertions
 
+
 class InsertionModel(VBLBaseModel):
     position: Vector3
     angles: Vector3
     atlas_name: str
     transform_name: str
     reference_coord: Vector3
+
 
 class ProbeModel(VBLBaseModel):
     insertion: InsertionModel
@@ -52,6 +56,7 @@ class ProbeModel(VBLBaseModel):
 
 
 # Full scene
+
 
 class SceneModel(VBLBaseModel):
     atlas_name: str
