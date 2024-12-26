@@ -11,25 +11,25 @@ requires-python = ">=3.8"
 license = "MIT"
 keywords = ['pydantic', "virtualbrainlab", "neuroscience"]
 authors = [
-  { name = "Daniel Birman", email = "dbirman@uw.edu" },
-  { name = "Kenneth Yang", email = "kjy5@uw.edu" },
+    { name = "Daniel Birman", email = "dbirman@uw.edu" },
+    { name = "Kenneth Yang", email = "kjy5@uw.edu" },
 ]
 classifiers = [
-  "Development Status :: 4 - Beta",
-  "Programming Language :: Python",
-  "Programming Language :: Python :: 3.8",
-  "Programming Language :: Python :: 3.9",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
-  "Programming Language :: Python :: 3.13",
-  "Programming Language :: Python :: Implementation :: CPython",
-  "Programming Language :: Python :: Implementation :: PyPy",
-  "Operating System :: OS Independent",
-  "Intended Audience :: Science/Research",
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
 ]
 dependencies = [
-  "pydantic==2.10.4",
+    "pydantic==2.10.4",
 ]
 
 [project.urls]
@@ -44,9 +44,9 @@ path = "src/vbl_aquarium/__about__.py"
 exclude = ["/models"]
 
 [tool.hatch.envs.default]
-python="3.13.1"
+python = "3.13.1"
 dependencies = [
-  "basedpyright==1.23.1"
+    "basedpyright==1.23.1"
 ]
 
 [tool.hatch.envs.default.scripts]
@@ -54,8 +54,8 @@ check = "mypy --strict --install-types --non-interactive {args:src/vbl_aquarium}
 
 [tool.basedpyright]
 include = ["src/vbl_aquarium"]
-exclude = ["src/vbl_aquarium/build.py", "src/vbl_aquarium/generate_cs.py", "src/vbl_aquarium/models/urchin.py"]
+exclude = ["src/vbl_aquarium/old_build.py", "src/vbl_aquarium/old_generate_cs.py", "src/vbl_aquarium/utils/old_common.py"]
 strict = ["src/vbl_aquarium"]
 
 [tool.ruff.lint]
-ignore=["A003", "EM101", "FBT002", "T201", "TCH001", "TRY002", "TRY003"]
+ignore = ["A003", "EM101", "FBT002", "T201", "TCH001", "TRY002", "TRY003"]
