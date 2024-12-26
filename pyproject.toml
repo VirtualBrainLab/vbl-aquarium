@@ -41,7 +41,7 @@ Source = "https://github.com/VirtualBrainLab/vbl-aquarium"
 path = "src/vbl_aquarium/__about__.py"
 
 [tool.hatch.build.targets.sdist]
-exclude = ["/models"]
+exclude = ["/models", "/.github", "/.idea"]
 
 [tool.hatch.envs.default]
 python = "3.13.1"
