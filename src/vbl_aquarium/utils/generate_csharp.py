@@ -4,7 +4,7 @@ from __future__ import annotations
 from enum import Enum
 from typing import get_origin, get_args
 
-from pydantic.alias_generators import to_camel, to_snake
+from pydantic.alias_generators import to_camel, to_snake, to_pascal
 from pydantic.fields import FieldInfo
 
 from vbl_aquarium.utils.common import get_unity_model_class_names
@@ -76,11 +76,11 @@ def _parse_model(model: type[VBLBaseModel]) -> str:
         field_name = alias if (alias := data.alias) else name
 
         # Handle enums.
-        if isinstance(data.annotation, Enum):
+        if "enum" in str(data.annotation):
             # Get the enum parts.
-            enum_name: str = data.title
+            enum_name: str = data.annotation.__name__
             enum_values: list[str] = model_json_schema["$defs"][enum_name]["enum"]
-            enum_keys: list[str] = model_json_schema["properties"][to_camel(name)]["enum_keys"]
+            enum_keys: list[str] = model_json_schema["properties"][to_pascal(name)]["enum_keys"]
            
             # Update the enum.
             enum = (enum_name, zip(enum_keys, enum_values))
@@ -137,8 +137,10 @@ def generate_csharp(model_classes: list[type[VBLBaseModel]]) -> str:
         output.append(_parse_model(model_class))
     
     # Add `using UnityEngine;` if Unity classes are present.
-    if any(unity_class in output for unity_class in get_unity_model_class_names()):
-        output.insert(0, "using UnityEngine;")
+    for segment in output:
+        if any(unity_class in segment for unity_class in get_unity_model_class_names()):
+            output.insert(0, "using UnityEngine;")
+            break
     
     # Return the complete C# file.
     return "\n".join(output)
