@@ -1,4 +1,5 @@
 using System;
+
 [Serializable]
 public struct Log
 {
@@ -9,6 +10,7 @@ public struct Log
         Msg = msg;
     }
 }
+
 
 [Serializable]
 public struct LogError
@@ -21,6 +23,7 @@ public struct LogError
     }
 }
 
+
 [Serializable]
 public struct LogWarning
 {
@@ -31,4 +34,3 @@ public struct LogWarning
         Msg = msg;
     }
 }
-

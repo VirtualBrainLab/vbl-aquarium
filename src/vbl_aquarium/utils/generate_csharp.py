@@ -1,17 +1,19 @@
 """Converts a VBL Aquarium model into a C# struct."""
+
 from __future__ import annotations
 
-from enum import Enum
-from typing import get_origin, get_args
+from typing import TYPE_CHECKING, get_args, get_origin
 
-from pydantic.alias_generators import to_camel, to_snake, to_pascal
-from pydantic.fields import FieldInfo
+from pydantic.alias_generators import to_camel, to_pascal, to_snake
 
 from vbl_aquarium.utils.common import get_unity_model_class_names
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
+if TYPE_CHECKING:
+    from pydantic.fields import FieldInfo
 
-def _generate_csharp_struct(class_name: str, fields: list[str], enum: tuple[str, list[tuple[str, str]]] | None):
+
+def _generate_csharp_struct(class_name: str, fields: list[str], enum: tuple[str, zip[tuple[str, str]]] | None):
     """Generate a C# struct and enum from parts.
 
     Args:
@@ -76,50 +78,51 @@ def _parse_model(model: type[VBLBaseModel]) -> str:
         field_name = alias if (alias := data.alias) else name
 
         # Handle enums.
-        if "enum" in str(data.annotation):
+        if data.annotation is not None and "enum" in str(data.annotation):
             # Get the enum parts.
             enum_name: str = data.annotation.__name__
             enum_values: list[str] = model_json_schema["$defs"][enum_name]["enum"]
             enum_keys: list[str] = model_json_schema["properties"][to_pascal(name)]["enum_keys"]
-           
+
             # Update the enum.
             enum = (enum_name, zip(enum_keys, enum_values))
             field_data = f"{enum_name} {field_name}"
-        
+
         # Handle bytearrays.
         elif isinstance(data.annotation, bytearray):
             field_data = f"byte[] {field_name}"
-        
+
         # Handle arrays.
         elif get_origin(data.annotation) == list:
-            arg_class = get_args(data.annotation)
+            arg_class: tuple[type, ...] = get_args(data.annotation)
             type_name = arg_class[0].__name__
-            
+
             # Convert `str` to C# `string`.
             if type_name == "str":
                 type_name = "string"
-                
+
             field_data = f"{type_name}[] {field_name}"
-        
+
         # Handle base classes.
-        elif hasattr(data.annotation, "__name__"):
+        elif data.annotation is not None and hasattr(data.annotation, "__name__"):
             type_name = data.annotation.__name__
-            
+
             # Convert `str` to C# `string`.
             if type_name == "str":
                 type_name = "string"
-            
+
             field_data = f"{type_name} {field_name}"
-        
+
         # Raise an error if unhandled.
         else:
-            raise TypeError(f"Unhandled field type: {data.annotation}")
-        
+            raise TypeError("Unhandled field type: " + str(data.annotation))
+
         # Append the field data.
         fields.append(field_data)
-    
+
     # Generate the C# struct.
     return _generate_csharp_struct(model.__name__, fields, enum)
+
 
 def generate_csharp(model_classes: list[type[VBLBaseModel]]) -> str:
     """Generate a C# file containing structs for the given model classes.
@@ -130,17 +133,14 @@ def generate_csharp(model_classes: list[type[VBLBaseModel]]) -> str:
     Returns:
         The C# file as a string.
     """
-    output = ["using System;"]
-    
     # Parse each model class.
-    for model_class in model_classes:
-        output.append(_parse_model(model_class))
-    
+    output = ["using System;"] + [_parse_model(model_class) for model_class in model_classes]
+
     # Add `using UnityEngine;` if Unity classes are present.
     for segment in output:
         if any(unity_class in segment for unity_class in get_unity_model_class_names()):
             output.insert(0, "using UnityEngine;")
             break
-    
+
     # Return the complete C# file.
     return "\n".join(output)

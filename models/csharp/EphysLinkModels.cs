@@ -14,6 +14,7 @@ public struct AngularResponse
     }
 }
 
+
 [Serializable]
 public struct BooleanStateResponse
 {
@@ -26,6 +27,7 @@ public struct BooleanStateResponse
         Error = error;
     }
 }
+
 
 [Serializable]
 public struct EphysLinkOptions
@@ -84,6 +86,7 @@ public struct PositionalResponse
     }
 }
 
+
 [Serializable]
 public struct SetDepthRequest
 {
@@ -99,6 +102,7 @@ public struct SetDepthRequest
     }
 }
 
+
 [Serializable]
 public struct SetDepthResponse
 {
@@ -111,6 +115,7 @@ public struct SetDepthResponse
         Error = error;
     }
 }
+
 
 [Serializable]
 public struct SetInsideBrainRequest
@@ -141,6 +146,7 @@ public struct SetPositionRequest
     }
 }
 
+
 [Serializable]
 public struct ShankCountResponse
 {
@@ -153,4 +159,3 @@ public struct ShankCountResponse
         Error = error;
     }
 }
-

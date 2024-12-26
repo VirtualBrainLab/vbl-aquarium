@@ -25,7 +25,7 @@ PACKAGE_DIRECTORY = dirname(abspath(__file__))
 MODELS_DIRECTORY = join(PACKAGE_DIRECTORY, "models")
 BUILT_MODELS_DIRECTORY = join(dirname(dirname(PACKAGE_DIRECTORY)), "models")
 SCHEMA_DIRECTORY = join(BUILT_MODELS_DIRECTORY, "schemas")
-CSHARP_DIRECTORY = join(BUILT_MODELS_DIRECTORY, "csharps")
+CSHARP_DIRECTORY = join(BUILT_MODELS_DIRECTORY, "csharp")
 
 # Ensure built directories exist.
 for directory in [SCHEMA_DIRECTORY, CSHARP_DIRECTORY]:
@@ -52,5 +52,4 @@ for module in iter_modules([MODELS_DIRECTORY]):
 
     # Generate C# structs.
     with open(join(CSHARP_DIRECTORY, f"{to_pascal(module.name)}Models.cs"), "w") as csharp_file:
-        _=csharp_file.write(generate_csharp(module_classes))
-
+        _ = csharp_file.write(generate_csharp(module_classes))

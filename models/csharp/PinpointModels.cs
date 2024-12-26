@@ -92,6 +92,7 @@ public struct RigModel
     }
 }
 
+
 [Serializable]
 public struct SceneModel
 {
@@ -114,4 +115,3 @@ public struct SceneModel
         Settings = settings;
     }
 }
-

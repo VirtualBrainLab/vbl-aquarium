@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+
 [Serializable]
 public struct BoolData
 {
@@ -12,6 +13,7 @@ public struct BoolData
         Value = value;
     }
 }
+
 
 [Serializable]
 public struct BoolList
@@ -54,6 +56,7 @@ public struct ColorList
     }
 }
 
+
 [Serializable]
 public struct FloatData
 {
@@ -66,6 +69,7 @@ public struct FloatData
         Value = value;
     }
 }
+
 
 [Serializable]
 public struct FloatList
@@ -80,6 +84,7 @@ public struct FloatList
     }
 }
 
+
 [Serializable]
 public struct IDData
 {
@@ -91,6 +96,7 @@ public struct IDData
     }
 }
 
+
 [Serializable]
 public struct IDList
 {
@@ -101,6 +107,7 @@ public struct IDList
         IDs = iDs;
     }
 }
+
 
 [Serializable]
 public struct IDListBoolData
@@ -114,6 +121,7 @@ public struct IDListBoolData
         Value = value;
     }
 }
+
 
 [Serializable]
 public struct IDListBoolList
@@ -156,6 +164,7 @@ public struct IDListColorList
     }
 }
 
+
 [Serializable]
 public struct IDListFloatData
 {
@@ -168,6 +177,7 @@ public struct IDListFloatData
         Value = value;
     }
 }
+
 
 [Serializable]
 public struct IDListFloatList
@@ -182,6 +192,7 @@ public struct IDListFloatList
     }
 }
 
+
 [Serializable]
 public struct IDListIntData
 {
@@ -194,6 +205,7 @@ public struct IDListIntData
         Value = value;
     }
 }
+
 
 [Serializable]
 public struct IDListIntList
@@ -208,6 +220,7 @@ public struct IDListIntList
     }
 }
 
+
 [Serializable]
 public struct IDListStringData
 {
@@ -220,6 +233,7 @@ public struct IDListStringData
         Value = value;
     }
 }
+
 
 [Serializable]
 public struct IDListStringList
@@ -290,6 +304,7 @@ public struct IDListVector3List
     }
 }
 
+
 [Serializable]
 public struct IntData
 {
@@ -302,6 +317,7 @@ public struct IntData
         Value = value;
     }
 }
+
 
 [Serializable]
 public struct IntList
@@ -316,6 +332,7 @@ public struct IntList
     }
 }
 
+
 [Serializable]
 public struct StringData
 {
@@ -328,6 +345,7 @@ public struct StringData
         Value = value;
     }
 }
+
 
 [Serializable]
 public struct StringList
@@ -383,4 +401,3 @@ public struct Vector3List
         Values = values;
     }
 }
-

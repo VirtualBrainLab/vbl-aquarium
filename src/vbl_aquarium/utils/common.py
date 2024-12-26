@@ -31,12 +31,17 @@ def get_model_classes(module: ModuleType) -> list[type[VBLBaseModel]]:
         if issubclass(class_object, VBLBaseModel) and class_object != VBLBaseModel
     ]
 
+
 def get_unity_model_class_names() -> set[str]:
     """Get the names of all Unity models.
-    
+
     Looks for all classes in the unity_models module that subclass BaseModel (excluding BaseModel itself).
 
     Returns:
         The names of all Unity models.
     """
-    return {model_name for model_name, class_object in getmembers(unity_models, isclass) if issubclass(class_object, BaseModel) and class_object != BaseModel}
+    return {
+        model_name
+        for model_name, class_object in getmembers(unity_models, isclass)
+        if issubclass(class_object, BaseModel) and class_object != BaseModel
+    }

@@ -51,6 +51,7 @@ dependencies = [
 
 [tool.hatch.envs.default.scripts]
 check = "basedpyright"
+check-watched = "basedpyright --watch"
 
 [tool.basedpyright]
 include = ["src/vbl_aquarium"]

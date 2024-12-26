@@ -56,6 +56,7 @@ public enum CameraMode
 }
 
 
+
 [Serializable]
 public struct CameraRotationModel
 {
@@ -68,6 +69,7 @@ public struct CameraRotationModel
         EndRotation = endRotation;
     }
 }
+
 
 [Serializable]
 public struct ColormapModel
@@ -186,6 +188,7 @@ public struct ParticleSystemModel
     }
 }
 
+
 [Serializable]
 public struct PrimitiveMeshModel
 {
@@ -265,6 +268,7 @@ public struct TextModel
     }
 }
 
+
 [Serializable]
 public struct VolumeDataChunk
 {
@@ -295,4 +299,3 @@ public struct VolumeMetaModel
         Visible = visible;
     }
 }
-
