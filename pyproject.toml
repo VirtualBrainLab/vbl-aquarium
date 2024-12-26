@@ -50,7 +50,7 @@ dependencies = [
 ]
 
 [tool.hatch.envs.default.scripts]
-check = "mypy --strict --install-types --non-interactive {args:src/vbl_aquarium}"
+check = "basedpyright"
 
 [tool.basedpyright]
 include = ["src/vbl_aquarium"]

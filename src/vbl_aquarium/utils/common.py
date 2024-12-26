@@ -5,6 +5,9 @@ from __future__ import annotations
 from inspect import getmembers, isclass
 from typing import TYPE_CHECKING
 
+from pydantic import BaseModel
+
+from vbl_aquarium.utils import unity_models
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
 if TYPE_CHECKING:
@@ -27,3 +30,13 @@ def get_model_classes(module: ModuleType) -> list[type[VBLBaseModel]]:
         for _, class_object in getmembers(module, isclass)
         if issubclass(class_object, VBLBaseModel) and class_object != VBLBaseModel
     ]
+
+def get_unity_model_class_names() -> set[str]:
+    """Get the names of all Unity models.
+    
+    Looks for all classes in the unity_models module that subclass BaseModel (excluding BaseModel itself).
+
+    Returns:
+        The names of all Unity models.
+    """
+    return {model_name for model_name, class_object in getmembers(unity_models, isclass) if issubclass(class_object, BaseModel) and class_object != BaseModel}
