@@ -1,14 +1,12 @@
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel
 from pydantic.alias_generators import to_pascal
 
 
-class VBLBaseModel(BaseModel):
+class VBLBaseModel(BaseModel, alias_generator=to_pascal, populate_by_name=True):
     """Base model for all VBL models.
 
-    Configured to use PascalCase for field names and be immutable.
+    Configured to use PascalCase for field names.
     """
-
-    model_config = ConfigDict(alias_generator=to_pascal, populate_by_name=True)
 
     def to_json_string(self) -> str:
         return self.model_dump_json(by_alias=True)
