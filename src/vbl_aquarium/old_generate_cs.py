@@ -5,13 +5,13 @@ from typing import get_args, get_origin
 from pydantic.alias_generators import to_camel, to_pascal, to_snake
 
 from vbl_aquarium.models import unity
-from vbl_aquarium.utils.common import get_classes
+from vbl_aquarium.utils.common import get_model_classes
 
 p2c_types = {
     "str": "string",
 }
 
-unity_class_names = [x.__name__ for x in get_classes(unity)]
+unity_class_names = [x.__name__ for x in get_model_classes(unity)]
 
 
 def generate_csharp_struct(class_name: str, fields: list[str], enums=None, has_unity_classes=False):

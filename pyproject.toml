@@ -54,7 +54,7 @@ check = "mypy --strict --install-types --non-interactive {args:src/vbl_aquarium}
 
 [tool.basedpyright]
 include = ["src/vbl_aquarium"]
-exclude = ["src/vbl_aquarium/old_build.py", "src/vbl_aquarium/old_generate_cs.py", "src/vbl_aquarium/utils/old_common.py"]
+exclude = ["src/vbl_aquarium/old_build.py", "src/vbl_aquarium/old_generate_cs.py"]
 strict = ["src/vbl_aquarium"]
 
 [tool.ruff.lint]
