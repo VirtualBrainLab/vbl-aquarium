@@ -1,4 +1,4 @@
-name: Build
+name: Build Models
 
 on:
   pull_request: 
@@ -20,12 +20,22 @@ jobs:
         with:
           python-version: '3.x'
           cache: 'pip'
+        
+      - name: 🌐 Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9
 
       - name: 📦 Install dependencies
-        run: pip install .
+        run: |
+          pip install .
+          dotnet tool install csharpier
 
       - name: 🛠️ Build
         run: python src/vbl_aquarium/build.py
+      
+      - name: 🧹 Format
+        run: dotnet csharpier models/csharp
       
       - name: 📤 PR changes
         if: github.ref == 'refs/heads/main'
