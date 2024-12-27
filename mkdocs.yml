@@ -74,12 +74,20 @@ plugins:
         python:
           paths: [ src ]
           options:
-            docstring_style: sphinx
+            docstring_style: google
 nav:
   - Home:
       - index.md
       - Usage: home/usage.md
-  - Development: development/index.md
+  - Development:
+      - development/index.md
+      - "Source Code Documentation":
+          - development/source_code_documentation/index.md
+          - "build.py": development/source_code_documentation/build.md
+          - "utils/generate_csharp.py": development/source_code_documentation/generate_csharp.md
+          - "utils/common.py": development/source_code_documentation/common.md
   - API:
       - api/index.md
+      - "VBL Base Model": api/vbl_base_model.md
+      - "Unity": api/unity_models.md
       - "Ephys Link": api/ephys_link.md

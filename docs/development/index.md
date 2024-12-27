@@ -1,3 +1,5 @@
+# Developing VBL Aquarium
+
 [GitHub Actions](https://github.com/VirtualBrainLab/vbl-aquarium/actions/workflows/build-models.yml)
 are used to automatically build models to the `models` directory.
 To update the models, simply push changes to the underlying pydantic models in

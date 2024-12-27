@@ -1,11 +1,12 @@
 """Build all VBL Aquarium models.
 
-Searches for models that subclass VBLBaseModel in the vlb_aquarium.models subpackage and
-generates JSON schemas to the models/schemas directory and C# structs to the models/csharp directory.
-JSON schemas are separated to one model per file under the models/schemas/{module_name} directory.
-C# structs for each model are bundled together under models/csharp/{module_name}Models.cs.
+Searches for models that subclass VBLBaseModel in the `vbl_aquarium.models` subpackage and
+generates JSON schemas to the `models/schemas` directory and C# structs to the `models/csharp` directory.
+JSON schemas are separated to one model per file under the `models/schemas/{module_name}` directory.
+C# structs for each model are bundled together under `models/csharp/{module_name}Models.cs`.
 
 Usage:
+
     python src/vbl_aquarium/build.py
 """
 
