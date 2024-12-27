@@ -1,4 +1,4 @@
-# VBL Aquarium
+# Virtual Brain Lab Aquarium
 
 ![PyPI - Version](https://img.shields.io/pypi/v/vbl-aquarium)
 [![Build Models](https://github.com/VirtualBrainLab/vbl-aquarium/actions/workflows/build-models.yml/badge.svg)](https://github.com/VirtualBrainLab/vbl-aquarium/actions/workflows/build-models.yml)
@@ -12,34 +12,29 @@ Collection of Pydantic models describing data objects passed between Virtual
 Brain Lab projects.
 
 Corresponding JSON schema and C# files are generated automatically and are
-located in the `/models` directory.
+located in the `models` directory.
 
 ## Usage
 
-Copy or reference whatever models you need from the `models` directory.
+For C# structs or JSON schemas, copy or reference whatever models you need from
+the `models` directory.
 
-GitHub Actions are used to automatically update the built models to the `models`
-directory. To update the models, simply push changes to the underlying pydantic
-models in the `vbl_aquarium` package.
-
-## Install for Development
-
-1. Install [Hatch](https://hatch.pypa.io/latest/)
-2. Clone the repository
-3. Run `hatch shell` in the repository root directory
-
-Use
+To use the Pydantic models directly in Python, install the package with
 
 ```bash
-python src/vbl_aquarium/build.py
+pip install vbl-aquarium
 ```
 
-to build the models locally.
+Then import the models with
 
-Use
-
-```bash
-hatch run check
+```python
+from vbl_aquarium.models.module_name import ModelName
 ```
 
-to run pyright type checking.
+replacing `.module_name` and `ModelName` with the desired model.
+
+## Further Documentation
+
+For more information regarding updating models and each model's specification,
+see the VBL
+Aquarium [documentation](https://virtualbrainlab.github.io/vbl-aquarium/).

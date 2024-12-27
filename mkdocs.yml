@@ -78,3 +78,8 @@ plugins:
 nav:
   - Home:
       - index.md
+      - Usage: home/usage.md
+  - Development: development/index.md
+  - API:
+      - api/index.md
+      - "Ephys Link": api/ephys_link.md
