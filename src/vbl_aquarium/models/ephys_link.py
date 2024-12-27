@@ -1,3 +1,8 @@
+"""Models for the Ephys Link Socket.IO API.
+
+
+
+"""
 from __future__ import annotations
 
 from pydantic import Field

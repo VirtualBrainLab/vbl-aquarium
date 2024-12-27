@@ -3,7 +3,6 @@
 ![PyPI - Version](https://img.shields.io/pypi/v/vbl-aquarium)
 [![Build Models](https://github.com/VirtualBrainLab/vbl-aquarium/actions/workflows/build-models.yml/badge.svg)](https://github.com/VirtualBrainLab/vbl-aquarium/actions/workflows/build-models.yml)
 [![Static Analysis](https://github.com/VirtualBrainLab/vbl-aquarium/actions/workflows/static-analysis.yml/badge.svg)](https://github.com/VirtualBrainLab/vbl-aquarium/actions/workflows/static-analysis.yml)
-[![Pydantic v2](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/pydantic/pydantic/main/docs/badge/v2.json)](https://pydantic.dev)
 [![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![Checked with pyright](https://microsoft.github.io/pyright/img/pyright_badge.svg)](https://microsoft.github.io/pyright/)

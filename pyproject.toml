@@ -29,7 +29,7 @@ classifiers = [
     "Intended Audience :: Science/Research",
 ]
 dependencies = [
-    "pydantic==2.10.4",
+    "pydantic==2.10.4"
 ]
 
 [project.urls]
@@ -52,6 +52,17 @@ dependencies = [
 [tool.hatch.envs.default.scripts]
 check = "basedpyright"
 check-watched = "basedpyright --watch"
+
+[tool.hatch.envs.docs]
+python = "3.13.1"
+skip-install = true
+dependencies = [
+    "mkdocs-material==9.5.49",
+    "mkdocstrings-python==1.12.2",
+]
+[tool.hatch.envs.docs.scripts]
+serve = "mkdocs serve"
+build = "mkdocs build"
 
 [tool.basedpyright]
 include = ["src/vbl_aquarium"]
