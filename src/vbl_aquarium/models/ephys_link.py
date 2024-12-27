@@ -2,6 +2,7 @@
 
 Used by Ephys Link and Pinpoint.
 """
+
 from __future__ import annotations
 
 from pydantic import Field
@@ -12,7 +13,7 @@ from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
 class EphysLinkOptions(VBLBaseModel):
     """Options for running Ephys Link.
-    
+
     Attributes:
         background: Whether to skip the GUI and run using CLI arguments.
         ignore_updates: Whether to ignore updates.
@@ -23,6 +24,7 @@ class EphysLinkOptions(VBLBaseModel):
         mpm_port: Port for New Scale MPM HTTP server.
         serial: Serial port for emergency stop.
     """
+
     background: bool = False
     ignore_updates: bool = False
     type: str = "ump-4"
@@ -41,6 +43,7 @@ class SetPositionRequest(VBLBaseModel):
         position: Position to move to in mm (X, Y, Z, W).
         speed: Speed to move at in mm/s.
     """
+
     manipulator_id: str = Field(min_length=1)
     position: Vector4
     speed: float = Field(gt=0)
@@ -48,23 +51,25 @@ class SetPositionRequest(VBLBaseModel):
 
 class SetInsideBrainRequest(VBLBaseModel):
     """Request format for setting inside brain state.
-    
+
     Attributes:
         manipulator_id: ID of the manipulator to move.
         inside: Whether the manipulator is inside the brain.
     """
+
     manipulator_id: str = Field(min_length=1)
     inside: bool
 
 
 class SetDepthRequest(VBLBaseModel):
     """Request format for driving a manipulator to depth.
-    
+
     Attributes:
         manipulator_id: ID of the manipulator to move.
         depth: Depth to drive to in mm.
         speed: Speed to drive at in mm/s.
     """
+
     manipulator_id: str = Field(min_length=1)
     depth: float
     speed: float = Field(gt=0)
@@ -72,13 +77,14 @@ class SetDepthRequest(VBLBaseModel):
 
 class GetManipulatorsResponse(VBLBaseModel):
     """Response format for requesting available manipulators.
-    
+
     Attributes:
         manipulators: List of manipulators.
         num_axes: Number of axes for the manipulators.
         dimensions: Dimensions of the manipulators (3-axis manipulators should set w to 0).
         error: Error message if any.
     """
+
     # noinspection PyDataclass
     manipulators: list[str] = Field(default_factory=list)
     num_axes: int = Field(default=0, ge=-1)
@@ -88,54 +94,59 @@ class GetManipulatorsResponse(VBLBaseModel):
 
 class PositionalResponse(VBLBaseModel):
     """Response format for the manipulator position.
-    
+
     Attributes:
         position: Position of the manipulator.
         error: Error message if any.
     """
+
     position: Vector4 = Vector4()
     error: str = ""
 
 
 class AngularResponse(VBLBaseModel):
     """Response format for the manipulator angles.
-    
+
     Attributes:
         angles: Position of the manipulator.
         error: Error message if any.
     """
+
     angles: Vector3 = Vector3()
     error: str = ""
 
 
 class ShankCountResponse(VBLBaseModel):
     """Response format for the shank count.
-    
+
     Attributes:
         shank_count: Number of shanks.
         error: Error message if any.
     """
+
     shank_count: int = Field(default=1, ge=1)
     error: str = ""
 
 
 class SetDepthResponse(VBLBaseModel):
     """Response format for driving a manipulator to depth.
-    
+
     Attributes:
         depth: Depth the manipulator is at in mm.
         error: Error message if any.
     """
+
     depth: float = 0
     error: str = ""
 
 
 class BooleanStateResponse(VBLBaseModel):
     """Response format for a boolean state.
-    
+
     Attributes:
         state: State of the event.
         error: Error message if any.
     """
+
     state: bool = False
     error: str = ""
