@@ -13,7 +13,6 @@ public struct BucketRequest
     }
 }
 
-
 [Serializable]
 public struct DockModel
 {
@@ -25,7 +24,6 @@ public struct DockModel
     }
 }
 
-
 [Serializable]
 public struct DownloadRequest
 {
@@ -36,7 +34,6 @@ public struct DownloadRequest
         Password = password;
     }
 }
-
 
 [Serializable]
 public struct DownloadResponse
@@ -51,7 +48,6 @@ public struct DownloadResponse
     }
 }
 
-
 [Serializable]
 public struct LoadModel
 {
@@ -64,7 +60,6 @@ public struct LoadModel
         Data = data;
     }
 }
-
 
 [Serializable]
 public struct LoadRequest
@@ -81,7 +76,6 @@ public struct LoadRequest
     }
 }
 
-
 [Serializable]
 public struct SaveRequest
 {
@@ -96,7 +90,6 @@ public struct SaveRequest
         Password = password;
     }
 }
-
 
 [Serializable]
 public struct UploadRequest

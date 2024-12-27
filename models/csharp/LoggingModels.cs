@@ -11,7 +11,6 @@ public struct Log
     }
 }
 
-
 [Serializable]
 public struct LogError
 {
@@ -22,7 +21,6 @@ public struct LogError
         Msg = msg;
     }
 }
-
 
 [Serializable]
 public struct LogWarning
