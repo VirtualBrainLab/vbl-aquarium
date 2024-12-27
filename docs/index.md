@@ -12,3 +12,31 @@ Brain Lab projects.
 
 Corresponding JSON schema and C# files are generated automatically and are
 located in the `models` directory.
+
+<div class="grid cards" markdown>
+
+-   __:fontawesome-solid-computer: Usage__
+
+    ---
+
+    Learn how to use VBL Aquarium in your project
+
+    [:octicons-arrow-right-24: Usage](home/usage.md)
+
+-   __:fontawesome-solid-code: Develop Models__
+
+    ---
+
+    Install VBL Aquarium locally to develop new models
+
+    [:octicons-arrow-right-24: Install](development/index.md)
+
+
+-   __:material-api: API Reference__
+
+    ---
+
+    View the API reference for the models
+
+    [:octicons-arrow-right-24: API](api/index.md)
+</div>
