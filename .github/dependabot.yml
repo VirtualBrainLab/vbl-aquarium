@@ -13,6 +13,14 @@ updates:
       pip:
         patterns:
           - '*'
+  - package-ecosystem: "nuget" # See documentation for possible values
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "weekly"
+    groups:
+      pip:
+        patterns:
+          - '*'
   - package-ecosystem: "github-actions" # See documentation for possible values
     directory: ".github/workflows" # Location of package manifests
     schedule:

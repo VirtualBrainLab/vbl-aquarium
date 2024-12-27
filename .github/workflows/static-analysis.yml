@@ -21,6 +21,12 @@ jobs:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.WORKFLOW_COMMIT_TOKEN }}
 
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+
       - name: 🥚 Install Hatch
         uses: pypa/hatch@install
 
@@ -44,9 +50,9 @@ jobs:
           title: "chore: Autoformat code"
           branch: "autoformat-code"
           delete-branch: true
-      
+
       - name: 🧶 Lint
         run: hatch fmt --check
-      
+
       - name: 🔍 Type Check
         run: hatch run check
