@@ -18,6 +18,7 @@ public struct AffineTransformModel
     }
 }
 
+
 [Serializable]
 public struct CraniotomyModel
 {
@@ -33,6 +34,7 @@ public struct CraniotomyModel
     }
 }
 
+
 [Serializable]
 public struct InsertionModel
 {
@@ -42,13 +44,7 @@ public struct InsertionModel
     public string TransformName;
     public Vector3 ReferenceCoord;
 
-    public InsertionModel(
-        Vector3 position,
-        Vector3 angles,
-        string atlasName,
-        string transformName,
-        Vector3 referenceCoord
-    )
+    public InsertionModel(Vector3 position, Vector3 angles, string atlasName, string transformName, Vector3 referenceCoord)
     {
         Position = position;
         Angles = angles;
@@ -57,6 +53,7 @@ public struct InsertionModel
         ReferenceCoord = referenceCoord;
     }
 }
+
 
 [Serializable]
 public struct ProbeModel
@@ -74,6 +71,7 @@ public struct ProbeModel
         Color = color;
     }
 }
+
 
 [Serializable]
 public struct RigModel
@@ -94,6 +92,7 @@ public struct RigModel
     }
 }
 
+
 [Serializable]
 public struct SceneModel
 {
@@ -105,15 +104,7 @@ public struct SceneModel
     public string[] SceneData;
     public string Settings;
 
-    public SceneModel(
-        string atlasName,
-        string transformName,
-        ProbeModel[] probes,
-        RigModel[] rigs,
-        CraniotomyModel[] craniotomies,
-        string[] sceneData,
-        string settings
-    )
+    public SceneModel(string atlasName, string transformName, ProbeModel[] probes, RigModel[] rigs, CraniotomyModel[] craniotomies, string[] sceneData, string settings)
     {
         AtlasName = atlasName;
         TransformName = transformName;

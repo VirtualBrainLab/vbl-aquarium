@@ -33,7 +33,7 @@ def _generate_csharp_struct(class_name: str, fields: list[str], enum: tuple[str,
     if enum is not None:
         enum_array = "\n".join(f"    {v[0]} = {v[1]}," for v in enum[1])
         enum_str = f"""
-\n\npublic enum {enum[0]}
+public enum {enum[0]}
 {{
 {enum_array}
 }}
@@ -139,7 +139,7 @@ def generate_csharp(model_classes: list[type[VBLBaseModel]]) -> str:
     # Add `using UnityEngine;` if Unity classes are present.
     for segment in output:
         if any(unity_class in segment for unity_class in get_unity_model_class_names()):
-            output.insert(0, "using UnityEngine;")
+            output.insert(1, "using UnityEngine;")
             break
 
     # Return the complete C# file.
