@@ -1,4 +1,5 @@
 using System;
+
 [Serializable]
 public struct PinpointIdResponse
 {
@@ -11,4 +12,3 @@ public struct PinpointIdResponse
         IsRequester = isRequester;
     }
 }
-

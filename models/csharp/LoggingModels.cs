@@ -1,4 +1,5 @@
 using System;
+
 [Serializable]
 public struct Log
 {
@@ -31,4 +32,3 @@ public struct LogWarning
         Msg = msg;
     }
 }
-

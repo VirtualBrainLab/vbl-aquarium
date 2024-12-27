@@ -1,4 +1,5 @@
 using System;
+
 [Serializable]
 public struct BucketRequest
 {
@@ -104,4 +105,3 @@ public struct UploadRequest
         Password = password;
     }
 }
-

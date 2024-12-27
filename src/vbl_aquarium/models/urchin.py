@@ -4,7 +4,7 @@ from enum import IntEnum
 
 from pydantic import Field
 
-from vbl_aquarium.models.unity import Color, Vector2, Vector3
+from vbl_aquarium.utils.unity_models import Color, Vector2, Vector3
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
 # CustomAtlas
@@ -21,7 +21,7 @@ class CustomAtlasModel(VBLBaseModel):
 
 class AtlasModel(VBLBaseModel):
     name: str
-    reference_coord: Vector3 = None
+    reference_coord: Vector3 = None  # pyright: ignore [reportAssignmentType]
     areas: list[StructureModel]
     colormap: ColormapModel
 
@@ -47,9 +47,9 @@ class CameraModel(VBLBaseModel):
         perspective = 1
 
     id: str = Field(alias="ID")
-    position: Vector3 = None
+    position: Vector3 = None  # pyright: ignore [reportAssignmentType]
     rotation: Vector3 = Vector3()
-    target: Vector3 = None
+    target: Vector3 = None  # pyright: ignore [reportAssignmentType]
     zoom: float = 16
     pan: Vector2 = Vector2()
     mode: CameraMode = Field(
@@ -87,6 +87,7 @@ class MeshModel(VBLBaseModel):
 
 class LineModel(VBLBaseModel):
     id: str = Field(alias="ID")
+    # noinspection PyDataclass
     positions: list[Vector3] = Field(default_factory=list)
     color: Color = Color()
 
@@ -106,6 +107,7 @@ class ProbeModel(VBLBaseModel):
 # Particle group
 
 
+# noinspection PyDataclass
 class ParticleSystemModel(VBLBaseModel):
     id: str = Field(alias="ID")
     n: int
@@ -132,7 +134,7 @@ class CustomMeshModel(VBLBaseModel):
     id: str = Field(alias="ID")
     vertices: list[Vector3]
     triangles: list[int]
-    normals: list[Vector3] = None
+    normals: list[Vector3] = None  # pyright: ignore [reportAssignmentType]
     position: Vector3 = Vector3(x=0, y=0, z=0)
     use_reference: bool = True
     scale: Vector3 = Vector3(x=1, y=1, z=1)

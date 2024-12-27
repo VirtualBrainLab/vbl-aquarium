@@ -1,3 +1,6 @@
+# pyright: reportAny=false, reportExplicitAny=false
+from typing import Any
+
 from pydantic import BaseModel, Field
 
 # Unity models don't get generated as .cs files since they exist in UnityEngine
@@ -27,25 +30,25 @@ class Vector4(BaseModel):
     z: float = 0.0
     w: float = 0.0
 
-    def __add__(self, other):
+    def __add__(self, other: Any):
         if isinstance(other, Vector4):
             return Vector4(x=self.x + other.x, y=self.y + other.y, z=self.z + other.z, w=self.w + other.w)
         error = f"unsupported operand type(s) for +: 'Vector4' and '{type(other)}'"
         raise TypeError(error)
 
-    def __sub__(self, other):
+    def __sub__(self, other: Any):
         if isinstance(other, Vector4):
             return Vector4(x=self.x - other.x, y=self.y - other.y, z=self.z - other.z, w=self.w - other.w)
         error = f"unsupported operand type(s) for -: 'Vector4' and '{type(other)}'"
         raise TypeError(error)
 
-    def __mul__(self, other):
+    def __mul__(self, other: Any):
         if isinstance(other, (int, float)):
             return Vector4(x=self.x * other, y=self.y * other, z=self.z * other, w=self.w * other)
         error = f"unsupported operand type(s) for *: 'Vector4' and '{type(other)}'"
         raise TypeError(error)
 
-    def __truediv__(self, other):
+    def __truediv__(self, other: Any):
         if isinstance(other, (int, float)):
             return Vector4(x=self.x / other, y=self.y / other, z=self.z / other, w=self.w / other)
         error = f"unsupported operand type(s) for /: 'Vector4' and '{type(other)}'"

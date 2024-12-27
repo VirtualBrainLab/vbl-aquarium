@@ -1,4 +1,4 @@
-name: Build
+name: Build Models
 
 on:
   pull_request: 
@@ -14,20 +14,39 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.WORKFLOW_COMMIT_TOKEN }}
 
       - name: 🐍 Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
           cache: 'pip'
+        
+      - name: 🌐 Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9
 
       - name: 📦 Install dependencies
-        run: pip install .
+        run: |
+          pip install .
+          dotnet tool restore
 
       - name: 🛠️ Build
         run: python src/vbl_aquarium/build.py
       
-      - name: 📤 PR changes
+      - name: 🧹 Format
+        run: dotnet csharpier models/csharp
+
+      - name: ✅ Commit code format changes (on PR)
+        if: github.ref != 'refs/heads/main'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: Build Models"
+
+      - name: 📤 PR changes (on main)
         if: github.ref == 'refs/heads/main'
         uses: peter-evans/create-pull-request@v7
         with:

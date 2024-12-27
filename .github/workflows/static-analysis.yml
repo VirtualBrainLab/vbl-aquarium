@@ -1,4 +1,4 @@
-name: Autoformat and Lint
+name: Static Analysis
 
 on:
   pull_request:
@@ -7,8 +7,8 @@ on:
       - main
 
 jobs:
-  autoformat-and-lint:
-    name: Autoformat and Lint
+  analyze:
+    name: Analyze
     if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     permissions:
@@ -21,11 +21,17 @@ jobs:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.WORKFLOW_COMMIT_TOKEN }}
 
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
       - name: 🥚 Install Hatch
         uses: pypa/hatch@install
 
-      - name: 📝 Static Analysis
-        run: hatch fmt
+      - name: 📝 Format Code
+        run: hatch fmt -f
 
       - name: ✅ Commit code format changes
         if: github.ref != 'refs/heads/main'
@@ -44,3 +50,9 @@ jobs:
           title: "chore: Autoformat code"
           branch: "autoformat-code"
           delete-branch: true
+
+      - name: 🧶 Lint
+        run: hatch fmt --check
+
+      - name: 🔍 Type Check
+        run: hatch run check

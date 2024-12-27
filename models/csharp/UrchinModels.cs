@@ -1,5 +1,5 @@
-using UnityEngine;
 using System;
+using UnityEngine;
 
 [Serializable]
 public struct AtlasModel
@@ -9,7 +9,12 @@ public struct AtlasModel
     public StructureModel[] Areas;
     public ColormapModel Colormap;
 
-    public AtlasModel(string name, Vector3 referenceCoord, StructureModel[] areas, ColormapModel colormap)
+    public AtlasModel(
+        string name,
+        Vector3 referenceCoord,
+        StructureModel[] areas,
+        ColormapModel colormap
+    )
     {
         Name = name;
         ReferenceCoord = referenceCoord;
@@ -17,7 +22,6 @@ public struct AtlasModel
         Colormap = colormap;
     }
 }
-
 
 [Serializable]
 public struct CameraModel
@@ -33,7 +37,18 @@ public struct CameraModel
     public bool Controllable;
     public bool Main;
 
-    public CameraModel(string id, Vector3 position, Vector3 rotation, Vector3 target, float zoom, Vector2 pan, CameraMode mode, Color backgroundColor, bool controllable, bool main)
+    public CameraModel(
+        string id,
+        Vector3 position,
+        Vector3 rotation,
+        Vector3 target,
+        float zoom,
+        Vector2 pan,
+        CameraMode mode,
+        Color backgroundColor,
+        bool controllable,
+        bool main
+    )
     {
         ID = id;
         Position = position;
@@ -48,13 +63,11 @@ public struct CameraModel
     }
 }
 
-
 public enum CameraMode
 {
     orthographic = 0,
     perspective = 1,
 }
-
 
 [Serializable]
 public struct CameraRotationModel
@@ -84,7 +97,6 @@ public struct ColormapModel
     }
 }
 
-
 [Serializable]
 public struct CustomAtlasModel
 {
@@ -100,7 +112,6 @@ public struct CustomAtlasModel
     }
 }
 
-
 [Serializable]
 public struct CustomMeshModel
 {
@@ -112,7 +123,15 @@ public struct CustomMeshModel
     public bool UseReference;
     public Vector3 Scale;
 
-    public CustomMeshModel(string id, Vector3[] vertices, int[] triangles, Vector3[] normals, Vector3 position, bool useReference, Vector3 scale)
+    public CustomMeshModel(
+        string id,
+        Vector3[] vertices,
+        int[] triangles,
+        Vector3[] normals,
+        Vector3 position,
+        bool useReference,
+        Vector3 scale
+    )
     {
         ID = id;
         Vertices = vertices;
@@ -123,7 +142,6 @@ public struct CustomMeshModel
         Scale = scale;
     }
 }
-
 
 [Serializable]
 public struct LineModel
@@ -140,7 +158,6 @@ public struct LineModel
     }
 }
 
-
 [Serializable]
 public struct MeshModel
 {
@@ -152,7 +169,15 @@ public struct MeshModel
     public string Material;
     public bool Interactive;
 
-    public MeshModel(string id, string shape, Vector3 position, Color color, Vector3 scale, string material, bool interactive)
+    public MeshModel(
+        string id,
+        string shape,
+        Vector3 position,
+        Color color,
+        Vector3 scale,
+        string material,
+        bool interactive
+    )
     {
         ID = id;
         Shape = shape;
@@ -164,7 +189,6 @@ public struct MeshModel
     }
 }
 
-
 [Serializable]
 public struct ParticleSystemModel
 {
@@ -175,7 +199,14 @@ public struct ParticleSystemModel
     public float[] Sizes;
     public Color[] Colors;
 
-    public ParticleSystemModel(string id, int n, string material, Vector3[] positions, float[] sizes, Color[] colors)
+    public ParticleSystemModel(
+        string id,
+        int n,
+        string material,
+        Vector3[] positions,
+        float[] sizes,
+        Color[] colors
+    )
     {
         ID = id;
         N = n;
@@ -197,7 +228,6 @@ public struct PrimitiveMeshModel
     }
 }
 
-
 [Serializable]
 public struct ProbeModel
 {
@@ -208,7 +238,14 @@ public struct ProbeModel
     public string Style;
     public Vector3 Scale;
 
-    public ProbeModel(string id, Vector3 position, Color color, Vector3 angles, string style, Vector3 scale)
+    public ProbeModel(
+        string id,
+        Vector3 position,
+        Color color,
+        Vector3 angles,
+        string style,
+        Vector3 scale
+    )
     {
         ID = id;
         Position = position;
@@ -218,7 +255,6 @@ public struct ProbeModel
         Scale = scale;
     }
 }
-
 
 [Serializable]
 public struct StructureModel
@@ -232,7 +268,16 @@ public struct StructureModel
     public int Side;
     public string Material;
 
-    public StructureModel(string name, string acronym, int atlasId, Color color, bool visible, float colorIntensity, int side, string material)
+    public StructureModel(
+        string name,
+        string acronym,
+        int atlasId,
+        Color color,
+        bool visible,
+        float colorIntensity,
+        int side,
+        string material
+    )
     {
         Name = name;
         Acronym = acronym;
@@ -244,7 +289,6 @@ public struct StructureModel
         Material = material;
     }
 }
-
 
 [Serializable]
 public struct TextModel
@@ -278,7 +322,6 @@ public struct VolumeDataChunk
     }
 }
 
-
 [Serializable]
 public struct VolumeMetaModel
 {
@@ -295,4 +338,3 @@ public struct VolumeMetaModel
         Visible = visible;
     }
 }
-

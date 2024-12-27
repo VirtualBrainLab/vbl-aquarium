@@ -1,5 +1,6 @@
-using UnityEngine;
 using System;
+using UnityEngine;
+
 [Serializable]
 public struct BoolData
 {
@@ -26,7 +27,6 @@ public struct BoolList
     }
 }
 
-
 [Serializable]
 public struct ColorData
 {
@@ -39,7 +39,6 @@ public struct ColorData
         Value = value;
     }
 }
-
 
 [Serializable]
 public struct ColorList
@@ -128,7 +127,6 @@ public struct IDListBoolList
     }
 }
 
-
 [Serializable]
 public struct IDListColorData
 {
@@ -141,7 +139,6 @@ public struct IDListColorData
         Value = value;
     }
 }
-
 
 [Serializable]
 public struct IDListColorList
@@ -234,7 +231,6 @@ public struct IDListStringList
     }
 }
 
-
 [Serializable]
 public struct IDListVector2Data
 {
@@ -247,7 +243,6 @@ public struct IDListVector2Data
         Value = value;
     }
 }
-
 
 [Serializable]
 public struct IDListVector2List
@@ -262,7 +257,6 @@ public struct IDListVector2List
     }
 }
 
-
 [Serializable]
 public struct IDListVector3Data
 {
@@ -275,7 +269,6 @@ public struct IDListVector3Data
         Value = value;
     }
 }
-
 
 [Serializable]
 public struct IDListVector3List
@@ -342,7 +335,6 @@ public struct StringList
     }
 }
 
-
 [Serializable]
 public struct Vector2Data
 {
@@ -355,7 +347,6 @@ public struct Vector2Data
         Value = value;
     }
 }
-
 
 [Serializable]
 public struct Vector3Data
@@ -370,7 +361,6 @@ public struct Vector3Data
     }
 }
 
-
 [Serializable]
 public struct Vector3List
 {
@@ -383,4 +373,3 @@ public struct Vector3List
         Values = values;
     }
 }
-
