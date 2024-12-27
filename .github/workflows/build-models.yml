@@ -36,8 +36,16 @@ jobs:
       
       - name: 🧹 Format
         run: dotnet csharpier models/csharp
-      
-      - name: 📤 PR changes
+
+      - name: ✅ Commit code format changes (on PR)
+        if: github.ref != 'refs/heads/main'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: Autoformat code"
+          skip_fetch: true
+          skip_checkout: true
+
+      - name: 📤 PR changes (on main)
         if: github.ref == 'refs/heads/main'
         uses: peter-evans/create-pull-request@v7
         with:
