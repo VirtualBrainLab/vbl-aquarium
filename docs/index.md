@@ -29,14 +29,14 @@ located in the `models` directory.
 
     Install VBL Aquarium locally to develop new models
 
-    [:octicons-arrow-right-24: Install](development/index.md)
+    [:octicons-arrow-right-24: Install](home/development.md)
 
 
--   __:material-api: API Reference__
+-   __:material-api: Model API Reference__
 
     ---
 
     View the API reference for the models
 
-    [:octicons-arrow-right-24: API](api/index.md)
+    [:octicons-arrow-right-24: API](reference/vbl_aquarium/models/index.md)
 </div>
