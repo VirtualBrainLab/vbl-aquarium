@@ -7,7 +7,9 @@ from typing import TYPE_CHECKING, get_args, get_origin
 from pydantic.alias_generators import to_camel, to_pascal, to_snake
 
 from vbl_aquarium.utils.common import get_unity_model_class_names
-from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
+
+if TYPE_CHECKING:
+    from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
 if TYPE_CHECKING:
     from pydantic.fields import FieldInfo

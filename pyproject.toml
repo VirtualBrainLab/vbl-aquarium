@@ -58,7 +58,7 @@ python = "3.13.1"
 skip-install = true
 dependencies = [
     "mkdocs-material==9.5.49",
-    "mkdocstrings-python==1.12.2",
+    "mkdocstrings-python==1.13.0",
 ]
 [tool.hatch.envs.docs.scripts]
 serve = "mkdocs serve"
@@ -66,8 +66,7 @@ build = "mkdocs build"
 
 [tool.basedpyright]
 include = ["src/vbl_aquarium"]
-exclude = ["src/vbl_aquarium/old_build.py", "src/vbl_aquarium/old_generate_cs.py"]
 strict = ["src/vbl_aquarium"]
 
-[tool.ruff.lint]
-ignore = ["A003", "EM101", "FBT002", "T201", "TCH001", "TRY002", "TRY003"]
+#[tool.ruff.lint]
+#ignore = ["A003", "EM101", "FBT002", "T201", "TCH001", "TRY002", "TRY003"]

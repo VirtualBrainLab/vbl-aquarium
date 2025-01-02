@@ -1,6 +1,8 @@
 """Models for Unity data types."""
 
-# pyright: reportAny=false, reportExplicitAny=false
+# pyright: reportUnnecessaryIsInstance=false, reportAny=false, reportExplicitAny=false
+from __future__ import annotations
+
 from typing import Any
 
 from pydantic import BaseModel, Field
@@ -67,7 +69,7 @@ class Vector4(BaseModel):
     z: float = 0.0
     w: float = 0.0
 
-    def __add__(self, other: Any):
+    def __add__(self, other: Any) -> Vector4:
         """Add two vectors together.
 
         Args:
@@ -79,12 +81,12 @@ class Vector4(BaseModel):
         Raises:
             TypeError: If the other object is not a Vector4.
         """
-        if isinstance(other, Vector4):
-            return Vector4(x=self.x + other.x, y=self.y + other.y, z=self.z + other.z, w=self.w + other.w)
-        error = f"unsupported operand type(s) for +: 'Vector4' and '{type(other)}'"
-        raise TypeError(error)
+        if not isinstance(other, Vector4):
+            error = f"Unsupported operand type(s) for +: 'Vector4' and '{type(other)}'"
+            raise TypeError(error)
+        return Vector4(x=self.x + other.x, y=self.y + other.y, z=self.z + other.z, w=self.w + other.w)
 
-    def __sub__(self, other: Any):
+    def __sub__(self, other: Any) -> Vector4:
         """Subtract one vector from another.
 
         Args:
@@ -96,12 +98,12 @@ class Vector4(BaseModel):
         Raises:
             TypeError: If the other object is not a Vector4.
         """
-        if isinstance(other, Vector4):
-            return Vector4(x=self.x - other.x, y=self.y - other.y, z=self.z - other.z, w=self.w - other.w)
-        error = f"unsupported operand type(s) for -: 'Vector4' and '{type(other)}'"
-        raise TypeError(error)
+        if not isinstance(other, Vector4):
+            error = f"Unsupported operand type(s) for -: 'Vector4' and '{type(other)}'"
+            raise TypeError(error)
+        return Vector4(x=self.x - other.x, y=self.y - other.y, z=self.z - other.z, w=self.w - other.w)
 
-    def __mul__(self, other: Any):
+    def __mul__(self, other: Any) -> Vector4:
         """Multiply a vector by a scalar.
 
         Args:
@@ -113,12 +115,12 @@ class Vector4(BaseModel):
         Raises:
             TypeError: If the other object is not an int or float.
         """
-        if isinstance(other, (int, float)):
-            return Vector4(x=self.x * other, y=self.y * other, z=self.z * other, w=self.w * other)
-        error = f"unsupported operand type(s) for *: 'Vector4' and '{type(other)}'"
-        raise TypeError(error)
+        if not isinstance(other, (int, float)):
+            error = f"Unsupported operand type(s) for *: 'Vector4' and '{type(other)}'"
+            raise TypeError(error)
+        return Vector4(x=self.x * other, y=self.y * other, z=self.z * other, w=self.w * other)
 
-    def __truediv__(self, other: Any):
+    def __truediv__(self, other: Any) -> Vector4:
         """Divide a vector by a scalar.
 
         Args:
@@ -130,7 +132,7 @@ class Vector4(BaseModel):
         Raises:
             TypeError: If the other object is not an int or float.
         """
-        if isinstance(other, (int, float)):
-            return Vector4(x=self.x / other, y=self.y / other, z=self.z / other, w=self.w / other)
-        error = f"unsupported operand type(s) for /: 'Vector4' and '{type(other)}'"
-        raise TypeError(error)
+        if not isinstance(other, (int, float)):
+            error = f"Unsupported operand type(s) for /: 'Vector4' and '{type(other)}'"
+            raise TypeError(error)
+        return Vector4(x=self.x / other, y=self.y / other, z=self.z / other, w=self.w / other)

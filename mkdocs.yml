@@ -47,6 +47,7 @@ theme:
     - toc.follow
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/mkdocstrings.css
 markdown_extensions:
   - admonition
   - attr_list
