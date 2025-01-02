@@ -4,7 +4,7 @@ from enum import IntEnum
 
 from pydantic import Field
 
-from vbl_aquarium.utils.unity_models import Color, Vector2, Vector3
+from vbl_aquarium.models.unity import Color, Vector2, Vector3
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
 # CustomAtlas

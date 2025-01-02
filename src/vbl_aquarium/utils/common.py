@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING
 
 from pydantic import BaseModel
 
-from vbl_aquarium.utils import unity_models
+from vbl_aquarium.models import unity
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
 if TYPE_CHECKING:
@@ -42,6 +42,6 @@ def get_unity_model_class_names() -> set[str]:
     """
     return {
         model_name
-        for model_name, class_object in getmembers(unity_models, isclass)
+        for model_name, class_object in getmembers(unity, isclass)
         if issubclass(class_object, BaseModel) and class_object != BaseModel
     }

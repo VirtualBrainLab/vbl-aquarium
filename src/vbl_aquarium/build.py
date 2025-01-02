@@ -35,6 +35,10 @@ for directory in [SCHEMA_DIRECTORY, CSHARP_DIRECTORY]:
 
 # Look for all modules under the models subpackage.
 for module in iter_modules([MODELS_DIRECTORY]):
+    # Skip Unity module since it's already built into Unity.
+    if module.name == "unity":
+        continue
+
     # Collect classes.
     imported_module = import_module(f"vbl_aquarium.models.{module.name}")
     module_classes = get_model_classes(imported_module)
