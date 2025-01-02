@@ -67,6 +67,3 @@ build = "mkdocs build"
 [tool.basedpyright]
 include = ["src/vbl_aquarium"]
 strict = ["src/vbl_aquarium"]
-
-#[tool.ruff.lint]
-#ignore = ["A003", "EM101", "FBT002", "T201", "TCH001", "TRY002", "TRY003"]
