@@ -59,6 +59,9 @@ skip-install = true
 dependencies = [
     "mkdocs-material==9.5.49",
     "mkdocstrings-python==1.13.0",
+    "mkdocs-gen-files==0.5.0",
+    "mkdocs-literate-nav==0.6.1",
+    "mkdocs-section-index==0.3.9"
 ]
 [tool.hatch.envs.docs.scripts]
 serve = "mkdocs serve"
@@ -67,6 +70,3 @@ build = "mkdocs build"
 [tool.basedpyright]
 include = ["src/vbl_aquarium"]
 strict = ["src/vbl_aquarium"]
-
-#[tool.ruff.lint]
-#ignore = ["A003", "EM101", "FBT002", "T201", "TCH001", "TRY002", "TRY003"]

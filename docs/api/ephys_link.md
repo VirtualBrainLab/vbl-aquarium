@@ -1,1 +1,0 @@
-::: vbl_aquarium.models.ephys_link

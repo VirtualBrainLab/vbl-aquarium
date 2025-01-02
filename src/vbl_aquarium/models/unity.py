@@ -1,4 +1,7 @@
-"""Models for Unity data types."""
+"""Models for Unity data types.
+
+JSON Schema and C# models are not generated for these models since they are built-in Unity types.
+"""
 
 # pyright: reportUnnecessaryIsInstance=false, reportAny=false, reportExplicitAny=false
 from __future__ import annotations
