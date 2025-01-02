@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from pydantic import Field
 
-from vbl_aquarium.utils.unity_models import Vector3, Vector4
+from vbl_aquarium.models.unity import Vector3, Vector4
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
 

@@ -47,6 +47,7 @@ theme:
     - toc.follow
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/mkdocstrings.css
 markdown_extensions:
   - admonition
   - attr_list
@@ -89,5 +90,5 @@ nav:
   - API:
       - api/index.md
       - "VBL Base Model": api/vbl_base_model.md
-      - "Unity": api/unity_models.md
+      - "Unity": api/unity.md
       - "Ephys Link": api/ephys_link.md
