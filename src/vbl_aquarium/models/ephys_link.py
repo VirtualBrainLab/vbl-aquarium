@@ -34,6 +34,20 @@ class EphysLinkOptions(VBLBaseModel):
     mpm_port: int = Field(default=8080, ge=1024, le=49151)
     serial: str = "no-e-stop"
 
+class PlatformInfo(VBLBaseModel):
+    """Information about the manipulator platform.
+
+    Attributes:
+        name: Name of the manipulator platform.
+        cli_name: CLI identifier for the manipulator platform (for the `-t` flag).
+        num_axes: Number of axes on a manipulator.
+        dimensions: Dimensions of the manipulators (3-axis manipulators should set w to 0).
+    """
+
+    name: str = Field(min_length=1)
+    cli_name: str = Field(min_length=1)
+    num_axes: int = Field(default=0, ge=-1)
+    dimensions: Vector4 = Vector4()
 
 class SetPositionRequest(VBLBaseModel):
     """Request format for moving a manipulator to a position.
@@ -79,16 +93,12 @@ class GetManipulatorsResponse(VBLBaseModel):
     """Response format for requesting available manipulators.
 
     Attributes:
-        manipulators: List of manipulators.
-        num_axes: Number of axes for the manipulators.
-        dimensions: Dimensions of the manipulators (3-axis manipulators should set w to 0).
+        manipulators: List of manipulators by ID.
         error: Error message if any.
     """
 
     # noinspection PyDataclass
     manipulators: list[str] = Field(default_factory=list)
-    num_axes: int = Field(default=0, ge=-1)
-    dimensions: Vector4 = Vector4()
     error: str = ""
 
 
