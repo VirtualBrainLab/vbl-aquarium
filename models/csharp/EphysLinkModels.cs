@@ -79,14 +79,14 @@ public struct PlatformInfo
 {
     public string Name;
     public string CliName;
-    public int NumAxes;
+    public int AxesCount;
     public Vector4 Dimensions;
 
-    public PlatformInfo(string name, string cliName, int numAxes, Vector4 dimensions)
+    public PlatformInfo(string name, string cliName, int axesCount, Vector4 dimensions)
     {
         Name = name;
         CliName = cliName;
-        NumAxes = numAxes;
+        AxesCount = axesCount;
         Dimensions = dimensions;
     }
 }
