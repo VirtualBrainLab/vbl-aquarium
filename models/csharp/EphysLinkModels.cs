@@ -65,21 +65,29 @@ public struct EphysLinkOptions
 public struct GetManipulatorsResponse
 {
     public string[] Manipulators;
-    public int NumAxes;
-    public Vector4 Dimensions;
     public string Error;
 
-    public GetManipulatorsResponse(
-        string[] manipulators,
-        int numAxes,
-        Vector4 dimensions,
-        string error
-    )
+    public GetManipulatorsResponse(string[] manipulators, string error)
     {
         Manipulators = manipulators;
+        Error = error;
+    }
+}
+
+[Serializable]
+public struct PlatformInfo
+{
+    public string Name;
+    public string CliName;
+    public int NumAxes;
+    public Vector4 Dimensions;
+
+    public PlatformInfo(string name, string cliName, int numAxes, Vector4 dimensions)
+    {
+        Name = name;
+        CliName = cliName;
         NumAxes = numAxes;
         Dimensions = dimensions;
-        Error = error;
     }
 }
 
