@@ -41,13 +41,13 @@ class PlatformInfo(VBLBaseModel):
     Attributes:
         name: Name of the manipulator platform.
         cli_name: CLI identifier for the manipulator platform (for the `-t` flag).
-        num_axes: Number of axes on a manipulator.
+        axes_count: Number of axes on a manipulator.
         dimensions: Dimensions of the manipulators (3-axis manipulators should set w to 0).
     """
 
     name: str = Field(min_length=1)
     cli_name: str = Field(min_length=1)
-    num_axes: int = Field(default=0, ge=-1)
+    axes_count: int = Field(default=0, ge=-1)
     dimensions: Vector4 = Vector4()
 
 
