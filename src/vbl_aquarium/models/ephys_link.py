@@ -34,6 +34,7 @@ class EphysLinkOptions(VBLBaseModel):
     mpm_port: int = Field(default=8080, ge=1024, le=49151)
     serial: str = "no-e-stop"
 
+
 class PlatformInfo(VBLBaseModel):
     """Information about the manipulator platform.
 
@@ -48,6 +49,7 @@ class PlatformInfo(VBLBaseModel):
     cli_name: str = Field(min_length=1)
     num_axes: int = Field(default=0, ge=-1)
     dimensions: Vector4 = Vector4()
+
 
 class SetPositionRequest(VBLBaseModel):
     """Request format for moving a manipulator to a position.
