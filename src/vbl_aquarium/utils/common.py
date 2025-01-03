@@ -26,9 +26,9 @@ def get_model_classes(module: ModuleType) -> list[type[VBLBaseModel]]:
         A list of all model classes in the module.
     """
     return [
-        class_object
-        for _, class_object in getmembers(module, isclass)
-        if issubclass(class_object, VBLBaseModel) and class_object != VBLBaseModel
+        class_type
+        for _, class_type in getmembers(module, isclass)
+        if issubclass(class_type, VBLBaseModel) and class_type != VBLBaseModel
     ]
 
 
