@@ -53,7 +53,7 @@ class PlatformInfo(VBLBaseModel):
 
 class SetPositionRequest(VBLBaseModel):
     """Position to set a manipulator to.
-    
+
     These are the absolute positions of the manipulator stages.
 
     Attributes:
@@ -81,7 +81,7 @@ class SetInsideBrainRequest(VBLBaseModel):
 
 class SetDepthRequest(VBLBaseModel):
     """Depth to drive a manipulator to.
-    
+
     These are the absolute positions of the manipulator stages.
 
     Attributes:
@@ -122,7 +122,7 @@ class PositionalResponse(VBLBaseModel):
 
 class AngularResponse(VBLBaseModel):
     """Manipulator axis angles.
-    
+
     This is not very standardized and its usage is platform-specific.
 
     Attributes:
