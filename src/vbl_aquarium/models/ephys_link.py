@@ -36,7 +36,7 @@ class EphysLinkOptions(VBLBaseModel):
 
 
 class PlatformInfo(VBLBaseModel):
-    """Information about the manipulator platform.
+    """General metadata information about the manipulator platform
 
     Attributes:
         name: Name of the manipulator platform.
@@ -92,7 +92,7 @@ class SetDepthRequest(VBLBaseModel):
 
 
 class GetManipulatorsResponse(VBLBaseModel):
-    """Response format for requesting available manipulators.
+    """List the IDs of available manipulators from the active platform.
 
     Attributes:
         manipulators: List of manipulators by ID.
