@@ -36,7 +36,7 @@ class EphysLinkOptions(VBLBaseModel):
 
 
 class PlatformInfo(VBLBaseModel):
-    """Information about the manipulator platform.
+    """General metadata information about the manipulator platform
 
     Attributes:
         name: Name of the manipulator platform.
@@ -52,7 +52,9 @@ class PlatformInfo(VBLBaseModel):
 
 
 class SetPositionRequest(VBLBaseModel):
-    """Request format for moving a manipulator to a position.
+    """Position to set a manipulator to.
+
+    These are the absolute positions of the manipulator stages.
 
     Attributes:
         manipulator_id: ID of the manipulator to move.
@@ -66,7 +68,7 @@ class SetPositionRequest(VBLBaseModel):
 
 
 class SetInsideBrainRequest(VBLBaseModel):
-    """Request format for setting inside brain state.
+    """Set the "inside brain" state of a manipulator.
 
     Attributes:
         manipulator_id: ID of the manipulator to move.
@@ -78,7 +80,9 @@ class SetInsideBrainRequest(VBLBaseModel):
 
 
 class SetDepthRequest(VBLBaseModel):
-    """Request format for driving a manipulator to depth.
+    """Depth to drive a manipulator to.
+
+    These are the absolute positions of the manipulator stages.
 
     Attributes:
         manipulator_id: ID of the manipulator to move.
@@ -92,7 +96,7 @@ class SetDepthRequest(VBLBaseModel):
 
 
 class GetManipulatorsResponse(VBLBaseModel):
-    """Response format for requesting available manipulators.
+    """List the IDs of available manipulators from the active platform.
 
     Attributes:
         manipulators: List of manipulators by ID.
@@ -105,7 +109,7 @@ class GetManipulatorsResponse(VBLBaseModel):
 
 
 class PositionalResponse(VBLBaseModel):
-    """Response format for the manipulator position.
+    """Position of a manipulator.
 
     Attributes:
         position: Position of the manipulator.
@@ -117,7 +121,9 @@ class PositionalResponse(VBLBaseModel):
 
 
 class AngularResponse(VBLBaseModel):
-    """Response format for the manipulator angles.
+    """Manipulator axis angles.
+
+    This is not very standardized and its usage is platform-specific.
 
     Attributes:
         angles: Position of the manipulator.
@@ -129,7 +135,7 @@ class AngularResponse(VBLBaseModel):
 
 
 class ShankCountResponse(VBLBaseModel):
-    """Response format for the shank count.
+    """Number of electrode shanks on a manipulator.
 
     Attributes:
         shank_count: Number of shanks.
@@ -141,7 +147,7 @@ class ShankCountResponse(VBLBaseModel):
 
 
 class SetDepthResponse(VBLBaseModel):
-    """Response format for driving a manipulator to depth.
+    """Final depth a manipulator is at after a drive.
 
     Attributes:
         depth: Depth the manipulator is at in mm.
@@ -153,7 +159,7 @@ class SetDepthResponse(VBLBaseModel):
 
 
 class BooleanStateResponse(VBLBaseModel):
-    """Response format for a boolean state.
+    """Boolean state from an event.
 
     Attributes:
         state: State of the event.
