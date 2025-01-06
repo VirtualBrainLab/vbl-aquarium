@@ -105,7 +105,7 @@ class GetManipulatorsResponse(VBLBaseModel):
 
 
 class PositionalResponse(VBLBaseModel):
-    """Response format for the manipulator position.
+    """Position of a manipulator.
 
     Attributes:
         position: Position of the manipulator.
