@@ -37,4 +37,4 @@ replacing `.module_name` and `ModelName` with the desired model.
 
 For more information regarding updating models and each model's specification,
 see the VBL
-Aquarium [documentation](https://virtualbrainlab.github.io/vbl-aquarium/).
+Aquarium [documentation](https://aquarium.virtualbrainlab.org).
