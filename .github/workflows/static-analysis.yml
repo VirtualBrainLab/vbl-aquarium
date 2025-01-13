@@ -25,23 +25,17 @@ jobs:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.WORKFLOW_COMMIT_TOKEN }}
 
-      - name: 🐍 Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.13'
-          cache: 'pip'
-
       - name: 🥚 Install Hatch
         uses: pypa/hatch@install
 
       - name: 📝 Format Code
-        run: hatch fmt -f
+        run: hatch fmt
 
       - name: ✅ Commit code format changes
         if: github.ref != 'refs/heads/main'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: Autoformat code"
+          commit_message: "chore: Format code"
           skip_fetch: true
           skip_checkout: true
 
@@ -50,13 +44,30 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.PR_TOKEN }}
-          commit-message: "chore: Autoformat code"
-          title: "chore: Autoformat code"
-          branch: "autoformat-code"
+          commit-message: "chore: Format code"
+          title: "chore: Format code"
+          branch: "format-code"
           delete-branch: true
+  
+  type-check:
+    name: Type Check
+    if: github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 🛎 Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
 
-      - name: 🧶 Lint
-        run: hatch fmt --check
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: 🥚 Install Hatch
+        uses: pypa/hatch@install
 
       - name: 🔍 Type Check
         run: hatch run check
