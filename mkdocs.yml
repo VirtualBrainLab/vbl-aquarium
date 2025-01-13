@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 
 site_name: VBL Aquarium
-site_url: https://virtualbrainlab.github.io/vbl-aquarium
+site_url: https://aquarium.virtualbrainlab.org
 repo_url: https://github.com/VirtualBrainLab/vbl-aquarium
 repo_name: virtualbrainlab/vbl-aquarium
 copyright: Copyright &copy; 2024 Virtual Brain Lab
