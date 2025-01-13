@@ -16,14 +16,14 @@ concurrency:
 
 jobs:
 
-  build:
-    name: Build
+  build-docs:
+    name: Build Documentation
     uses: ./.github/workflows/build-docs.yml
 
   deploy:
     name: Deploy Documentation
 
-    needs: build
+    needs: build-docs
 
     environment:
       name: github-pages

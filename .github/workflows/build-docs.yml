@@ -11,8 +11,8 @@ concurrency:
   cancel-in-progress: true
  
 jobs:
-  build:
-    name: Build
+  build-docs:
+    name: Build Documentation
     
     runs-on: ubuntu-latest
     

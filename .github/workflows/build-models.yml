@@ -11,8 +11,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Build
+  build-models:
+    name: Build Models
     runs-on: ubuntu-latest
     
     steps:
