@@ -44,9 +44,9 @@ path = "src/vbl_aquarium/__about__.py"
 exclude = ["/models", "/.github", "/.idea"]
 
 [tool.hatch.envs.default]
-python = "3.13.1"
+python = "3.13"
 dependencies = [
-    "basedpyright==1.23.1"
+    "basedpyright==1.27.1"
 ]
 
 [tool.hatch.envs.default.scripts]
