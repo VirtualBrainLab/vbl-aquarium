@@ -54,7 +54,7 @@ check = "basedpyright"
 check-watched = "basedpyright --watch"
 
 [tool.hatch.envs.docs]
-python = "3.13.1"
+python = "3.13"
 skip-install = true
 dependencies = [
     "mkdocs-material==9.5.49",
