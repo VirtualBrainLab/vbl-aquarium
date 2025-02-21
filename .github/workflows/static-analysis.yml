@@ -22,8 +22,8 @@ jobs:
       - name: 🛎 Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
           token: ${{ secrets.WORKFLOW_COMMIT_TOKEN }}
+          ref: ${{ github.head_ref }}
 
       - name: 🥚 Install Hatch
         uses: pypa/hatch@install
