@@ -18,7 +18,7 @@ jobs:
     
     steps:
       - name: 🛎 Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ github.head_ref }}
 
@@ -35,6 +35,6 @@ jobs:
         run: hatch -e docs run build
 
       - name: ⬆️ Upload Artifacts
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: "site"
