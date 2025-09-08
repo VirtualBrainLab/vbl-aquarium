@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: 🛎 Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           token: ${{ secrets.WORKFLOW_COMMIT_TOKEN }}
           ref: ${{ github.head_ref }}
@@ -33,7 +33,7 @@ jobs:
 
       - name: ✅ Commit code format changes
         if: github.ref != 'refs/heads/main'
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "chore: Format code"
           skip_fetch: true
@@ -56,12 +56,12 @@ jobs:
     
     steps:
       - name: 🛎 Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ github.head_ref }}
 
       - name: 🐍 Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.13'
           cache: 'pip'
