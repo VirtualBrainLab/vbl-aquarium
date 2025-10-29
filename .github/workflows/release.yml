@@ -1,0 +1,47 @@
+name: Release Version
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  # Publish Python package to PyPI.
+  publish-to-pypi:
+    name: Publish to PyPI
+
+    runs-on: ubuntu-latest
+
+    environment:
+      name: pypi
+      url: https://pypi.org/p/ephys-link
+    
+    permissions:
+      id-token: write
+    
+    steps:
+      - name: 🛎 Checkout
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+
+      - name: 📦 Install Hatch
+        uses: pypa/hatch@install
+
+      - name: 🔨 Build Package
+        run: hatch build
+
+      - name: 📦 Publish Distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+  
+      - name: 📦 Make Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ github.ref_name }}
+          generateReleaseNotes: true
+          prerelease: ${{ contains(github.ref_name, 'a') || contains(github.ref_name, 'b') || contains(github.ref_name, 'c') || contains(github.ref_name, 'd') }}
