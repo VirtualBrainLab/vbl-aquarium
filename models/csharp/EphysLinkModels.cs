@@ -37,6 +37,7 @@ public struct EphysLinkOptions
     public bool UseProxy;
     public string ProxyAddress;
     public int MpmPort;
+    public int ParallaxPort;
     public string Serial;
 
     public EphysLinkOptions(
@@ -47,6 +48,7 @@ public struct EphysLinkOptions
         bool useProxy,
         string proxyAddress,
         int mpmPort,
+        int parallaxPort,
         string serial
     )
     {
@@ -57,6 +59,7 @@ public struct EphysLinkOptions
         UseProxy = useProxy;
         ProxyAddress = proxyAddress;
         MpmPort = mpmPort;
+        ParallaxPort = parallaxPort;
         Serial = serial;
     }
 }

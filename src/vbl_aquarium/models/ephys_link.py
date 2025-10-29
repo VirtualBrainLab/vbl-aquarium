@@ -32,6 +32,7 @@ class EphysLinkOptions(VBLBaseModel):
     use_proxy: bool = False
     proxy_address: str = "proxy2.virtualbrainlab.org"
     mpm_port: int = Field(default=8080, ge=1024, le=49151)
+    parallax_port: int = Field(default=8081, ge=1024, le=49151)
     serial: str = "no-e-stop"
 
 
