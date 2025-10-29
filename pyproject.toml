@@ -17,19 +17,14 @@ authors = [
 classifiers = [
     "Development Status :: 4 - Beta",
     "Programming Language :: Python",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
     "Operating System :: OS Independent",
     "Intended Audience :: Science/Research",
 ]
 dependencies = [
-    "pydantic==2.10.6"
+    "pydantic==2.12.3"
 ]
 
 [project.urls]
@@ -44,24 +39,25 @@ path = "src/vbl_aquarium/__about__.py"
 exclude = ["/models", "/.github", "/.idea"]
 
 [tool.hatch.envs.default]
-python = "3.13"
+python = "3.14"
 dependencies = [
     "basedpyright==1.27.1"
 ]
 
 [tool.hatch.envs.default.scripts]
+build = "python src/vbl_aquarium/build.py"
 check = "basedpyright"
 check-watched = "basedpyright --watch"
 
 [tool.hatch.envs.docs]
-python = "3.13"
+python = "3.14"
 skip-install = true
 dependencies = [
-    "mkdocs-material==9.6.5",
-    "mkdocstrings-python==1.16.1",
+    "mkdocs-material==9.6.22",
+    "mkdocstrings-python==1.18.2",
     "mkdocs-gen-files==0.5.0",
-    "mkdocs-literate-nav==0.6.1",
-    "mkdocs-section-index==0.3.9"
+    "mkdocs-literate-nav==0.6.2",
+    "mkdocs-section-index==0.3.10"
 ]
 [tool.hatch.envs.docs.scripts]
 serve = "mkdocs serve"
