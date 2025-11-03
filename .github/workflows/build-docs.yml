@@ -18,12 +18,12 @@ jobs:
     
     steps:
       - name: 🛎 Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ github.head_ref }}
 
       - name: 🐍 Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.13"
           cache: "pip"
@@ -35,6 +35,6 @@ jobs:
         run: hatch -e docs run build
 
       - name: ⬆️ Upload Artifacts
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: "site"
