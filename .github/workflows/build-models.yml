@@ -17,19 +17,19 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.WORKFLOW_COMMIT_TOKEN }}
 
       - name: 🐍 Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.x'
           cache: 'pip'
         
       - name: 🌐 Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 9
 
@@ -46,13 +46,13 @@ jobs:
 
       - name: ✅ Commit code format changes (on PR)
         if: github.ref != 'refs/heads/main'
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "chore: Build Models"
 
       - name: 📤 PR changes (on main)
         if: github.ref == 'refs/heads/main'
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.PR_TOKEN }}
           commit-message: "chore: Build Models"
