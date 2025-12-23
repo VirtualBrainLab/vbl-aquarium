@@ -34,8 +34,6 @@ public struct EphysLinkOptions
     public bool IgnoreUpdates;
     public string Type;
     public bool Debug;
-    public bool UseProxy;
-    public string ProxyAddress;
     public int MpmPort;
     public int ParallaxPort;
     public string Serial;
@@ -45,8 +43,6 @@ public struct EphysLinkOptions
         bool ignoreUpdates,
         string type,
         bool debug,
-        bool useProxy,
-        string proxyAddress,
         int mpmPort,
         int parallaxPort,
         string serial
@@ -56,8 +52,6 @@ public struct EphysLinkOptions
         IgnoreUpdates = ignoreUpdates;
         Type = type;
         Debug = debug;
-        UseProxy = useProxy;
-        ProxyAddress = proxyAddress;
         MpmPort = mpmPort;
         ParallaxPort = parallaxPort;
         Serial = serial;

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pydantic import Field
 
-from vbl_aquarium.models.unity import Color, Vector2, Vector3  # noqa: TCH001
+from vbl_aquarium.models.unity import Color, Vector2, Vector3  # noqa: TC001
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
 
 
