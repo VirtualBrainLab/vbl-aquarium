@@ -1,13 +1,9 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-
 from pydantic import Field
 
+from vbl_aquarium.models.unity import Color, Vector2, Vector3  # noqa: TC001
 from vbl_aquarium.utils.vbl_base_model import VBLBaseModel
-
-if TYPE_CHECKING:
-    from vbl_aquarium.models.unity import Color, Vector2, Vector3
 
 
 # Standard types and lists
