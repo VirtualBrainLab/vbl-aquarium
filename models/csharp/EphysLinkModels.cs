@@ -14,6 +14,7 @@ public struct AngularResponse
     }
 }
 
+
 [Serializable]
 public struct BooleanStateResponse
 {
@@ -27,6 +28,7 @@ public struct BooleanStateResponse
     }
 }
 
+
 [Serializable]
 public struct EphysLinkOptions
 {
@@ -34,35 +36,22 @@ public struct EphysLinkOptions
     public bool IgnoreUpdates;
     public string Type;
     public bool Debug;
-    public bool UseProxy;
-    public string ProxyAddress;
     public int MpmPort;
     public int ParallaxPort;
     public string Serial;
 
-    public EphysLinkOptions(
-        bool background,
-        bool ignoreUpdates,
-        string type,
-        bool debug,
-        bool useProxy,
-        string proxyAddress,
-        int mpmPort,
-        int parallaxPort,
-        string serial
-    )
+    public EphysLinkOptions(bool background, bool ignoreUpdates, string type, bool debug, int mpmPort, int parallaxPort, string serial)
     {
         Background = background;
         IgnoreUpdates = ignoreUpdates;
         Type = type;
         Debug = debug;
-        UseProxy = useProxy;
-        ProxyAddress = proxyAddress;
         MpmPort = mpmPort;
         ParallaxPort = parallaxPort;
         Serial = serial;
     }
 }
+
 
 [Serializable]
 public struct GetManipulatorsResponse
@@ -76,6 +65,7 @@ public struct GetManipulatorsResponse
         Error = error;
     }
 }
+
 
 [Serializable]
 public struct PlatformInfo
@@ -94,6 +84,7 @@ public struct PlatformInfo
     }
 }
 
+
 [Serializable]
 public struct PositionalResponse
 {
@@ -106,6 +97,7 @@ public struct PositionalResponse
         Error = error;
     }
 }
+
 
 [Serializable]
 public struct SetDepthRequest
@@ -122,6 +114,7 @@ public struct SetDepthRequest
     }
 }
 
+
 [Serializable]
 public struct SetDepthResponse
 {
@@ -135,6 +128,7 @@ public struct SetDepthResponse
     }
 }
 
+
 [Serializable]
 public struct SetInsideBrainRequest
 {
@@ -147,6 +141,7 @@ public struct SetInsideBrainRequest
         Inside = inside;
     }
 }
+
 
 [Serializable]
 public struct SetPositionRequest
@@ -162,6 +157,7 @@ public struct SetPositionRequest
         Speed = speed;
     }
 }
+
 
 [Serializable]
 public struct ShankCountResponse
