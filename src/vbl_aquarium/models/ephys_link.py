@@ -19,8 +19,6 @@ class EphysLinkOptions(VBLBaseModel):
         ignore_updates: Whether to ignore updates.
         type: Type of manipulator platform to use.
         debug: Whether to print debug messages.
-        use_proxy: Whether to use VBL proxy service.
-        proxy_address: Address of the proxy service.
         mpm_port: Port for New Scale MPM HTTP server.
         serial: Serial port for emergency stop.
     """
@@ -29,8 +27,6 @@ class EphysLinkOptions(VBLBaseModel):
     ignore_updates: bool = False
     type: str = "ump-4"
     debug: bool = False
-    use_proxy: bool = False
-    proxy_address: str = "proxy2.virtualbrainlab.org"
     mpm_port: int = Field(default=8080, ge=1024, le=49151)
     parallax_port: int = Field(default=8081, ge=1024, le=49151)
     serial: str = "no-e-stop"

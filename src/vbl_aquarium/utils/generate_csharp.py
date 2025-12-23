@@ -95,7 +95,7 @@ def _parse_model(model: type[VBLBaseModel]) -> str:
             field_data = f"byte[] {field_name}"
 
         # Handle arrays.
-        elif get_origin(data.annotation) == list:
+        elif get_origin(data.annotation) is list:
             arg_class: tuple[type, ...] = get_args(data.annotation)
             type_name = arg_class[0].__name__
 
